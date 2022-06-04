@@ -20,6 +20,6 @@ navbar:
   title: "Mudcats Stats"
 left:
   - text: "Home"
-href: MarkdownDoc.htlm
+href: MarkdownDoc.html
 - text: "Lab Manual"
 
