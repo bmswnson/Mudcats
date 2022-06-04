@@ -19,7 +19,7 @@ includes:
 navbar:
   title: "Mudcats-Stats"
 left:
-  - text: "Home"
+  - text: "Stats"
 href: MarkdownDoc.html
-- text: "Lab Manual"
+- text: "Test"
 
