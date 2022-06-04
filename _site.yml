@@ -17,7 +17,7 @@ includes:
   in_header:
   - "includes/google_analytics.html"
 navbar:
-  title: "Mudcats Stats"
+  title: "Mudcats-Stats"
 left:
   - text: "Home"
 href: MarkdownDoc.html

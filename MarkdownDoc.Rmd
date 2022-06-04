@@ -16,10 +16,8 @@ output:
 
 # Installing Libraries 
 ```{r, include=FALSE}
-library('petersenlab')
-
 #load or install packages 
-load_or_install(c("tidyr", "dplyr", "knitr", "tidyverse"))
+install.packages(c("tidyr", "dplyr", "knitr", "tidyverse", "yaml"))
 ```
 
 ```{r, include=FALSE}
