@@ -19,38 +19,51 @@ output:
 library('petersenlab')
 
 #load or install packages 
-load_or_install(c("tidyr", "dplyr", "knitr"))
+load_or_install(c("tidyr", "dplyr", "knitr", "tidyverse"))
 ```
 
 ```{r, include=FALSE}
 # Reading Data
-
-mudcatsRaw <- read.csv("C:/Users/Owner/Downloads/gc-mudcats_summer-2022_Qualified_SeasonStats-2022-05-26.csv")
+mudcatsRaw <- read_csv(file.path(path, "/Github/Mudcats/Data/seasonStats_2022-05-26.csv"))
 ```
 
 # Adding Full Names
 ```{r, include=FALSE}
 mudcatsRaw$fullName <- paste(mudcatsRaw$First, mudcatsRaw$Last, sep = " ")
+
+mudcatsRaw <- mudcatsRaw %>%
+  rename("GPoffense" = GP...4, 
+         "Hoffense" = H...7, 
+         "HRoffesne" = HR...11, 
+         "Roffesne" = R...13, 
+         "HBPoffense" = HBP...14, 
+         "BBoffense" = BB...18, 
+         "SOoffesne" = SO...19,
+         #Defense
+         "GPdefense" = GP...55, 
+         "Hdefense" = H...63, 
+         "HRdefense" = HR...110, 
+         "Rdefense" = R...64, 
+         "HBPdefense" = HBP...68, 
+         "BBdefense" = BB...66, 
+         "SOdefense" = SO...67)
 ```
 
 
 # Subsetting Stats
 ```{r, include=FALSE}
 offense <- mudcatsRaw %>% 
-  select(Last, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP, AVG, ROE, FC, OBP, SLG, OPS, PA.BB, 
-         BB.K, C., K.L, SB, CS, SB.)
+  select(Last, GPoffense, PA, AB, Hoffense, "1B", "2B", "3B", HRoffesne, RBI,
+         Roffesne, HBPoffense, AVG, ROE, FC, OBP, SLG, OPS)
 
 offenseSelect <- mudcatsRaw %>%
-  select(fullName, Last, GP, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP, AVG, SLG, OPS, OBP) %>% 
-  rename("singles" = X1B, 
-         "doubles" = X2B, 
-         "triples" = X3B)
+  select(fullName, Last, GPoffense, PA, AB, Hoffense, "1B", "2B", "3B", HRoffesne, RBI,
+         Roffesne, HBPoffense, AVG, SLG, OPS, OBP)
+ 
 
 pitchingSelect <- mudcatsRaw %>%
-  select(fullName, Last, IP, GP, GS, W, L, SV, SVO, BS, SV, 
-         H, R, ER, BB, SO, HBP, ERA, WHIP, BF)
+  select(fullName, Last, IP, GPdefense, GS, W, L, SV, SVO, BS, SV, 
+         Hdefense, Rdefense, ER, BBdefense, SOdefense, HBPdefense, ERA, WHIP, BF)
 ```
 
 
