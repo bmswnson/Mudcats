@@ -22,7 +22,7 @@ Imports:
   ggthemes,
   psych, 
   tidyr, 
-  dplyr
+  dplyr,
   knitr, 
   tidyverse, 
   yaml
