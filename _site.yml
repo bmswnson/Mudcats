@@ -18,6 +18,9 @@ navbar:
   title: "Mudcats Stats"
   left:
       menu: 
-      - text: Current Stats
-        href: MarkdownDoc.html
+      - text: Offense
+        href: offense.html
+      - text: Defense
+        href: defense.html
+        
       

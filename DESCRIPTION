@@ -25,6 +25,5 @@ Imports:
   dplyr,
   knitr, 
   tidyverse, 
-  yaml
-Remotes: 
-  tinytex::install_tinytex()
+  yaml, 
+  tinytex:

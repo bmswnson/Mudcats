@@ -23,6 +23,7 @@ library("yaml")
 library("dplyr")
 library("knitr")
 library("tidyverse")
+library("tinytex")
 ```
 
 ```{r, include=FALSE}
@@ -40,153 +41,10 @@ mudcatsRaw$fullName <- paste(mudcatsRaw$First, mudcatsRaw$Last, sep = " ")
 
 ```{r, include=FALSE}
 # Subsetting Stats
-offense <- mudcatsRaw %>% 
-  select(Last, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP, AVG, ROE, FC, OBP, SLG, OPS, PA.BB, 
-         BB.K, C., K.L, SB, CS, SB.)
-offenseSelect <- mudcatsRaw %>%
-  select(fullName, Last, GP, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP, AVG, SLG, OPS, OBP) %>% 
-  rename("singles" = X1B, 
-         "doubles" = X2B, 
-         "triples" = X3B)
 pitchingSelect <- mudcatsRaw %>%
   select(fullName, Last, IP, GP, GS, W, L, SV, SVO, BS, SV, 
          H, R, ER, BB, SO, HBP, ERA, WHIP, BF)
 ```
-
-
-
-# Offensive
-
-## Team Leaders
-
-### Average
-```{r}
-offenseSelect %>% 
-  filter(quantile(AVG, .9) < AVG) %>%
-  select(fullName, AVG) %>%
-  kable()
-```
-
-### OPS
-```{r}
-offenseSelect %>% 
-  filter(quantile(OPS, .9) < OPS) %>%
-  select(fullName, OPS) %>%
-  kable()
-```
-
-### OBP
-```{r}
-offenseSelect %>% 
-  filter(quantile(OBP, .9) < OBP) %>%
-  select(fullName, OBP) %>%
-  kable()
-```
-
-
-
-
-# Individual Stats
-## Dorsey
-```{r}
-offenseSelect %>%
-  filter(Last == "Dorsey") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Gunkel
-```{r}
-offenseSelect %>%
-  filter(Last == "Gunkel") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Huntington
-```{r}
-offenseSelect %>%
-  filter(Last == "Huntington") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Huseby
-```{r}
-offenseSelect %>%
-  filter(Last == "Huseby") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Liking
-```{r}
-offenseSelect %>%
-  filter(Last == "Liking") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Naugs
-```{r}
-offenseSelect %>%
-  filter(Last == "Naugle") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Pill
-```{r}
-offenseSelect %>%
-  filter(Last == "Pilon") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Reed
-```{r}
-offenseSelect %>%
-  filter(Last == "Reed") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Big Chungus
-```{r}
-offenseSelect %>%
-  filter(Last == "Sayles") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## Schwinner
-```{r}
-offenseSelect %>%
-  filter(Last == "Stratton") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-## B Weids
-```{r}
-offenseSelect %>%
-  filter(Last == "Weidieman") %>%
-  select(-Last, -fullName) %>%
-  kable()
-```
-
-
-
-
-
-
-
-
-
-
-
 
 # Pitiching
 
