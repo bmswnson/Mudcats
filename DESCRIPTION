@@ -20,4 +20,9 @@ Imports:
   ggExtra,
   viridis,
   ggthemes,
-  psych
+  psych, 
+  tidyr, 
+  dplyr
+  knitr, 
+  tidyverse, 
+  yaml
