@@ -11,6 +11,7 @@
 
 <meta name="author" content="Ben Swanson" />
 
+<meta name="date" content="2022-06-04" />
 
 <title>Mudcats Stats</title>
 
@@ -363,27 +364,17 @@ div.tocify {
 
 <h1 class="title toc-ignore">Mudcats Stats</h1>
 <h4 class="author">Ben Swanson</h4>
-<h4 class="date">5/31/2022</h4>
+<h4 class="date">June 04, 2022</h4>
 
 </div>
 
 
-<div id="installing-libraries" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Installing
-Libraries</h1>
-</div>
-<div id="adding-full-names" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Adding Full Names</h1>
-</div>
-<div id="subsetting-stats" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Subsetting Stats</h1>
-</div>
-<div id="offensive-stats" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Offensive Stats</h1>
-<div id="team-leaders" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Team Leaders</h2>
-<div id="average" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Average</h3>
+<div id="offensive" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Offensive</h1>
+<div id="team-leaders" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Team Leaders</h2>
+<div id="average" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Average</h3>
 <pre class="r"><code>offenseSelect %&gt;% 
   filter(quantile(AVG, .9) &lt; AVG) %&gt;%
   select(fullName, AVG) %&gt;%
@@ -407,8 +398,8 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="ops" class="section level3" number="4.1.2">
-<h3><span class="header-section-number">4.1.2</span> OPS</h3>
+<div id="ops" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> OPS</h3>
 <pre class="r"><code>offenseSelect %&gt;% 
   filter(quantile(OPS, .9) &lt; OPS) %&gt;%
   select(fullName, OPS) %&gt;%
@@ -432,8 +423,8 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="obp" class="section level3" number="4.1.3">
-<h3><span class="header-section-number">4.1.3</span> OBP</h3>
+<div id="obp" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> OBP</h3>
 <pre class="r"><code>offenseSelect %&gt;% 
   filter(quantile(OBP, .9) &lt; OBP) %&gt;%
   select(fullName, OBP) %&gt;%
@@ -459,45 +450,45 @@ Libraries</h1>
 </div>
 </div>
 </div>
-<div id="individual-stats" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Individual Stats</h1>
-<div id="dorsey" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Dorsey</h2>
+<div id="individual-stats" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Individual Stats</h1>
+<div id="dorsey" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Dorsey</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="11%" />
 <col width="11%" />
 <col width="4%" />
-<col width="10%" />
-<col width="12%" />
-<col width="5%" />
 <col width="5%" />
 <col width="4%" />
 <col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -525,43 +516,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Gunkel</h2>
+<div id="gunkel" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Gunkel</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="11%" />
 <col width="11%" />
 <col width="4%" />
-<col width="10%" />
-<col width="12%" />
 <col width="5%" />
 <col width="4%" />
 <col width="5%" />
+<col width="7%" />
 <col width="5%" />
+<col width="7%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -589,43 +580,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Huntington</h2>
+<div id="huntington" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Huntington</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table style="width:100%;">
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="9%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="10%" />
 <col width="10%" />
 <col width="4%" />
-<col width="9%" />
-<col width="12%" />
-<col width="6%" />
-<col width="6%" />
-<col width="6%" />
 <col width="5%" />
+<col width="4%" />
+<col width="5%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -653,43 +644,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="huseby" class="section level2" number="5.4">
-<h2><span class="header-section-number">5.4</span> Huseby</h2>
+<div id="huseby" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Huseby</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="11%" />
 <col width="11%" />
 <col width="4%" />
-<col width="10%" />
-<col width="12%" />
-<col width="5%" />
 <col width="5%" />
 <col width="4%" />
 <col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -717,43 +708,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="5.5">
-<h2><span class="header-section-number">5.5</span> Liking</h2>
+<div id="liking" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Liking</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="11%" />
-<col width="4%" />
-<col width="10%" />
-<col width="13%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="4%" />
+<col width="6%" />
+<col width="4%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -781,43 +772,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="5.6">
-<h2><span class="header-section-number">5.6</span> Naugs</h2>
+<div id="naugs" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Naugs</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="11%" />
 <col width="11%" />
 <col width="4%" />
-<col width="10%" />
-<col width="12%" />
-<col width="5%" />
 <col width="5%" />
 <col width="4%" />
 <col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="5%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -845,43 +836,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="5.7">
-<h2><span class="header-section-number">5.7</span> Pill</h2>
+<div id="pill" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Pill</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="11%" />
-<col width="4%" />
-<col width="10%" />
-<col width="13%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="4%" />
+<col width="6%" />
+<col width="4%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -909,43 +900,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="5.8">
-<h2><span class="header-section-number">5.8</span> Reed</h2>
+<div id="reed" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Reed</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="11%" />
-<col width="4%" />
-<col width="10%" />
-<col width="13%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="4%" />
+<col width="6%" />
+<col width="4%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -973,43 +964,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="5.9">
-<h2><span class="header-section-number">5.9</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Big Chungus</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table style="width:100%;">
 <colgroup>
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
+<col width="4%" />
 <col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
+<col width="11%" />
 <col width="11%" />
 <col width="4%" />
-<col width="10%" />
-<col width="12%" />
-<col width="4%" />
+<col width="5%" />
 <col width="4%" />
 <col width="5%" />
 <col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -1037,43 +1028,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="5.10">
-<h2><span class="header-section-number">5.10</span> Schwinner</h2>
+<div id="schwinner" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Schwinner</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="11%" />
-<col width="4%" />
-<col width="10%" />
-<col width="13%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="4%" />
+<col width="6%" />
+<col width="4%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -1101,43 +1092,43 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="5.11">
-<h2><span class="header-section-number">5.11</span> B Weids</h2>
+<div id="b-weids" class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> B Weids</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
-<table>
+<table style="width:100%;">
 <colgroup>
-<col width="11%" />
-<col width="3%" />
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="11%" />
-<col width="4%" />
-<col width="10%" />
-<col width="13%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
 <col width="4%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="4%" />
+<col width="6%" />
+<col width="4%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right">GPoffense</th>
+<th align="right">GP</th>
 <th align="right">PA</th>
 <th align="right">AB</th>
-<th align="right">Hoffense</th>
-<th align="right">1B</th>
-<th align="right">2B</th>
-<th align="right">3B</th>
-<th align="right">HRoffesne</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
 <th align="right">RBI</th>
-<th align="right">Roffesne</th>
-<th align="right">HBPoffense</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
 <th align="right">AVG</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
@@ -1166,53 +1157,53 @@ Libraries</h1>
 </table>
 </div>
 </div>
-<div id="pitiching" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Pitiching</h1>
+<div id="pitiching" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Pitiching</h1>
 </div>
-<div id="individual-stats-1" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Individual Stats</h1>
-<div id="dorsey-1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Dorsey</h2>
+<div id="individual-stats-1" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Individual Stats</h1>
+<div id="dorsey-1" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Dorsey</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
 <col width="5%" />
-<col width="3%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="right">IP</th>
-<th align="right">GPdefense</th>
+<th align="right">GP</th>
 <th align="right">GS</th>
 <th align="right">W</th>
 <th align="right">L</th>
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
+<th align="right">H</th>
+<th align="right">R</th>
 <th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -1221,636 +1212,6 @@ Libraries</h1>
 <tbody>
 <tr class="odd">
 <td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="gunkel-1" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> Gunkel</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Gunkel&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="huntington-1" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Huntington</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Huntington&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="huseby-1" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Huseby</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Huseby&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="liking-1" class="section level2" number="7.5">
-<h2><span class="header-section-number">7.5</span> Liking</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Liking&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="naugs-1" class="section level2" number="7.6">
-<h2><span class="header-section-number">7.6</span> Naugs</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Naugle&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="pill-1" class="section level2" number="7.7">
-<h2><span class="header-section-number">7.7</span> Pill</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Pilon&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="reed-1" class="section level2" number="7.8">
-<h2><span class="header-section-number">7.8</span> Reed</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Reed&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="big-chungus-1" class="section level2" number="7.9">
-<h2><span class="header-section-number">7.9</span> Big Chungus</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Sayles&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="schwinner-1" class="section level2" number="7.10">
-<h2><span class="header-section-number">7.10</span> Schwinner</h2>
-<pre class="r"><code>pitchingSelect %&gt;%
-  filter(Last == &quot;Stratton&quot;) %&gt;%
-  select(-Last, -fullName) %&gt;%
-  kable()</code></pre>
-<table>
-<colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
-<col width="5%" />
-<col width="3%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">IP</th>
-<th align="right">GPdefense</th>
-<th align="right">GS</th>
-<th align="right">W</th>
-<th align="right">L</th>
-<th align="right">SV</th>
-<th align="right">SVO</th>
-<th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
-<th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
-<th align="right">ERA</th>
-<th align="right">WHIP</th>
-<th align="right">BF</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">3</td>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -1858,11 +1219,641 @@ Libraries</h1>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="gunkel-1" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Gunkel</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Gunkel&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="huntington-1" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Huntington</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Huntington&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="huseby-1" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Huseby</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Huseby&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="liking-1" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Liking</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Liking&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="naugs-1" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Naugs</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Naugle&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="pill-1" class="section level2" number="4.7">
+<h2><span class="header-section-number">4.7</span> Pill</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Pilon&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="reed-1" class="section level2" number="4.8">
+<h2><span class="header-section-number">4.8</span> Reed</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Reed&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="big-chungus-1" class="section level2" number="4.9">
+<h2><span class="header-section-number">4.9</span> Big Chungus</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Sayles&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="schwinner-1" class="section level2" number="4.10">
+<h2><span class="header-section-number">4.10</span> Schwinner</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Stratton&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H</th>
+<th align="right">R</th>
+<th align="right">ER</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">1</td>
@@ -1871,48 +1862,48 @@ Libraries</h1>
 </tbody>
 </table>
 </div>
-<div id="b-weids-1" class="section level2" number="7.11">
-<h2><span class="header-section-number">7.11</span> B Weids</h2>
+<div id="b-weids-1" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> B Weids</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
   kable()</code></pre>
 <table>
 <colgroup>
-<col width="3%" />
-<col width="10%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="3%" />
-<col width="4%" />
-<col width="3%" />
-<col width="9%" />
-<col width="9%" />
-<col width="3%" />
-<col width="10%" />
-<col width="10%" />
-<col width="11%" />
-<col width="4%" />
 <col width="5%" />
-<col width="3%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="5%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="right">IP</th>
-<th align="right">GPdefense</th>
+<th align="right">GP</th>
 <th align="right">GS</th>
 <th align="right">W</th>
 <th align="right">L</th>
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">Hdefense</th>
-<th align="right">Rdefense</th>
+<th align="right">H</th>
+<th align="right">R</th>
 <th align="right">ER</th>
-<th align="right">BBdefense</th>
-<th align="right">SOdefense</th>
-<th align="right">HBPdefense</th>
+<th align="right">BB</th>
+<th align="right">SO</th>
+<th align="right">HBP</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -1921,7 +1912,7 @@ Libraries</h1>
 <tbody>
 <tr class="odd">
 <td align="right">0</td>
-<td align="right">0</td>
+<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -1943,7 +1934,7 @@ Libraries</h1>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIk11ZGNhdHMgU3RhdHMiDQphdXRob3I6ICJCZW4gU3dhbnNvbiINCmRhdGU6ICI1LzMxLzIwMjIiDQpvdXRwdXQ6DQogIGh0bWxfZG9jdW1lbnQ6DQogICAgdG9jOiB5ZXMNCiAgICB0b2NfZmxvYXQ6IHllcw0KICAgIG51bWJlcl9zZWN0aW9uczogeWVzDQogICAgY29kZV9mb2xkaW5nOiBoaWRlDQogICAgZGZfcHJpbnQ6IHBhZ2VkDQogIHBkZl9kb2N1bWVudDoNCiAgICB0b2M6IHllcw0KLS0tDQoNCg0KIyBJbnN0YWxsaW5nIExpYnJhcmllcyANCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQ0KI2luc3RhbGwucGFja2FnZXMoYygidGlkeXIiLCAiZHBseXIiLCAia25pdHIiLCAidGlkeXZlcnNlIiwgInlhbWwiKSkNCmxpYnJhcnkoInRpZHlyIikNCmxpYnJhcnkoInlhbWwiKQ0KbGlicmFyeSgiZHBseXIiKQ0KbGlicmFyeSgia25pdHIiKQ0KbGlicmFyeSgidGlkeXZlcnNlIikNCmBgYA0KDQpgYGB7ciwgaW5jbHVkZT1GQUxTRX0NCiMgUmVhZGluZyBEYXRhDQptdWRjYXRzUmF3IDwtIHJlYWRfY3N2KGZpbGUucGF0aChwYXRoLCAiL0dpdGh1Yi9NdWRjYXRzL0RhdGEvc2Vhc29uU3RhdHNfMjAyMi0wNS0yNi5jc3YiKSkNCmBgYA0KDQojIEFkZGluZyBGdWxsIE5hbWVzDQpgYGB7ciwgaW5jbHVkZT1GQUxTRX0NCm11ZGNhdHNSYXckZnVsbE5hbWUgPC0gcGFzdGUobXVkY2F0c1JhdyRGaXJzdCwgbXVkY2F0c1JhdyRMYXN0LCBzZXAgPSAiICIpDQoNCm11ZGNhdHNSYXcgPC0gbXVkY2F0c1JhdyAlPiUNCiAgcmVuYW1lKCJHUG9mZmVuc2UiID0gR1AuLi40LCANCiAgICAgICAgICJIb2ZmZW5zZSIgPSBILi4uNywgDQogICAgICAgICAiSFJvZmZlc25lIiA9IEhSLi4uMTEsIA0KICAgICAgICAgIlJvZmZlc25lIiA9IFIuLi4xMywgDQogICAgICAgICAiSEJQb2ZmZW5zZSIgPSBIQlAuLi4xNCwgDQogICAgICAgICAiQkJvZmZlbnNlIiA9IEJCLi4uMTgsIA0KICAgICAgICAgIlNPb2ZmZXNuZSIgPSBTTy4uLjE5LA0KICAgICAgICAgI0RlZmVuc2UNCiAgICAgICAgICJHUGRlZmVuc2UiID0gR1AuLi41NSwgDQogICAgICAgICAiSGRlZmVuc2UiID0gSC4uLjYzLCANCiAgICAgICAgICJIUmRlZmVuc2UiID0gSFIuLi4xMTAsIA0KICAgICAgICAgIlJkZWZlbnNlIiA9IFIuLi42NCwgDQogICAgICAgICAiSEJQZGVmZW5zZSIgPSBIQlAuLi42OCwgDQogICAgICAgICAiQkJkZWZlbnNlIiA9IEJCLi4uNjYsIA0KICAgICAgICAgIlNPZGVmZW5zZSIgPSBTTy4uLjY3KQ0KYGBgDQoNCg0KIyBTdWJzZXR0aW5nIFN0YXRzDQpgYGB7ciwgaW5jbHVkZT1GQUxTRX0NCm9mZmVuc2UgPC0gbXVkY2F0c1JhdyAlPiUgDQogIHNlbGVjdChMYXN0LCBHUG9mZmVuc2UsIFBBLCBBQiwgSG9mZmVuc2UsICIxQiIsICIyQiIsICIzQiIsIEhSb2ZmZXNuZSwgUkJJLA0KICAgICAgICAgUm9mZmVzbmUsIEhCUG9mZmVuc2UsIEFWRywgUk9FLCBGQywgT0JQLCBTTEcsIE9QUykNCg0Kb2ZmZW5zZVNlbGVjdCA8LSBtdWRjYXRzUmF3ICU+JQ0KICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEdQb2ZmZW5zZSwgUEEsIEFCLCBIb2ZmZW5zZSwgIjFCIiwgIjJCIiwgIjNCIiwgSFJvZmZlc25lLCBSQkksDQogICAgICAgICBSb2ZmZXNuZSwgSEJQb2ZmZW5zZSwgQVZHLCBTTEcsIE9QUywgT0JQKQ0KIA0KDQpwaXRjaGluZ1NlbGVjdCA8LSBtdWRjYXRzUmF3ICU+JQ0KICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIElQLCBHUGRlZmVuc2UsIEdTLCBXLCBMLCBTViwgU1ZPLCBCUywgU1YsIA0KICAgICAgICAgSGRlZmVuc2UsIFJkZWZlbnNlLCBFUiwgQkJkZWZlbnNlLCBTT2RlZmVuc2UsIEhCUGRlZmVuc2UsIEVSQSwgV0hJUCwgQkYpDQpgYGANCg0KDQoNCiMgT2ZmZW5zaXZlIFN0YXRzDQoNCiMjIFRlYW0gTGVhZGVycw0KDQojIyMgQXZlcmFnZQ0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JSANCiAgZmlsdGVyKHF1YW50aWxlKEFWRywgLjkpIDwgQVZHKSAlPiUNCiAgc2VsZWN0KGZ1bGxOYW1lLCBBVkcpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMjIE9QUw0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JSANCiAgZmlsdGVyKHF1YW50aWxlKE9QUywgLjkpIDwgT1BTKSAlPiUNCiAgc2VsZWN0KGZ1bGxOYW1lLCBPUFMpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMjIE9CUA0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JSANCiAgZmlsdGVyKHF1YW50aWxlKE9CUCwgLjkpIDwgT0JQKSAlPiUNCiAgc2VsZWN0KGZ1bGxOYW1lLCBPQlApICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KDQoNCg0KIyBJbmRpdmlkdWFsIFN0YXRzDQojIyBEb3JzZXkNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkRvcnNleSIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBHdW5rZWwNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkd1bmtlbCIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBIdW50aW5ndG9uDQpgYGB7cn0NCm9mZmVuc2VTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEh1c2VieQ0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiSHVzZWJ5IikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIExpa2luZw0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiTGlraW5nIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIE5hdWdzDQpgYGB7cn0NCm9mZmVuc2VTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJOYXVnbGUiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgUGlsbA0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiUGlsb24iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgUmVlZA0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiUmVlZCIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBCaWcgQ2h1bmd1cw0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiU2F5bGVzIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIFNjaHdpbm5lcg0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiU3RyYXR0b24iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgQiBXZWlkcw0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiV2VpZGllbWFuIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQojIFBpdGljaGluZw0KDQojIEluZGl2aWR1YWwgU3RhdHMNCiMjIERvcnNleQ0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkRvcnNleSIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBHdW5rZWwNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgSHVudGluZ3Rvbg0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkh1bnRpbmd0b24iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgSHVzZWJ5DQpgYGB7cn0NCnBpdGNoaW5nU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiSHVzZWJ5IikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIExpa2luZw0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkxpa2luZyIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBOYXVncw0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIk5hdWdsZSIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBQaWxsDQpgYGB7cn0NCnBpdGNoaW5nU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiUGlsb24iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgUmVlZA0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlJlZWQiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgQmlnIENodW5ndXMNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJTYXlsZXMiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgU2Nod2lubmVyDQpgYGB7cn0NCnBpdGNoaW5nU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiU3RyYXR0b24iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgQiBXZWlkcw0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIldlaWRpZW1hbiIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIk11ZGNhdHMgU3RhdHMiDQphdXRob3I6ICJCZW4gU3dhbnNvbiINCmRhdGU6ICdgciBmb3JtYXQoU3lzLkRhdGUoKSwgIiVCICVkLCAlWSIpYCcNCm91dHB1dDoNCiAgaHRtbF9kb2N1bWVudDoNCiAgICB0b2M6IHllcw0KICAgIHRvY19mbG9hdDogeWVzDQogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMNCiAgICBjb2RlX2ZvbGRpbmc6IGhpZGUNCiAgICBkZl9wcmludDogcGFnZWQNCiAgcGRmX2RvY3VtZW50Og0KICAgIHRvYzogeWVzDQotLS0NCg0KDQoNCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQ0KIyBJbnN0YWxsaW5nIExpYnJhcmllcyANCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpDQpsaWJyYXJ5KCJ0aWR5ciIpDQpsaWJyYXJ5KCJ5YW1sIikNCmxpYnJhcnkoImRwbHlyIikNCmxpYnJhcnkoImtuaXRyIikNCmxpYnJhcnkoInRpZHl2ZXJzZSIpDQpgYGANCg0KYGBge3IsIGluY2x1ZGU9RkFMU0V9DQojIFJlYWRpbmcgRGF0YQ0KbXVkY2F0c1JhdyA8LSByZWFkLmNzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Jtc3duc29uL011ZGNhdHMvbWFpbi9EYXRhL3NlYXNvblN0YXRzXzIwMjItMDUtMjYuY3N2IikNCmBgYA0KDQoNCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQ0KIyBBZGRpbmcgRnVsbCBOYW1lcw0KbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikNCmBgYA0KDQoNCg0KYGBge3IsIGluY2x1ZGU9RkFMU0V9DQojIFN1YnNldHRpbmcgU3RhdHMNCm9mZmVuc2UgPC0gbXVkY2F0c1JhdyAlPiUgDQogIHNlbGVjdChMYXN0LCBHUCwgUEEsIEFCLCBILCBYMUIsIFgyQiwgWDNCLCBIUiwgUkJJLA0KICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCANCiAgICAgICAgIEJCLkssIEMuLCBLLkwsIFNCLCBDUywgU0IuKQ0Kb2ZmZW5zZVNlbGVjdCA8LSBtdWRjYXRzUmF3ICU+JQ0KICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEdQLCBHUCwgUEEsIEFCLCBILCBYMUIsIFgyQiwgWDNCLCBIUiwgUkJJLA0KICAgICAgICAgUiwgSEJQLCBBVkcsIFNMRywgT1BTLCBPQlApICU+JSANCiAgcmVuYW1lKCJzaW5nbGVzIiA9IFgxQiwgDQogICAgICAgICAiZG91YmxlcyIgPSBYMkIsIA0KICAgICAgICAgInRyaXBsZXMiID0gWDNCKQ0KcGl0Y2hpbmdTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUNCiAgc2VsZWN0KGZ1bGxOYW1lLCBMYXN0LCBJUCwgR1AsIEdTLCBXLCBMLCBTViwgU1ZPLCBCUywgU1YsIA0KICAgICAgICAgSCwgUiwgRVIsIEJCLCBTTywgSEJQLCBFUkEsIFdISVAsIEJGKQ0KYGBgDQoNCg0KDQojIE9mZmVuc2l2ZQ0KDQojIyBUZWFtIExlYWRlcnMNCg0KIyMjIEF2ZXJhZ2UNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUgDQogIGZpbHRlcihxdWFudGlsZShBVkcsIC45KSA8IEFWRykgJT4lDQogIHNlbGVjdChmdWxsTmFtZSwgQVZHKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIyBPUFMNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUgDQogIGZpbHRlcihxdWFudGlsZShPUFMsIC45KSA8IE9QUykgJT4lDQogIHNlbGVjdChmdWxsTmFtZSwgT1BTKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIyBPQlANCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUgDQogIGZpbHRlcihxdWFudGlsZShPQlAsIC45KSA8IE9CUCkgJT4lDQogIHNlbGVjdChmdWxsTmFtZSwgT0JQKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCg0KDQoNCiMgSW5kaXZpZHVhbCBTdGF0cw0KIyMgRG9yc2V5DQpgYGB7cn0NCm9mZmVuc2VTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJEb3JzZXkiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgR3Vua2VsDQpgYGB7cn0NCm9mZmVuc2VTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgSHVudGluZ3Rvbg0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiSHVudGluZ3RvbiIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBIdXNlYnkNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkh1c2VieSIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBMaWtpbmcNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkxpa2luZyIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBOYXVncw0KYGBge3J9DQpvZmZlbnNlU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiTmF1Z2xlIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIFBpbGwNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIFJlZWQNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlJlZWQiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgQmlnIENodW5ndXMNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlNheWxlcyIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBTY2h3aW5uZXINCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEIgV2VpZHMNCmBgYHtyfQ0Kb2ZmZW5zZVNlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIldlaWRpZW1hbiIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KIyBQaXRpY2hpbmcNCg0KIyBJbmRpdmlkdWFsIFN0YXRzDQojIyBEb3JzZXkNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJEb3JzZXkiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgR3Vua2VsDQpgYGB7cn0NCnBpdGNoaW5nU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiR3Vua2VsIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEh1bnRpbmd0b24NCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEh1c2VieQ0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIkh1c2VieSIpICU+JQ0KICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lDQogIGthYmxlKCkNCmBgYA0KDQojIyBMaWtpbmcNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJMaWtpbmciKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgTmF1Z3MNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJOYXVnbGUiKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg0KIyMgUGlsbA0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIFJlZWQNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJSZWVkIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEJpZyBDaHVuZ3VzDQpgYGB7cn0NCnBpdGNoaW5nU2VsZWN0ICU+JQ0KICBmaWx0ZXIoTGFzdCA9PSAiU2F5bGVzIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIFNjaHdpbm5lcg0KYGBge3J9DQpwaXRjaGluZ1NlbGVjdCAlPiUNCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lDQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUNCiAga2FibGUoKQ0KYGBgDQoNCiMjIEIgV2VpZHMNCmBgYHtyfQ0KcGl0Y2hpbmdTZWxlY3QgJT4lDQogIGZpbHRlcihMYXN0ID09ICJXZWlkaWVtYW4iKSAlPiUNCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQ0KICBrYWJsZSgpDQpgYGANCg==</div>
 
 
 </div>
