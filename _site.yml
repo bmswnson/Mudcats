@@ -13,9 +13,6 @@ output:
     code_download: true
     theme: readable
     css: ["includes/custom.css", "font/css/roboto.css"]
-    includes:
-      in_header:
-      - "includes/google_analytics.html"
 new_session: true
 navbar:
   title: "Mudcats Stats"
