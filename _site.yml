@@ -22,6 +22,6 @@ navbar:
       - text: offense
         href: offense.html
       - text: Defense
-        href: defense.html
+        href: Defense.html
         
       
