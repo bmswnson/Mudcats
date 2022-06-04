@@ -17,5 +17,7 @@ new_session: true
 navbar:
   title: "Mudcats Stats"
   left:
-    - text: "Current Stats"
-      href: MarkdownDoc.html
+      menu: 
+      - text: Current Stats
+        href: MarkdownDoc.html
+      

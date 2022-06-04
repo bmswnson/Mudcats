@@ -26,3 +26,5 @@ Imports:
   knitr, 
   tidyverse, 
   yaml
+Remotes: 
+  tinytex::install_tinytex()
