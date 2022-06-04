@@ -16,8 +16,10 @@ output:
 
 # Installing Libraries 
 ```{r, include=FALSE}
-#load or install packages 
-install.packages(c("tidyr", "dplyr", "knitr", "tidyverse", "yaml"))
+#install.packages(c("tidyr", "dplyr", "knitr", "tidyverse", "yaml"))
+library("tidyr", "dplyr", "knitr", "tidyverse")
+library("yaml")
+
 ```
 
 ```{r, include=FALSE}
