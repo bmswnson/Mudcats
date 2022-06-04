@@ -16,8 +16,6 @@ output:
     includes:
       in_header:
       - "includes/google_analytics.html"
-      after_body:
-      - "includes/footer.html"
 new_session: true
 navbar:
   title: "Mudcats Stats"
