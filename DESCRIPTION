@@ -26,4 +26,4 @@ Imports:
   knitr, 
   tidyverse, 
   yaml, 
-  tinytex:
+  tinytex
