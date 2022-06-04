@@ -17,8 +17,9 @@ new_session: true
 navbar:
   title: "Mudcats Stats"
   left:
-      menu: 
-      - text: Offense
+    - text: Current Stats
+      menu:
+      - text: offense
         href: offense.html
       - text: Defense
         href: defense.html

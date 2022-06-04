@@ -2,15 +2,6 @@
 title: "Mudcats Stats"
 author: "Ben Swanson"
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
-output:
-  html_document:
-    toc: yes
-    toc_float: yes
-    number_sections: yes
-    code_folding: hide
-    df_print: paged
-  pdf_document:
-    toc: yes
 ---
 
 
