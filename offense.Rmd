@@ -92,6 +92,32 @@ offenseSelect %>%
   kable()
 ```
 
+## Gravy
+```{r}
+offenseSelect %>%
+  filter(Last == "Gravdahl ") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+## Tommy
+```{r}
+offenseSelect %>%
+  filter(Last == "Horan ") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+
+## Howe
+```{r}
+offenseSelect %>%
+  filter(Last == "Howe") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+
 ## Huntington
 ```{r}
 offenseSelect %>%

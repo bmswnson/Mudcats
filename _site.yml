@@ -19,7 +19,7 @@ navbar:
   left:
     - text: Current Stats
       menu:
-      - text: offense
+      - text: Offense
         href: offense.html
       - text: Defense
         href: Defense.html

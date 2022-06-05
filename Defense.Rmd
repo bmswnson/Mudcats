@@ -32,7 +32,7 @@ mudcatsRaw$fullName <- paste(mudcatsRaw$First, mudcatsRaw$Last, sep = " ")
 # Subsetting Stats
 pitchingSelect <- mudcatsRaw %>%
   select(fullName, Last, IP, GP, GS, W, L, SV, SVO, BS, SV, 
-         H, R, ER, BB, SO, HBP, ERA, WHIP, BF)
+         H.1, R.1, ER, BB.1, SO.1, HBP.1, ERA, WHIP, BF)
 ```
 
 # Pitiching
@@ -42,6 +42,14 @@ pitchingSelect <- mudcatsRaw %>%
 ```{r}
 pitchingSelect %>%
   filter(Last == "Dorsey") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+## Duncan
+```{r}
+pitchingSelect %>%
+  filter(Last == "Duncan") %>%
   select(-Last, -fullName) %>%
   kable()
 ```
@@ -62,10 +70,36 @@ pitchingSelect %>%
   kable()
 ```
 
+## Howe
+## Huseby
+```{r}
+pitchingSelect %>%
+  filter(Last == "Howe") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+
 ## Huseby
 ```{r}
 pitchingSelect %>%
   filter(Last == "Huseby") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+## Levasseur
+```{r}
+pitchingSelect %>%
+  filter(Last == "Levasseur") %>%
+  select(-Last, -fullName) %>%
+  kable()
+```
+
+## Fagerland 
+```{r}
+pitchingSelect %>%
+  filter(Last == "Fagerland") %>%
   select(-Last, -fullName) %>%
   kable()
 ```
