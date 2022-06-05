@@ -1,7 +1,5 @@
 ---
-title: "Mudcats Stats"
-author: "Ben Swanson"
-date: '`r format(Sys.Date(), "%B %d, %Y")`'
+title: "Offense"
 ---
 
 
@@ -19,7 +17,7 @@ library("tinytex")
 
 ```{r, include=FALSE}
 # Reading Data
-mudcatsRaw <- read.csv("https://raw.githubusercontent.com/bmswnson/Mudcats/main/Data/seasonStats_2022-05-26.csv")
+mudcatsRaw <- read.csv("https://raw.githubusercontent.com/bmswnson/Mudcats/main/Data/currentStats.csv")
 ```
 
 
