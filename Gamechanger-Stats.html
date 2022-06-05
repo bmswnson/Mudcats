@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>gamechanger-stats.knit</title>
+
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+
+<link rel="stylesheet" href="includes/custom.css" type="text/css" />
+<link rel="stylesheet" href="font/css/roboto.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Mudcats Stats</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Current Stats
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="offense.html">offense</a>
+    </li>
+    <li>
+      <a href="Defense.html">Defense</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="gamechanger-stats.html">All Possible Stats</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+<li role="separator" class="divider"></li>
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<table>
+<tbody>
+<tr class="odd">
+<td>title:All Possible Stats</td>
+</tr>
+</tbody>
+</table>
+<div id="offense" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Offense</h1>
+<p>GP = Games played<br />
+PA = Plate appearances AB = At bats H = Hits<br />
+1B = Singles 2B = Doubles<br />
+3B = Triples<br />
+HR = Home runs RBI = Runs batted in R = Runs scored HBP = Hit by pitch ROE = Reached on error FC = Hit into fielder’s choice CI = Batter advances on catcher’s interference<br />
+BB = Base on balls (walks)<br />
+SO = Strikeouts AVG = Batting average (season) OBP = On-base percentage (season) SLG = Slugging percentage<br />
+OPS = On-base percentage plus slugging percentage (season) PA/BB = Plate appearances per walk<br />
+BB/K = Walks per strikeout C% = Contact rate<br />
+K-L = Strikeouts Looking SB = Stolen bases CS = Caught stealing<br />
+SB% = Stolen base percentage PIK = Picked off GIDP = Hit into double play GITP = Hit into triple play XBH = Extra-base hits<br />
+TB = Total bases<br />
+AB/HR = At bats per home run BA/RISP = Batting average with runners in scoring position<br />
+PS = Pitches seen<br />
+PS/PA = Pitches seen per plate appearance<br />
+2S+3 = Plate appearances in which batter sees 3+ pitches after 2 strikes<br />
+2S+3% = % of plate appearances in which batter sees 3+ pitches after 2 strikes 6+ = Plate appearances with 6+ pitches<br />
+6+% = % of plate appearances of 6+ pitches<br />
+FLB% = Fly ball percentage<br />
+GB% = Ground ball percentage SAC = Sacrifice hits &amp; bunts SF = Sacrifice flies<br />
+LOB = Runners left on base when batter is out 2OUTRBI = 2-out RBI HHB = Hard hit balls: Total line drives and hard ground balls<br />
+QAB = Quality at bats (any one of: 3 pitches after 2 strikes, 6+ pitch ABs, XBH, HHB, BB, SAC Bunt, SAC Fly) QAB% = Quality at bats per plate appearance BABIP = Batting average on balls in play</p>
+</div>
+<div id="pitching" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Pitching</h1>
+<p>IP = Innings Pitched GP = Games pitched<br />
+GS = Games started as the pitcher W = Wins L = Losses SV = Saves<br />
+SVO = Save opportunities BS = Blown saves<br />
+SV% = Save percentage<br />
+H = Hits allowed<br />
+R = Runs allowed<br />
+ER = Earned runs allowed<br />
+BB = Base on balls (walks) SO = Strikeouts HBP = Hit batters<br />
+ERA = Earned run average (season) WHIP = Walks plus hits per innings pitched BF = Total batters faced #P = Total pitches TS = Total strikes TB = Total balls P/IP = Pitches per inning P/BF = Pitches per batter faced &lt;3 = Batters on or out in three pitches or less &lt;3% = % of batters on or out in three pitches or less<br />
+LOO = Leadoff out (1st batter of inning) 1ST2OUT = Innings with 1st 2 batters out<br />
+123INN = 1-2-3 Innings &lt;13 = Innings of 13 pitches or fewer FIP = Fielding Independent Pitching S% = Strike percentage FPS = First pitch strikes FPS% = First pitch strike percentage<br />
+FPSO% = % of FPS at-bats that result in an out<br />
+FPSW% = % of FPS at-bats that result in a walk<br />
+FPSH% = % of FPS at-bats that result in a hit<br />
+BB/INN = Walks per inning 0BBINN = Zero-walk innings<br />
+BBS = Walks that score<br />
+LOBB = Leadoff walk (1st batter of inning) LOBBS = Leadoff walk that scored (1st batter of inning) WP = Wild pitches<br />
+ABA = At Bats against<br />
+SM = Opposing batter swings-and-misses<br />
+SM% = % of total pitches that are swings and misses K/G = Strikeouts per regulation game<br />
+K/BF = Strikeouts per batter faced K/BB = Strikeouts per walk<br />
+WEAK% = % of batted balls weakly hit (fly balls and ground balls)<br />
+HHB% = % of batted balls that are line drives or hard ground balls GB% = % of all batted balls hit on the ground<br />
+FLB% = % of batted balls that are hit in the air GO = Ground outs FO = Fly outs<br />
+GO/FO = Ratio of ground outs to fly outs<br />
+BAA = Opponent batting average HR = Home runs allowed<br />
+BABIP = Opponent batting average on balls in play LOB = Runners left on base BK = Balks<br />
+PIK = Runners picked off<br />
+SB = Stolen bases allowed<br />
+CS = Runners caught stealing SB% = Opponent stolen base percentage FB = Number of pitches thrown as Fastballs FBS = Number of Fastballs thrown for strikes<br />
+FBS% = Percentage of Fastballs thrown for strikes<br />
+CT = Number of pitches thrown as Cutters<br />
+CTS = Number of Cutters thrown for strikes<br />
+CTS% = Percentage of Cutters thrown for strikes CB = Number of pitches thrown as Curveballs CBS = Number of Curveballs thrown for strikes<br />
+CBS% = Percentage of Curveballs thrown for strikes SL = Number of pitches thrown as Sliders<br />
+SLS = Number of Sliders thrown for strikes<br />
+SLS% = Percentage of Sliders thrown for strikes CH = Number of pitches thrown as Changeups CHS = Number of Changeups thrown for strikes CHS% = Percentage of Changeups thrown for strikes OS = Number of pitches thrown Offspeed (Curveball, Screwball, Changeup) OSS = Number of pitches thrown Offspeed for strikes OSS% = Percentage of Offspeed pitches thrown as strikes TC = Total Chances</p>
+</div>
+<div id="defense" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Defense</h1>
+<p>A = Assists PO = Putouts<br />
+E = Errors<br />
+DP = Double Plays<br />
+TP = Triple Plays<br />
+FPCT = Fielding Percentage cINN = Innings caught cPB = Passed balls allowed<br />
+cSB = Stolen bases allowed cCS = Runners caught stealing<br />
+cCS% = Runners caught stealing percentage<br />
+cPIK = Runners picked off cCI = Batter advances on catcher’s interference</p>
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOkFsbCBQb3NzaWJsZSBTdGF0cwotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmBgYAoKIyBPZmZlbnNlCkdQID0gR2FtZXMgcGxheWVkCQpQQSA9IFBsYXRlIGFwcGVhcmFuY2VzCkFCID0gQXQgYmF0cwpIID0gSGl0cwkKMUIgPSBTaW5nbGVzCjJCID0gRG91YmxlcwkKM0IgPSBUcmlwbGVzCQpIUiA9IEhvbWUgcnVucwpSQkkgPSBSdW5zIGJhdHRlZCBpbgpSID0gUnVucyBzY29yZWQJCkhCUCA9IEhpdCBieSBwaXRjaApST0UgPSBSZWFjaGVkIG9uIGVycm9yCkZDID0gSGl0IGludG8gZmllbGRlcidzIGNob2ljZQpDSSA9IEJhdHRlciBhZHZhbmNlcyBvbiBjYXRjaGVyJ3MgaW50ZXJmZXJlbmNlCQpCQiA9IEJhc2Ugb24gYmFsbHMgKHdhbGtzKQkKU08gPSBTdHJpa2VvdXRzCQpBVkcgPSBCYXR0aW5nIGF2ZXJhZ2UgKHNlYXNvbikKT0JQID0gT24tYmFzZSBwZXJjZW50YWdlIChzZWFzb24pClNMRyA9IFNsdWdnaW5nIHBlcmNlbnRhZ2UJCk9QUyA9IE9uLWJhc2UgcGVyY2VudGFnZSBwbHVzIHNsdWdnaW5nIHBlcmNlbnRhZ2UgKHNlYXNvbikKUEEvQkIgPSBQbGF0ZSBhcHBlYXJhbmNlcyBwZXIgd2FsawkKQkIvSyA9IFdhbGtzIHBlciBzdHJpa2VvdXQKQyUgPSBDb250YWN0IHJhdGUJCkstTCA9IFN0cmlrZW91dHMgTG9va2luZwpTQiA9IFN0b2xlbiBiYXNlcwpDUyA9IENhdWdodCBzdGVhbGluZwkKU0IlID0gU3RvbGVuIGJhc2UgcGVyY2VudGFnZQpQSUsgPSBQaWNrZWQgb2ZmCkdJRFAgPSBIaXQgaW50byBkb3VibGUgcGxheQkKR0lUUCA9IEhpdCBpbnRvIHRyaXBsZSBwbGF5CQpYQkggPSBFeHRyYS1iYXNlIGhpdHMJClRCID0gVG90YWwgYmFzZXMJCkFCL0hSID0gQXQgYmF0cyBwZXIgaG9tZSBydW4KQkEvUklTUCA9IEJhdHRpbmcgYXZlcmFnZSB3aXRoIHJ1bm5lcnMgaW4gc2NvcmluZyBwb3NpdGlvbgkKUFMgPSBQaXRjaGVzIHNlZW4JClBTL1BBID0gUGl0Y2hlcyBzZWVuIHBlciBwbGF0ZSBhcHBlYXJhbmNlCQoyUyszID0gUGxhdGUgYXBwZWFyYW5jZXMgaW4gd2hpY2ggYmF0dGVyIHNlZXMgMysgcGl0Y2hlcyBhZnRlciAyIHN0cmlrZXMJCjJTKzMlID0gJSBvZiBwbGF0ZSBhcHBlYXJhbmNlcyBpbiB3aGljaCBiYXR0ZXIgc2VlcyAzKyBwaXRjaGVzIGFmdGVyIDIgc3RyaWtlcwo2KyA9IFBsYXRlIGFwcGVhcmFuY2VzIHdpdGggNisgcGl0Y2hlcwkKNislID0gJSBvZiBwbGF0ZSBhcHBlYXJhbmNlcyBvZiA2KyBwaXRjaGVzCQpGTEIlID0gRmx5IGJhbGwgcGVyY2VudGFnZQkKR0IlID0gR3JvdW5kIGJhbGwgcGVyY2VudGFnZQpTQUMgPSBTYWNyaWZpY2UgaGl0cyAmIGJ1bnRzClNGID0gU2FjcmlmaWNlIGZsaWVzCQpMT0IgPSBSdW5uZXJzIGxlZnQgb24gYmFzZSB3aGVuIGJhdHRlciBpcyBvdXQJMk9VVFJCSSA9IAoyLW91dCBSQkkJSEhCID0gSGFyZCBoaXQgYmFsbHM6IFRvdGFsIGxpbmUgZHJpdmVzIGFuZCBoYXJkIGdyb3VuZCBiYWxscwkKUUFCID0gUXVhbGl0eSBhdCBiYXRzIChhbnkgb25lIG9mOiAzIHBpdGNoZXMgYWZ0ZXIgMiBzdHJpa2VzLCA2KyBwaXRjaCBBQnMsIFhCSCwgSEhCLCBCQiwgU0FDIEJ1bnQsIFNBQyBGbHkpClFBQiUgPSBRdWFsaXR5IGF0IGJhdHMgcGVyIHBsYXRlIGFwcGVhcmFuY2UJCkJBQklQID0gQmF0dGluZyBhdmVyYWdlIG9uIGJhbGxzIGluIHBsYXkKCiMgUGl0Y2hpbmcKSVAgPSBJbm5pbmdzIFBpdGNoZWQKR1AgPSBHYW1lcyBwaXRjaGVkCQpHUyA9IEdhbWVzIHN0YXJ0ZWQgYXMgdGhlIHBpdGNoZXIKVyA9IFdpbnMKTCA9IExvc3NlcwpTViA9IFNhdmVzCQpTVk8gPSBTYXZlIG9wcG9ydHVuaXRpZXMKQlMgPSBCbG93biBzYXZlcwkKU1YlID0gU2F2ZSBwZXJjZW50YWdlCQpIID0gSGl0cyBhbGxvd2VkCQpSID0gUnVucyBhbGxvd2VkCQpFUiA9IEVhcm5lZCBydW5zIGFsbG93ZWQJCkJCID0gQmFzZSBvbiBiYWxscyAod2Fsa3MpClNPID0gU3RyaWtlb3V0cwkKSEJQID0gSGl0IGJhdHRlcnMJCkVSQSA9IEVhcm5lZCBydW4gYXZlcmFnZSAoc2Vhc29uKQpXSElQID0gV2Fsa3MgcGx1cyBoaXRzIHBlciBpbm5pbmdzIHBpdGNoZWQKQkYgPSBUb3RhbCBiYXR0ZXJzIGZhY2VkCSNQID0gVG90YWwgcGl0Y2hlcwpUUyA9IFRvdGFsIHN0cmlrZXMKVEIgPSBUb3RhbCBiYWxscwpQL0lQID0gUGl0Y2hlcyBwZXIgaW5uaW5nClAvQkYgPSBQaXRjaGVzIHBlciBiYXR0ZXIgZmFjZWQJPDMgPSBCYXR0ZXJzIG9uIG9yIG91dCBpbiB0aHJlZSBwaXRjaGVzIG9yIGxlc3MJPDMlID0gJSBvZiBiYXR0ZXJzIG9uIG9yIG91dCBpbiB0aHJlZSBwaXRjaGVzIG9yIGxlc3MJCkxPTyA9IExlYWRvZmYgb3V0ICgxc3QgYmF0dGVyIG9mIGlubmluZykKMVNUMk9VVCA9IElubmluZ3Mgd2l0aCAxc3QgMiBiYXR0ZXJzIG91dAkKMTIzSU5OID0gIDEtMi0zIElubmluZ3MJPDEzID0gSW5uaW5ncyBvZiAxMyBwaXRjaGVzIG9yIGZld2VyCkZJUCA9IEZpZWxkaW5nIEluZGVwZW5kZW50IFBpdGNoaW5nCVMlID0gU3RyaWtlIHBlcmNlbnRhZ2UKRlBTID0gRmlyc3QgcGl0Y2ggc3RyaWtlcwlGUFMlID0gRmlyc3QgcGl0Y2ggc3RyaWtlIHBlcmNlbnRhZ2UJCkZQU08lID0gJSBvZiBGUFMgYXQtYmF0cyB0aGF0IHJlc3VsdCBpbiBhbiBvdXQJCkZQU1clID0gJSBvZiBGUFMgYXQtYmF0cyB0aGF0IHJlc3VsdCBpbiBhIHdhbGsJCkZQU0glID0gJSBvZiBGUFMgYXQtYmF0cyB0aGF0IHJlc3VsdCBpbiBhIGhpdAkKQkIvSU5OID0gV2Fsa3MgcGVyIGlubmluZwowQkJJTk4gPSBaZXJvLXdhbGsgaW5uaW5ncwkKQkJTID0gV2Fsa3MgdGhhdCBzY29yZQkKTE9CQiA9IExlYWRvZmYgd2FsayAoMXN0IGJhdHRlciBvZiBpbm5pbmcpCkxPQkJTID0gTGVhZG9mZiB3YWxrIHRoYXQgc2NvcmVkICgxc3QgYmF0dGVyIG9mIGlubmluZykKV1AgPSBXaWxkIHBpdGNoZXMJCkFCQSA9IEF0IEJhdHMgYWdhaW5zdAkKU00gPSBPcHBvc2luZyBiYXR0ZXIgc3dpbmdzLWFuZC1taXNzZXMJClNNJSA9ICUgb2YgdG90YWwgcGl0Y2hlcyB0aGF0IGFyZSBzd2luZ3MgYW5kIG1pc3NlcwkKSy9HID0gU3RyaWtlb3V0cyBwZXIgcmVndWxhdGlvbiBnYW1lCQpLL0JGID0gU3RyaWtlb3V0cyBwZXIgYmF0dGVyIGZhY2VkCksvQkIgPSBTdHJpa2VvdXRzIHBlciB3YWxrCQpXRUFLJSA9ICUgb2YgYmF0dGVkIGJhbGxzIHdlYWtseSBoaXQgKGZseSBiYWxscyBhbmQgZ3JvdW5kIGJhbGxzKQkKSEhCJSA9ICUgb2YgYmF0dGVkIGJhbGxzIHRoYXQgYXJlIGxpbmUgZHJpdmVzIG9yIGhhcmQgZ3JvdW5kIGJhbGxzCkdCJSA9ICUgb2YgYWxsIGJhdHRlZCBiYWxscyBoaXQgb24gdGhlIGdyb3VuZAkKRkxCJSA9ICUgb2YgYmF0dGVkIGJhbGxzIHRoYXQgYXJlIGhpdCBpbiB0aGUgYWlyCkdPID0gR3JvdW5kIG91dHMJRk8gPSBGbHkgb3V0cwkKR08vRk8gPSBSYXRpbyBvZiBncm91bmQgb3V0cyB0byBmbHkgb3V0cwkKQkFBID0gT3Bwb25lbnQgYmF0dGluZyBhdmVyYWdlCkhSID0gSG9tZSBydW5zIGFsbG93ZWQJCkJBQklQID0gT3Bwb25lbnQgYmF0dGluZyBhdmVyYWdlIG9uIGJhbGxzIGluIHBsYXkKTE9CID0gUnVubmVycyBsZWZ0IG9uIGJhc2UJQksgPSBCYWxrcwkKUElLID0gUnVubmVycyBwaWNrZWQgb2ZmCQpTQiA9IFN0b2xlbiBiYXNlcyBhbGxvd2VkCQpDUyA9IFJ1bm5lcnMgY2F1Z2h0IHN0ZWFsaW5nClNCJSA9IE9wcG9uZW50IHN0b2xlbiBiYXNlIHBlcmNlbnRhZ2UKRkIgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gYXMgRmFzdGJhbGxzCkZCUyA9IE51bWJlciBvZiBGYXN0YmFsbHMgdGhyb3duIGZvciBzdHJpa2VzCQpGQlMlID0gUGVyY2VudGFnZSBvZiBGYXN0YmFsbHMgdGhyb3duIGZvciBzdHJpa2VzCQpDVCA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBDdXR0ZXJzCQpDVFMgPSBOdW1iZXIgb2YgQ3V0dGVycyB0aHJvd24gZm9yIHN0cmlrZXMJCkNUUyUgPSBQZXJjZW50YWdlIG9mIEN1dHRlcnMgdGhyb3duIGZvciBzdHJpa2VzCQpDQiA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBDdXJ2ZWJhbGxzCQpDQlMgPSBOdW1iZXIgb2YgQ3VydmViYWxscyB0aHJvd24gZm9yIHN0cmlrZXMJCkNCUyUgPSBQZXJjZW50YWdlIG9mIEN1cnZlYmFsbHMgdGhyb3duIGZvciBzdHJpa2VzClNMID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIGFzIFNsaWRlcnMJClNMUyA9IE51bWJlciBvZiBTbGlkZXJzIHRocm93biBmb3Igc3RyaWtlcwkKU0xTJSA9IFBlcmNlbnRhZ2Ugb2YgU2xpZGVycyB0aHJvd24gZm9yIHN0cmlrZXMJCkNIID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIGFzIENoYW5nZXVwcwpDSFMgPSBOdW1iZXIgb2YgQ2hhbmdldXBzIHRocm93biBmb3Igc3RyaWtlcwpDSFMlID0gUGVyY2VudGFnZSBvZiBDaGFuZ2V1cHMgdGhyb3duIGZvciBzdHJpa2VzCk9TID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIE9mZnNwZWVkIChDdXJ2ZWJhbGwsIFNjcmV3YmFsbCwgQ2hhbmdldXApCQpPU1MgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gT2Zmc3BlZWQgZm9yIHN0cmlrZXMJCk9TUyUgPSBQZXJjZW50YWdlIG9mIE9mZnNwZWVkIHBpdGNoZXMgdGhyb3duIGFzIHN0cmlrZXMJVEMgPSBUb3RhbCBDaGFuY2VzIAoKIyBEZWZlbnNlCkEgPSBBc3Npc3RzCQpQTyA9IFB1dG91dHMJCkUgPSBFcnJvcnMJCkRQID0gRG91YmxlIFBsYXlzCQpUUCA9IFRyaXBsZSBQbGF5cwkKRlBDVCA9IEZpZWxkaW5nIFBlcmNlbnRhZ2UKY0lOTiA9IElubmluZ3MgY2F1Z2h0CmNQQiA9IFBhc3NlZCBiYWxscyBhbGxvd2VkCQpjU0IgPSBTdG9sZW4gYmFzZXMgYWxsb3dlZApjQ1MgPSBSdW5uZXJzIGNhdWdodCBzdGVhbGluZwkKY0NTJSA9IFJ1bm5lcnMgY2F1Z2h0IHN0ZWFsaW5nIHBlcmNlbnRhZ2UJCmNQSUsgPSBSdW5uZXJzIHBpY2tlZCBvZmYJY0NJID0gQmF0dGVyIGFkdmFuY2VzIG9uIGNhdGNoZXIncyBpbnRlcmZlcmVuY2U=</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("gamechanger-stats.Rmd");
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
