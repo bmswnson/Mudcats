@@ -343,7 +343,7 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="offense.html">offense</a>
+      <a href="offense.html">Offense</a>
     </li>
     <li>
       <a href="Defense.html">Defense</a>
@@ -553,8 +553,149 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Huntington</h2>
+<div id="gravy" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Gravy</h2>
+<pre class="r"><code>offenseSelect %&gt;%
+  filter(Last == &quot;Gravdahl &quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">GP</th>
+<th align="right">PA</th>
+<th align="right">AB</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
+<th align="right">RBI</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
+<th align="right">AVG</th>
+<th align="right">SLG</th>
+<th align="right">OPS</th>
+<th align="right">OBP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">8</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.25</td>
+<td align="right">0.375</td>
+<td align="right">0.625</td>
+<td align="right">0.25</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tommy" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Tommy</h2>
+<pre class="r"><code>offenseSelect %&gt;%
+  filter(Last == &quot;Horan &quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">GP</th>
+<th align="right">PA</th>
+<th align="right">AB</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
+<th align="right">RBI</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
+<th align="right">AVG</th>
+<th align="right">SLG</th>
+<th align="right">OPS</th>
+<th align="right">OBP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">7</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0.571</td>
+<td align="right">0.714</td>
+<td align="right">1.339</td>
+<td align="right">0.625</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="howe" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Howe</h2>
+<pre class="r"><code>offenseSelect %&gt;%
+  filter(Last == &quot;Howe&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">GP</th>
+<th align="right">PA</th>
+<th align="right">AB</th>
+<th align="right">H</th>
+<th align="right">singles</th>
+<th align="right">doubles</th>
+<th align="right">triples</th>
+<th align="right">HR</th>
+<th align="right">RBI</th>
+<th align="right">R</th>
+<th align="right">HBP</th>
+<th align="right">AVG</th>
+<th align="right">SLG</th>
+<th align="right">OPS</th>
+<th align="right">OBP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2</td>
+<td align="right">8</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0.2</td>
+<td align="right">0.2</td>
+<td align="right">0.7</td>
+<td align="right">0.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="huntington" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Huntington</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -600,8 +741,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="huseby" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Huseby</h2>
+<div id="huseby" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Huseby</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -647,8 +788,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Liking</h2>
+<div id="liking" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Liking</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -694,8 +835,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Naugs</h2>
+<div id="naugs" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Naugs</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -741,8 +882,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Pill</h2>
+<div id="pill" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Pill</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -788,8 +929,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Reed</h2>
+<div id="reed" class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> Reed</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -835,8 +976,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2" number="2.12">
+<h2><span class="header-section-number">2.12</span> Big Chungus</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -882,8 +1023,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Schwinner</h2>
+<div id="schwinner" class="section level2" number="2.13">
+<h2><span class="header-section-number">2.13</span> Schwinner</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -929,8 +1070,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> B Weids</h2>
+<div id="b-weids" class="section level2" number="2.14">
+<h2><span class="header-section-number">2.14</span> B Weids</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -978,7 +1119,7 @@ div.tocify {
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2ZmZW5zZSIKLS0tCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIEluc3RhbGxpbmcgTGlicmFyaWVzIAojaW5zdGFsbC5wYWNrYWdlcyhjKCJ0aWR5ciIsICJkcGx5ciIsICJrbml0ciIsICJ0aWR5dmVyc2UiLCAieWFtbCIpKQpsaWJyYXJ5KCJ0aWR5ciIpCmxpYnJhcnkoInlhbWwiKQpsaWJyYXJ5KCJkcGx5ciIpCmxpYnJhcnkoImtuaXRyIikKbGlicmFyeSgidGlkeXZlcnNlIikKbGlicmFyeSgidGlueXRleCIpCmBgYAoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgUmVhZGluZyBEYXRhCm11ZGNhdHNSYXcgPC0gcmVhZC5jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ibXN3bnNvbi9NdWRjYXRzL21haW4vRGF0YS9jdXJyZW50U3RhdHMuY3N2IikKYGBgCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgQWRkaW5nIEZ1bGwgTmFtZXMKbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikKYGBgCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFN1YnNldHRpbmcgU3RhdHMKb2ZmZW5zZSA8LSBtdWRjYXRzUmF3ICU+JSAKICBzZWxlY3QoTGFzdCwgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCAKICAgICAgICAgQkIuSywgQy4sIEsuTCwgU0IsIENTLCBTQi4pCm9mZmVuc2VTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEdQLCBHUCwgUEEsIEFCLCBILCBYMUIsIFgyQiwgWDNCLCBIUiwgUkJJLAogICAgICAgICBSLCBIQlAsIEFWRywgU0xHLCBPUFMsIE9CUCkgJT4lIAogIHJlbmFtZSgic2luZ2xlcyIgPSBYMUIsIAogICAgICAgICAiZG91YmxlcyIgPSBYMkIsIAogICAgICAgICAidHJpcGxlcyIgPSBYM0IpCmBgYAoKCgojIE9mZmVuc2l2ZQoKIyMgVGVhbSBMZWFkZXJzCgojIyMgQXZlcmFnZQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKHF1YW50aWxlKEFWRywgLjkpIDwgQVZHKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIEFWRykgJT4lCiAga2FibGUoKQpgYGAKCiMjIyBPUFMKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihxdWFudGlsZShPUFMsIC45KSA8IE9QUykgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBPUFMpICU+JQogIGthYmxlKCkKYGBgCgojIyMgT0JQCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIocXVhbnRpbGUoT0JQLCAuOSkgPCBPQlApICU+JQogIHNlbGVjdChmdWxsTmFtZSwgT0JQKSAlPiUKICBrYWJsZSgpCmBgYAoKCgoKIyBJbmRpdmlkdWFsIFN0YXRzCiMjIERvcnNleQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRG9yc2V5IikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkd1bmtlbCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgSHVudGluZ3RvbgpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiSHVudGluZ3RvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgSHVzZWJ5CmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdXNlYnkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIExpa2luZwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTGlraW5nIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBOYXVncwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTmF1Z2xlIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBQaWxsCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJQaWxvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUmVlZApgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiUmVlZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQmlnIENodW5ndXMKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlNheWxlcyIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgU2Nod2lubmVyCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTdHJhdHRvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQiBXZWlkcwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiV2VpZGllbWFuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2ZmZW5zZSIKLS0tCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIEluc3RhbGxpbmcgTGlicmFyaWVzIAojaW5zdGFsbC5wYWNrYWdlcyhjKCJ0aWR5ciIsICJkcGx5ciIsICJrbml0ciIsICJ0aWR5dmVyc2UiLCAieWFtbCIpKQpsaWJyYXJ5KCJ0aWR5ciIpCmxpYnJhcnkoInlhbWwiKQpsaWJyYXJ5KCJkcGx5ciIpCmxpYnJhcnkoImtuaXRyIikKbGlicmFyeSgidGlkeXZlcnNlIikKbGlicmFyeSgidGlueXRleCIpCmBgYAoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgUmVhZGluZyBEYXRhCm11ZGNhdHNSYXcgPC0gcmVhZC5jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ibXN3bnNvbi9NdWRjYXRzL21haW4vRGF0YS9jdXJyZW50U3RhdHMuY3N2IikKYGBgCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgQWRkaW5nIEZ1bGwgTmFtZXMKbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikKYGBgCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFN1YnNldHRpbmcgU3RhdHMKb2ZmZW5zZSA8LSBtdWRjYXRzUmF3ICU+JSAKICBzZWxlY3QoTGFzdCwgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCAKICAgICAgICAgQkIuSywgQy4sIEsuTCwgU0IsIENTLCBTQi4pCm9mZmVuc2VTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEdQLCBHUCwgUEEsIEFCLCBILCBYMUIsIFgyQiwgWDNCLCBIUiwgUkJJLAogICAgICAgICBSLCBIQlAsIEFWRywgU0xHLCBPUFMsIE9CUCkgJT4lIAogIHJlbmFtZSgic2luZ2xlcyIgPSBYMUIsIAogICAgICAgICAiZG91YmxlcyIgPSBYMkIsIAogICAgICAgICAidHJpcGxlcyIgPSBYM0IpCmBgYAoKCgojIE9mZmVuc2l2ZQoKIyMgVGVhbSBMZWFkZXJzCgojIyMgQXZlcmFnZQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKHF1YW50aWxlKEFWRywgLjkpIDwgQVZHKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIEFWRykgJT4lCiAga2FibGUoKQpgYGAKCiMjIyBPUFMKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihxdWFudGlsZShPUFMsIC45KSA8IE9QUykgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBPUFMpICU+JQogIGthYmxlKCkKYGBgCgojIyMgT0JQCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIocXVhbnRpbGUoT0JQLCAuOSkgPCBPQlApICU+JQogIHNlbGVjdChmdWxsTmFtZSwgT0JQKSAlPiUKICBrYWJsZSgpCmBgYAoKCgoKIyBJbmRpdmlkdWFsIFN0YXRzCiMjIERvcnNleQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRG9yc2V5IikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkd1bmtlbCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgR3JhdnkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkdyYXZkYWhsICIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgVG9tbXkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvcmFuICIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKCiMjIEhvd2UKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvd2UiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCgojIyBIdW50aW5ndG9uCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBIdXNlYnkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkh1c2VieSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTGlraW5nCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJMaWtpbmciKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIE5hdWdzCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJOYXVnbGUiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFBpbGwKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBSZWVkCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJSZWVkIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCaWcgQ2h1bmd1cwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiU2F5bGVzIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBTY2h3aW5uZXIKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCIFdlaWRzCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJXZWlkaWVtYW4iKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCg==</div>
 
 
 </div>

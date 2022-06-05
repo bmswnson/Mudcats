@@ -343,7 +343,7 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="offense.html">offense</a>
+      <a href="offense.html">Offense</a>
     </li>
     <li>
       <a href="Defense.html">Defense</a>
@@ -402,12 +402,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -423,11 +423,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
-<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -436,8 +436,59 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Gunkel</h2>
+<div id="duncan" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Duncan</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Duncan&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
+<th align="right">ER</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">4</td>
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0.556</td>
+<td align="right">34</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="gunkel" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Gunkel</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -453,12 +504,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -474,11 +525,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">3</td>
-<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -487,8 +538,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Huntington</h2>
+<div id="huntington" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Huntington</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -504,12 +555,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -525,11 +576,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
-<td align="right">1</td>
 <td align="right">0</td>
-<td align="right">1</td>
-<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -538,8 +589,62 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="huseby" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Huseby</h2>
+<div id="howe" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Howe</h2>
+</div>
+<div id="huseby" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Huseby</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Howe&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
+<th align="right">ER</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="huseby-1" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Huseby</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -555,12 +660,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -576,11 +681,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
-<td align="right">2</td>
 <td align="right">0</td>
-<td align="right">1</td>
-<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -589,8 +694,110 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Liking</h2>
+<div id="levasseur" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Levasseur</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Levasseur&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
+<th align="right">ER</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">6</td>
+<td align="right">3</td>
+<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">5</td>
+<td align="right">0</td>
+<td align="right">6.75</td>
+<td align="right">1.5</td>
+<td align="right">18</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="fagerland" class="section level2" number="2.9">
+<h2><span class="header-section-number">2.9</span> Fagerland</h2>
+<pre class="r"><code>pitchingSelect %&gt;%
+  filter(Last == &quot;Fagerland&quot;) %&gt;%
+  select(-Last, -fullName) %&gt;%
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">IP</th>
+<th align="right">GP</th>
+<th align="right">GS</th>
+<th align="right">W</th>
+<th align="right">L</th>
+<th align="right">SV</th>
+<th align="right">SVO</th>
+<th align="right">BS</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
+<th align="right">ER</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
+<th align="right">ERA</th>
+<th align="right">WHIP</th>
+<th align="right">BF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="liking" class="section level2" number="2.10">
+<h2><span class="header-section-number">2.10</span> Liking</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -606,12 +813,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -627,7 +834,7 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">1</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -640,8 +847,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Naugs</h2>
+<div id="naugs" class="section level2" number="2.11">
+<h2><span class="header-section-number">2.11</span> Naugs</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -657,12 +864,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -678,11 +885,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">4</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -691,8 +898,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Pill</h2>
+<div id="pill" class="section level2" number="2.12">
+<h2><span class="header-section-number">2.12</span> Pill</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -708,12 +915,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -729,11 +936,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">3</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -742,8 +949,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Reed</h2>
+<div id="reed" class="section level2" number="2.13">
+<h2><span class="header-section-number">2.13</span> Reed</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -759,12 +966,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -784,7 +991,7 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">2</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -793,8 +1000,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2" number="2.14">
+<h2><span class="header-section-number">2.14</span> Big Chungus</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -810,12 +1017,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -834,8 +1041,8 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">1</td>
-<td align="right">2</td>
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -844,8 +1051,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Schwinner</h2>
+<div id="schwinner" class="section level2" number="2.15">
+<h2><span class="header-section-number">2.15</span> Schwinner</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -861,12 +1068,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -882,11 +1089,11 @@ div.tocify {
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<td align="right">9</td>
 <td align="right">3</td>
-<td align="right">0</td>
-<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">2</td>
+<td align="right">8</td>
 <td align="right">0</td>
 <td align="right">2.893</td>
 <td align="right">1.179</td>
@@ -895,8 +1102,8 @@ div.tocify {
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> B Weids</h2>
+<div id="b-weids" class="section level2" number="2.16">
+<h2><span class="header-section-number">2.16</span> B Weids</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -912,12 +1119,12 @@ div.tocify {
 <th align="right">SV</th>
 <th align="right">SVO</th>
 <th align="right">BS</th>
-<th align="right">H</th>
-<th align="right">R</th>
+<th align="right">H.1</th>
+<th align="right">R.1</th>
 <th align="right">ER</th>
-<th align="right">BB</th>
-<th align="right">SO</th>
-<th align="right">HBP</th>
+<th align="right">BB.1</th>
+<th align="right">SO.1</th>
+<th align="right">HBP.1</th>
 <th align="right">ERA</th>
 <th align="right">WHIP</th>
 <th align="right">BF</th>
@@ -948,7 +1155,7 @@ div.tocify {
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiBQaXRjaGluZwotLS0KCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgSW5zdGFsbGluZyBMaWJyYXJpZXMgCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpCmxpYnJhcnkoInRpZHlyIikKbGlicmFyeSgieWFtbCIpCmxpYnJhcnkoImRwbHlyIikKbGlicmFyeSgia25pdHIiKQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQpsaWJyYXJ5KCJ0aW55dGV4IikKYGBgCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBSZWFkaW5nIERhdGEKbXVkY2F0c1JhdyA8LSByZWFkLmNzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Jtc3duc29uL011ZGNhdHMvbWFpbi9EYXRhL2N1cnJlbnRTdGF0cy5jc3YiKQpgYGAKCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBBZGRpbmcgRnVsbCBOYW1lcwptdWRjYXRzUmF3JGZ1bGxOYW1lIDwtIHBhc3RlKG11ZGNhdHNSYXckRmlyc3QsIG11ZGNhdHNSYXckTGFzdCwgc2VwID0gIiAiKQpgYGAKCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgU3Vic2V0dGluZyBTdGF0cwpwaXRjaGluZ1NlbGVjdCA8LSBtdWRjYXRzUmF3ICU+JQogIHNlbGVjdChmdWxsTmFtZSwgTGFzdCwgSVAsIEdQLCBHUywgVywgTCwgU1YsIFNWTywgQlMsIFNWLCAKICAgICAgICAgSCwgUiwgRVIsIEJCLCBTTywgSEJQLCBFUkEsIFdISVAsIEJGKQpgYGAKCiMgUGl0aWNoaW5nCgojIEluZGl2aWR1YWwgU3RhdHMKIyMgRG9yc2V5CmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRG9yc2V5IikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEh1bnRpbmd0b24KYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBIdXNlYnkKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdXNlYnkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIExpa2luZwpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkxpa2luZyIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTmF1Z3MKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJOYXVnbGUiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFBpbGwKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJQaWxvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUmVlZApgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlJlZWQiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEJpZyBDaHVuZ3VzCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiU2F5bGVzIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBTY2h3aW5uZXIKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTdHJhdHRvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQiBXZWlkcwpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIldlaWRpZW1hbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiBQaXRjaGluZwotLS0KCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgSW5zdGFsbGluZyBMaWJyYXJpZXMgCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpCmxpYnJhcnkoInRpZHlyIikKbGlicmFyeSgieWFtbCIpCmxpYnJhcnkoImRwbHlyIikKbGlicmFyeSgia25pdHIiKQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQpsaWJyYXJ5KCJ0aW55dGV4IikKYGBgCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBSZWFkaW5nIERhdGEKbXVkY2F0c1JhdyA8LSByZWFkLmNzdigiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL2Jtc3duc29uL011ZGNhdHMvbWFpbi9EYXRhL2N1cnJlbnRTdGF0cy5jc3YiKQpgYGAKCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBBZGRpbmcgRnVsbCBOYW1lcwptdWRjYXRzUmF3JGZ1bGxOYW1lIDwtIHBhc3RlKG11ZGNhdHNSYXckRmlyc3QsIG11ZGNhdHNSYXckTGFzdCwgc2VwID0gIiAiKQpgYGAKCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgU3Vic2V0dGluZyBTdGF0cwpwaXRjaGluZ1NlbGVjdCA8LSBtdWRjYXRzUmF3ICU+JQogIHNlbGVjdChmdWxsTmFtZSwgTGFzdCwgSVAsIEdQLCBHUywgVywgTCwgU1YsIFNWTywgQlMsIFNWLCAKICAgICAgICAgSC4xLCBSLjEsIEVSLCBCQi4xLCBTTy4xLCBIQlAuMSwgRVJBLCBXSElQLCBCRikKYGBgCgojIFBpdGljaGluZwoKIyBJbmRpdmlkdWFsIFN0YXRzCiMjIERvcnNleQpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkRvcnNleSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgRHVuY2FuCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRHVuY2FuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEh1bnRpbmd0b24KYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBIb3dlCiMjIEh1c2VieQpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvd2UiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCgojIyBIdXNlYnkKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdXNlYnkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIExldmFzc2V1cgpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkxldmFzc2V1ciIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgRmFnZXJsYW5kIApgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkZhZ2VybGFuZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTGlraW5nCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTGlraW5nIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBOYXVncwpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIk5hdWdsZSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUGlsbApgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBSZWVkCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiUmVlZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQmlnIENodW5ndXMKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTYXlsZXMiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFNjaHdpbm5lcgpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCIFdlaWRzCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiV2VpZGllbWFuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCg==</div>
 
 
 </div>
