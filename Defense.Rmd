@@ -1,5 +1,6 @@
 ---
 title: Pitching
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 ---
 
 

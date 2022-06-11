@@ -1,5 +1,6 @@
 ---
 title: "Offense"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
 ---
 
 
@@ -13,6 +14,7 @@ library("dplyr")
 library("knitr")
 library("tidyverse")
 library("tinytex")
+library("ggplot2")
 ```
 
 ```{r, include=FALSE}
@@ -35,11 +37,11 @@ offense <- mudcatsRaw %>%
          R, HBP, AVG, ROE, FC, OBP, SLG, OPS, PA.BB, 
          BB.K, C., K.L, SB, CS, SB.)
 offenseSelect <- mudcatsRaw %>%
-  select(fullName, Last, GP, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP, AVG, SLG, OPS, OBP) %>% 
+  select(fullName, Last, AVG, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
+         R, HBP,  SLG, OPS, OBP) %>% 
   rename("singles" = X1B, 
          "doubles" = X2B, 
-         "triples" = X3B)
+         "triples" = X3B) 
 ```
 
 
@@ -72,6 +74,19 @@ offenseSelect %>%
   kable()
 ```
 
+## Graphs
+
+### Average
+```{r}
+ggplot(data = offenseSelect, aes(x = fullName, y = AVG, label = Last)) + 
+  geom_text(size = 2.5, vjust = 2) +
+  geom_point() + 
+  scale_y_binned(breaks = seq(0,1,.05)) +
+  scale_x_discrete(expand = c(.04, .08)) +
+  theme(axis.text.x = element_text(angle = 90, size = 0)) + 
+  ggtitle(paste("Team Averages"))
+  
+```
 
 
 
