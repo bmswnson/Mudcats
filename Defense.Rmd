@@ -38,6 +38,23 @@ pitchingSelect <- mudcatsRaw %>%
 
 # Pitiching
 
+## Tables
+
+### IP
+```{r}
+ipTable <- pitchingSelect %>%
+  select(Last, IP) 
+as.data.frame(ipTable[order(ipTable$IP, decreasing = TRUE),])
+```
+
+### ERA
+```{r}
+eraTable <- pitchingSelect %>%
+  filter(IP > .1) %>%
+  select(Last, ERA) 
+as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])
+```
+
 # Individual Stats
 ## Dorsey
 ```{r}

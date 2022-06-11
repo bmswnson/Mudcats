@@ -48,30 +48,45 @@ offenseSelect <- mudcatsRaw %>%
 
 # Offensive
 
-## Team Leaders
+## Tables
 
 ### Average
 ```{r}
-offenseSelect %>% 
-  filter(quantile(AVG, .9) < AVG) %>%
-  select(fullName, AVG) %>%
-  kable()
-```
+avgTable <- offenseSelect %>%
+  select(Last, AVG) 
+as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])
 
-### OPS
-```{r}
-offenseSelect %>% 
-  filter(quantile(OPS, .9) < OPS) %>%
-  select(fullName, OPS) %>%
-  kable()
 ```
 
 ### OBP
 ```{r}
-offenseSelect %>% 
-  filter(quantile(OBP, .9) < OBP) %>%
-  select(fullName, OBP) %>%
-  kable()
+obpTable <- offenseSelect %>%
+  select(Last, OBP) 
+as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])
+
+```
+
+
+```{r, include= FALSE}
+# offenseSelect %>% 
+#   filter(quantile(AVG, .9) < AVG) %>%
+#   select(fullName, AVG) %>%
+#   kable()
+```
+
+```{r, include= FALSE}
+# offenseSelect %>% 
+#   filter(quantile(OPS, .9) < OPS) %>%
+#   select(fullName, OPS) %>%
+#   kable()
+```
+
+
+```{r, include= FALSE}
+# offenseSelect %>% 
+#   filter(quantile(OBP, .9) < OBP) %>%
+#   select(fullName, OBP) %>%
+#   kable()
 ```
 
 ## Graphs
