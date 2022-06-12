@@ -17,6 +17,8 @@ new_session: true
 navbar:
   title: "Mudcats Stats"
   left:
+    - text: 2022 Schedule
+      href: 2022-Schedule.html
     - text: Current Stats
       menu:
       - text: Offense
