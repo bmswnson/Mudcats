@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2022-06-11" />
+<meta name="date" content="2022-06-12" />
 
 <title>Offense</title>
 
@@ -377,17 +377,28 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Offense</h1>
-<h4 class="date">June 11, 2022</h4>
+<h4 class="date">June 12, 2022</h4>
 
 </div>
 
 
-<div id="offensive" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Offensive</h1>
+<div id="team" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Team</h1>
 <div id="tables" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Tables</h2>
-<div id="average" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> Average</h3>
+<div id="quality-at-bats" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Quality At Bats</h3>
+<pre class="r"><code>qabTable &lt;- offenseSelect %&gt;%
+  select(Last, QAB.) 
+as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Last"],"name":[1],"type":["chr"],"align":["left"]},{"label":["QAB."],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Weidieman","2":"100.00","_rn_":"8"},{"1":"Huntington","2":"100.00","_rn_":"13"},{"1":"Fagerland","2":"87.50","_rn_":"16"},{"1":"Gunkel","2":"66.67","_rn_":"10"},{"1":"Howe","2":"62.50","_rn_":"2"},{"1":"Dorsey","2":"54.55","_rn_":"15"},{"1":"Sayles","2":"50.00","_rn_":"4"},{"1":"Liking","2":"50.00","_rn_":"5"},{"1":"Horan","2":"50.00","_rn_":"9"},{"1":"Gravdahl","2":"50.00","_rn_":"17"},{"1":"Totals","2":"50.00","_rn_":"18"},{"1":"Huseby","2":"30.00","_rn_":"11"},{"1":"Naugle","2":"30.00","_rn_":"12"},{"1":"Reed","2":"25.00","_rn_":"3"},{"1":"Pilon","2":"16.67","_rn_":"7"},{"1":"Duncan","2":"0.00","_rn_":"1"},{"1":"Stratton","2":"0.00","_rn_":"6"},{"1":"Levasseur","2":"0.00","_rn_":"14"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="average" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Average</h3>
 <pre class="r"><code>avgTable &lt;- offenseSelect %&gt;%
   select(Last, AVG) 
 as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
@@ -397,8 +408,8 @@ as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="obp" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> OBP</h3>
+<div id="obp" class="section level3" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> OBP</h3>
 <pre class="r"><code>obpTable &lt;- offenseSelect %&gt;%
   select(Last, OBP) 
 as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
@@ -416,11 +427,156 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = AVG, label = Last)) + 
   geom_text(size = 2.5, vjust = 2) +
   geom_point() + 
-  scale_y_binned(breaks = seq(0,1,.05)) +
+  scale_y_continuous(breaks = seq(0,1,.05)) +
+  ylim(0, .75) +
   scale_x_discrete(expand = c(.04, .08)) +
   theme(axis.text.x = element_text(angle = 90, size = 0)) + 
   ggtitle(paste(&quot;Team Averages&quot;))</code></pre>
-<p><img src="offense_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<pre><code>## Scale for &#39;y&#39; is already present. Adding another scale for &#39;y&#39;, which will
+## replace the existing scale.</code></pre>
+<p><img src="offense_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="quality-at-bats-percentage" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Quality At Bats Percentage</h3>
+<pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = QAB., label = Last)) + 
+  geom_text(size = 2.5, vjust = 2)  +
+  geom_point()  +
+  theme(axis.text.x = element_text(angle = 90, size = 0)) + 
+  ggtitle(paste(&quot;Quality At Bats Percentage&quot;)) </code></pre>
+<p><img src="offense_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+</div>
+</div>
+<div id="team-leaders-inlcludes-those-in-80th-percentile-or-above" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Team Leaders (Inlcludes those in 80th percentile or above)</h2>
+<div id="average-2" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Average</h3>
+<pre class="r"><code>avgLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(AVG, .8) &lt; AVG) %&gt;%
+  select(fullName, AVG) 
+as.data.frame(avgLead[order(avgLead$AVG, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["AVG"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Shea Huntington","2":"0.667","_rn_":"3"},{"1":"Tommy Horan","2":"0.571","_rn_":"2"},{"1":"Tom Liking","2":"0.500","_rn_":"1"},{"1":"Canaan Fagerland","2":"0.500","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="at-bats" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> At Bats</h3>
+<pre class="r"><code>absLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(AB, .8) &lt; AB) %&gt;%
+  select(fullName, AB) 
+as.data.frame(absLead[order(absLead$AB, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["AB"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Noah Pilon","2":"12","_rn_":"1"},{"1":"Wyatt Gunkel","2":"12","_rn_":"2"},{"1":"Jack Naugle","2":"10","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="hits" class="section level3" number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Hits</h3>
+<pre class="r"><code>hLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(H, .8) &lt; H) %&gt;%
+  select(fullName, H) 
+as.data.frame(hLead[order(hLead$H, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["H"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Tommy Horan","2":"4","_rn_":"1"},{"1":"Wyatt Gunkel","2":"3","_rn_":"2"},{"1":"Canaan Fagerland","2":"3","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="singles" class="section level3" number="1.3.4">
+<h3><span class="header-section-number">1.3.4</span> Singles</h3>
+<pre class="r"><code>singlesLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(singles, .8) &lt; singles) %&gt;%
+  select(fullName, singles) 
+as.data.frame(singlesLead[order(singlesLead$singles, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["singles"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Tommy Horan","2":"3","_rn_":"1"},{"1":"Wyatt Gunkel","2":"2","_rn_":"2"},{"1":"Shea Huntington","2":"2","_rn_":"3"},{"1":"Canaan Fagerland","2":"2","_rn_":"4"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="doubles" class="section level3" number="1.3.5">
+<h3><span class="header-section-number">1.3.5</span> Doubles</h3>
+<pre class="r"><code>doublesLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(doubles, .5) &lt; doubles) %&gt;%
+  select(fullName, doubles) 
+as.data.frame(doublesLead[order(doublesLead$doubles, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["doubles"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Noah Pilon","2":"1","_rn_":"1"},{"1":"Tommy Horan","2":"1","_rn_":"2"},{"1":"Wyatt Gunkel","2":"1","_rn_":"3"},{"1":"Sam Huseby","2":"1","_rn_":"4"},{"1":"Canaan Fagerland","2":"1","_rn_":"5"},{"1":"Andy Gravdahl","2":"1","_rn_":"6"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="triples" class="section level3" number="1.3.6">
+<h3><span class="header-section-number">1.3.6</span> Triples</h3>
+<pre class="r"><code>triplesLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(triples, .5) &lt; triples) %&gt;%
+  select(fullName, triples) 
+as.data.frame(triplesLead[order(triplesLead$triples, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["triples"],"name":[2],"type":["int"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="homers" class="section level3" number="1.3.7">
+<h3><span class="header-section-number">1.3.7</span> Homers</h3>
+<pre class="r"><code>hrLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(HR, .5) &lt; HR) %&gt;%
+  select(fullName, HR) 
+as.data.frame(hrLead[order(hrLead$HR, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["HR"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"David Dorsey","2":"1","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="stolen-bases" class="section level3" number="1.3.8">
+<h3><span class="header-section-number">1.3.8</span> Stolen Bases</h3>
+<pre class="r"><code>sbLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+ filter(quantile(SB, .5) &lt; SB) %&gt;%
+  select(fullName, SB) 
+as.data.frame(sbLead[order(sbLead$SB, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["SB"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"Tommy Horan","2":"1","_rn_":"1"},{"1":"David Dorsey","2":"1","_rn_":"2"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="ops" class="section level3" number="1.3.9">
+<h3><span class="header-section-number">1.3.9</span> OPS</h3>
+<pre class="r"><code>opsLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+  filter(quantile(OPS, .8) &lt; OPS) %&gt;%
+  select(fullName, OPS) 
+as.data.frame(opsLead[order(opsLead$OPS, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["OPS"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Shea Huntington","2":"1.417","_rn_":"3"},{"1":"Tommy Horan","2":"1.339","_rn_":"2"},{"1":"Canaan Fagerland","2":"1.292","_rn_":"4"},{"1":"Tom Liking","2":"1.000","_rn_":"1"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+</div>
+<div id="on-base-percentage" class="section level3" number="1.3.10">
+<h3><span class="header-section-number">1.3.10</span> On Base Percentage</h3>
+<pre class="r"><code>obsLead &lt;- offenseSelect %&gt;% 
+  filter(Last != &quot;Totals&quot;) %&gt;%
+   filter(quantile(OBP, .8) &lt; OBP) %&gt;%
+   select(fullName, OBP) 
+as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["fullName"],"name":[1],"type":["chr"],"align":["left"]},{"label":["OBP"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Shea Huntington","2":"0.750","_rn_":"2"},{"1":"Tommy Horan","2":"0.625","_rn_":"1"},{"1":"Canaan Fagerland","2":"0.625","_rn_":"3"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
 </div>
 </div>
 </div>
@@ -446,10 +602,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -465,10 +623,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">1</td>
 <td align="right">3</td>
 <td align="right">1</td>
+<td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0.556</td>
 <td align="right">0.737</td>
 <td align="right">0.182</td>
+<td align="right">54.55</td>
 </tr>
 </tbody>
 </table>
@@ -493,10 +653,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -513,9 +675,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.333</td>
 <td align="right">0.583</td>
 <td align="right">0.25</td>
+<td align="right">66.67</td>
 </tr>
 </tbody>
 </table>
@@ -540,10 +704,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -560,9 +726,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">2</td>
 <td align="right">1</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.375</td>
 <td align="right">0.625</td>
 <td align="right">0.25</td>
+<td align="right">50</td>
 </tr>
 </tbody>
 </table>
@@ -587,10 +755,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -607,9 +777,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">1</td>
 <td align="right">1</td>
 <td align="right">1</td>
+<td align="right">1</td>
 <td align="right">0.714</td>
 <td align="right">1.339</td>
 <td align="right">0.625</td>
+<td align="right">50</td>
 </tr>
 </tbody>
 </table>
@@ -634,10 +806,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -654,9 +828,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">2</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.2</td>
 <td align="right">0.7</td>
 <td align="right">0.5</td>
+<td align="right">62.5</td>
 </tr>
 </tbody>
 </table>
@@ -681,10 +857,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -701,9 +879,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">1</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.667</td>
 <td align="right">1.417</td>
 <td align="right">0.75</td>
+<td align="right">100</td>
 </tr>
 </tbody>
 </table>
@@ -728,10 +908,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -748,9 +930,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">2</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.333</td>
 <td align="right">0.633</td>
 <td align="right">0.3</td>
+<td align="right">30</td>
 </tr>
 </tbody>
 </table>
@@ -775,10 +959,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -795,9 +981,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">1</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.5</td>
 <td align="right">1</td>
 <td align="right">0.5</td>
+<td align="right">50</td>
 </tr>
 </tbody>
 </table>
@@ -822,10 +1010,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -842,9 +1032,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.1</td>
 <td align="right">0.2</td>
 <td align="right">0.1</td>
+<td align="right">30</td>
 </tr>
 </tbody>
 </table>
@@ -869,10 +1061,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -889,9 +1083,11 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.25</td>
 <td align="right">0.417</td>
 <td align="right">0.167</td>
+<td align="right">16.67</td>
 </tr>
 </tbody>
 </table>
@@ -916,10 +1112,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -939,6 +1137,8 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
+<td align="right">25</td>
 </tr>
 </tbody>
 </table>
@@ -963,10 +1163,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -984,8 +1186,10 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0.25</td>
 <td align="right">0.25</td>
+<td align="right">50</td>
 </tr>
 </tbody>
 </table>
@@ -1010,14 +1214,18 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td align="right">0</td>
+<td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
@@ -1057,10 +1265,12 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <th align="right">HR</th>
 <th align="right">RBI</th>
 <th align="right">R</th>
+<th align="right">SB</th>
 <th align="right">HBP</th>
 <th align="right">SLG</th>
 <th align="right">OPS</th>
 <th align="right">OBP</th>
+<th align="right">QAB.</th>
 </tr>
 </thead>
 <tbody>
@@ -1080,13 +1290,15 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 <td align="right">0</td>
 <td align="right">0</td>
 <td align="right">0</td>
+<td align="right">0</td>
+<td align="right">100</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2ZmZW5zZSIKZGF0ZTogJ2ByIGZvcm1hdChTeXMuRGF0ZSgpLCAiJUIgJWQsICVZIilgJwotLS0KCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgSW5zdGFsbGluZyBMaWJyYXJpZXMgCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpCmxpYnJhcnkoInRpZHlyIikKbGlicmFyeSgieWFtbCIpCmxpYnJhcnkoImRwbHlyIikKbGlicmFyeSgia25pdHIiKQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQpsaWJyYXJ5KCJ0aW55dGV4IikKbGlicmFyeSgiZ2dwbG90MiIpCmBgYAoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgUmVhZGluZyBEYXRhCm11ZGNhdHNSYXcgPC0gcmVhZC5jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ibXN3bnNvbi9NdWRjYXRzL21haW4vRGF0YS9jdXJyZW50U3RhdHMuY3N2IikKYGBgCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgQWRkaW5nIEZ1bGwgTmFtZXMKbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikKYGBgCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFN1YnNldHRpbmcgU3RhdHMKb2ZmZW5zZSA8LSBtdWRjYXRzUmF3ICU+JSAKICBzZWxlY3QoTGFzdCwgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCAKICAgICAgICAgQkIuSywgQy4sIEsuTCwgU0IsIENTLCBTQi4pCm9mZmVuc2VTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEFWRywgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCAgU0xHLCBPUFMsIE9CUCkgJT4lIAogIHJlbmFtZSgic2luZ2xlcyIgPSBYMUIsIAogICAgICAgICAiZG91YmxlcyIgPSBYMkIsIAogICAgICAgICAidHJpcGxlcyIgPSBYM0IpIApgYGAKCgoKIyBPZmZlbnNpdmUKCiMjIFRhYmxlcwoKIyMjIEF2ZXJhZ2UKYGBge3J9CmF2Z1RhYmxlIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgc2VsZWN0KExhc3QsIEFWRykgCmFzLmRhdGEuZnJhbWUoYXZnVGFibGVbb3JkZXIoYXZnVGFibGUkQVZHLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKCmBgYAoKIyMjIE9CUApgYGB7cn0Kb2JwVGFibGUgPC0gb2ZmZW5zZVNlbGVjdCAlPiUKICBzZWxlY3QoTGFzdCwgT0JQKSAKYXMuZGF0YS5mcmFtZShvYnBUYWJsZVtvcmRlcihvYnBUYWJsZSRPQlAsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQoKYGBgCgoKYGBge3IsIGluY2x1ZGU9IEZBTFNFfQojIG9mZmVuc2VTZWxlY3QgJT4lIAojICAgZmlsdGVyKHF1YW50aWxlKEFWRywgLjkpIDwgQVZHKSAlPiUKIyAgIHNlbGVjdChmdWxsTmFtZSwgQVZHKSAlPiUKIyAgIGthYmxlKCkKYGBgCgpgYGB7ciwgaW5jbHVkZT0gRkFMU0V9CiMgb2ZmZW5zZVNlbGVjdCAlPiUgCiMgICBmaWx0ZXIocXVhbnRpbGUoT1BTLCAuOSkgPCBPUFMpICU+JQojICAgc2VsZWN0KGZ1bGxOYW1lLCBPUFMpICU+JQojICAga2FibGUoKQpgYGAKCgpgYGB7ciwgaW5jbHVkZT0gRkFMU0V9CiMgb2ZmZW5zZVNlbGVjdCAlPiUgCiMgICBmaWx0ZXIocXVhbnRpbGUoT0JQLCAuOSkgPCBPQlApICU+JQojICAgc2VsZWN0KGZ1bGxOYW1lLCBPQlApICU+JQojICAga2FibGUoKQpgYGAKCiMjIEdyYXBocwoKIyMjIEF2ZXJhZ2UKYGBge3J9CmdncGxvdChkYXRhID0gb2ZmZW5zZVNlbGVjdCwgYWVzKHggPSBmdWxsTmFtZSwgeSA9IEFWRywgbGFiZWwgPSBMYXN0KSkgKyAKICBnZW9tX3RleHQoc2l6ZSA9IDIuNSwgdmp1c3QgPSAyKSArCiAgZ2VvbV9wb2ludCgpICsgCiAgc2NhbGVfeV9iaW5uZWQoYnJlYWtzID0gc2VxKDAsMSwuMDUpKSArCiAgc2NhbGVfeF9kaXNjcmV0ZShleHBhbmQgPSBjKC4wNCwgLjA4KSkgKwogIHRoZW1lKGF4aXMudGV4dC54ID0gZWxlbWVudF90ZXh0KGFuZ2xlID0gOTAsIHNpemUgPSAwKSkgKyAKICBnZ3RpdGxlKHBhc3RlKCJUZWFtIEF2ZXJhZ2VzIikpCiAgCmBgYAoKCgojIEluZGl2aWR1YWwgU3RhdHMKIyMgRG9yc2V5CmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJEb3JzZXkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEd1bmtlbApgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiR3Vua2VsIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHcmF2eQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiR3JhdmRhaGwgIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBUb21teQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiSG9yYW4gIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgoKIyMgSG93ZQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiSG93ZSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKCiMjIEh1bnRpbmd0b24KYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkh1bnRpbmd0b24iKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEh1c2VieQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiSHVzZWJ5IikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBMaWtpbmcKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkxpa2luZyIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTmF1Z3MKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIk5hdWdsZSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUGlsbApgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiUGlsb24iKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFJlZWQKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlJlZWQiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEJpZyBDaHVuZ3VzCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTYXlsZXMiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFNjaHdpbm5lcgpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiU3RyYXR0b24iKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEIgV2VpZHMKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIldlaWRpZW1hbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiT2ZmZW5zZSIKZGF0ZTogJ2ByIGZvcm1hdChTeXMuRGF0ZSgpLCAiJUIgJWQsICVZIilgJwotLS0KCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgSW5zdGFsbGluZyBMaWJyYXJpZXMgCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpCmxpYnJhcnkoInRpZHlyIikKbGlicmFyeSgieWFtbCIpCmxpYnJhcnkoImRwbHlyIikKbGlicmFyeSgia25pdHIiKQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQpsaWJyYXJ5KCJ0aW55dGV4IikKbGlicmFyeSgiZ2dwbG90MiIpCmBgYAoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgUmVhZGluZyBEYXRhCm11ZGNhdHNSYXcgPC0gcmVhZC5jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ibXN3bnNvbi9NdWRjYXRzL21haW4vRGF0YS9jdXJyZW50U3RhdHMuY3N2IikKYGBgCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgQWRkaW5nIEZ1bGwgTmFtZXMKbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikKYGBgCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFN1YnNldHRpbmcgU3RhdHMKb2ZmZW5zZSA8LSBtdWRjYXRzUmF3ICU+JSAKICBzZWxlY3QoTGFzdCwgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCAKICAgICAgICAgQkIuSywgQy4sIEsuTCwgU0IsIENTLCBTQi4pCm9mZmVuc2VTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEFWRywgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgU0IsIEhCUCwgIFNMRywgT1BTLCBPQlAsIFFBQi4pICU+JSAKICByZW5hbWUoInNpbmdsZXMiID0gWDFCLCAKICAgICAgICAgImRvdWJsZXMiID0gWDJCLCAKICAgICAgICAgInRyaXBsZXMiID0gWDNCKSAKI3JlbW92aW5nIHBlcmNlbnRhZ2Ugb2ZmIG9mIHFhYiBwZXJjZW50YWdlIApvZmZlbnNlU2VsZWN0JFFBQi4gPC0gc3RyX3N1YihvZmZlbnNlU2VsZWN0JFFBQi4sIDEsIG5jaGFyKG9mZmVuc2VTZWxlY3QkUUFCKS0xKQpvZmZlbnNlU2VsZWN0JFFBQi4gPC0gYXMubnVtZXJpYyhvZmZlbnNlU2VsZWN0JFFBQi4pCmBgYAoKCgojIFRlYW0KCiMjIFRhYmxlcwoKIyMjIFF1YWxpdHkgQXQgQmF0cwpgYGB7cn0KcWFiVGFibGUgPC0gb2ZmZW5zZVNlbGVjdCAlPiUKICBzZWxlY3QoTGFzdCwgUUFCLikgCmFzLmRhdGEuZnJhbWUocWFiVGFibGVbb3JkZXIocWFiVGFibGUkUUFCLiwgZGVjcmVhc2luZyA9IFRSVUUpLF0pCgpgYGAKCiMjIyBBdmVyYWdlCmBgYHtyfQphdmdUYWJsZSA8LSBvZmZlbnNlU2VsZWN0ICU+JQogIHNlbGVjdChMYXN0LCBBVkcpIAphcy5kYXRhLmZyYW1lKGF2Z1RhYmxlW29yZGVyKGF2Z1RhYmxlJEFWRywgZGVjcmVhc2luZyA9IFRSVUUpLF0pCgpgYGAKCiMjIyBPQlAKYGBge3J9Cm9icFRhYmxlIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgc2VsZWN0KExhc3QsIE9CUCkgCmFzLmRhdGEuZnJhbWUob2JwVGFibGVbb3JkZXIob2JwVGFibGUkT0JQLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKCmBgYAoKIyMgR3JhcGhzCgojIyMgQXZlcmFnZQpgYGB7cn0KZ2dwbG90KGRhdGEgPSBvZmZlbnNlU2VsZWN0LCBhZXMoeCA9IGZ1bGxOYW1lLCB5ID0gQVZHLCBsYWJlbCA9IExhc3QpKSArIAogIGdlb21fdGV4dChzaXplID0gMi41LCB2anVzdCA9IDIpICsKICBnZW9tX3BvaW50KCkgKyAKICBzY2FsZV95X2NvbnRpbnVvdXMoYnJlYWtzID0gc2VxKDAsMSwuMDUpKSArCiAgeWxpbSgwLCAuNzUpICsKICBzY2FsZV94X2Rpc2NyZXRlKGV4cGFuZCA9IGMoLjA0LCAuMDgpKSArCiAgdGhlbWUoYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoYW5nbGUgPSA5MCwgc2l6ZSA9IDApKSArIAogIGdndGl0bGUocGFzdGUoIlRlYW0gQXZlcmFnZXMiKSkKICAKYGBgCgojIyMgUXVhbGl0eSBBdCBCYXRzIFBlcmNlbnRhZ2UKYGBge3J9CmdncGxvdChkYXRhID0gb2ZmZW5zZVNlbGVjdCwgYWVzKHggPSBmdWxsTmFtZSwgeSA9IFFBQi4sIGxhYmVsID0gTGFzdCkpICsgCiAgZ2VvbV90ZXh0KHNpemUgPSAyLjUsIHZqdXN0ID0gMikgICsKICBnZW9tX3BvaW50KCkgICsKICB0aGVtZShheGlzLnRleHQueCA9IGVsZW1lbnRfdGV4dChhbmdsZSA9IDkwLCBzaXplID0gMCkpICsgCiAgZ2d0aXRsZShwYXN0ZSgiUXVhbGl0eSBBdCBCYXRzIFBlcmNlbnRhZ2UiKSkgCiAgCmBgYAoKIyMgVGVhbSBMZWFkZXJzIChJbmxjbHVkZXMgdGhvc2UgaW4gODB0aCBwZXJjZW50aWxlIG9yIGFib3ZlKQoKIyMjIEF2ZXJhZ2UKYGBge3J9CmF2Z0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogZmlsdGVyKHF1YW50aWxlKEFWRywgLjgpIDwgQVZHKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIEFWRykgCmFzLmRhdGEuZnJhbWUoYXZnTGVhZFtvcmRlcihhdmdMZWFkJEFWRywgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKIyMjIEF0IEJhdHMKYGBge3J9CmFic0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogZmlsdGVyKHF1YW50aWxlKEFCLCAuOCkgPCBBQikgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBBQikgCmFzLmRhdGEuZnJhbWUoYWJzTGVhZFtvcmRlcihhYnNMZWFkJEFCLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgSGl0cwpgYGB7cn0KaExlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogZmlsdGVyKHF1YW50aWxlKEgsIC44KSA8IEgpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgSCkgCmFzLmRhdGEuZnJhbWUoaExlYWRbb3JkZXIoaExlYWQkSCwgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKCiMjIyBTaW5nbGVzCmBgYHtyfQpzaW5nbGVzTGVhZCA8LSBvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIoTGFzdCAhPSAiVG90YWxzIikgJT4lCiBmaWx0ZXIocXVhbnRpbGUoc2luZ2xlcywgLjgpIDwgc2luZ2xlcykgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBzaW5nbGVzKSAKYXMuZGF0YS5mcmFtZShzaW5nbGVzTGVhZFtvcmRlcihzaW5nbGVzTGVhZCRzaW5nbGVzLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgRG91YmxlcwpgYGB7cn0KZG91Ymxlc0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogZmlsdGVyKHF1YW50aWxlKGRvdWJsZXMsIC41KSA8IGRvdWJsZXMpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgZG91YmxlcykgCmFzLmRhdGEuZnJhbWUoZG91Ymxlc0xlYWRbb3JkZXIoZG91Ymxlc0xlYWQkZG91YmxlcywgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKIyMjIFRyaXBsZXMKYGBge3J9CnRyaXBsZXNMZWFkIDwtIG9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihMYXN0ICE9ICJUb3RhbHMiKSAlPiUKIGZpbHRlcihxdWFudGlsZSh0cmlwbGVzLCAuNSkgPCB0cmlwbGVzKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIHRyaXBsZXMpIAphcy5kYXRhLmZyYW1lKHRyaXBsZXNMZWFkW29yZGVyKHRyaXBsZXNMZWFkJHRyaXBsZXMsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBIb21lcnMKYGBge3J9CmhyTGVhZCA8LSBvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIoTGFzdCAhPSAiVG90YWxzIikgJT4lCiBmaWx0ZXIocXVhbnRpbGUoSFIsIC41KSA8IEhSKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIEhSKSAKYXMuZGF0YS5mcmFtZShockxlYWRbb3JkZXIoaHJMZWFkJEhSLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgU3RvbGVuIEJhc2VzIApgYGB7cn0Kc2JMZWFkIDwtIG9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihMYXN0ICE9ICJUb3RhbHMiKSAlPiUKIGZpbHRlcihxdWFudGlsZShTQiwgLjUpIDwgU0IpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgU0IpIAphcy5kYXRhLmZyYW1lKHNiTGVhZFtvcmRlcihzYkxlYWQkU0IsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBPUFMKYGBge3J9Cm9wc0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogIGZpbHRlcihxdWFudGlsZShPUFMsIC44KSA8IE9QUykgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBPUFMpIAphcy5kYXRhLmZyYW1lKG9wc0xlYWRbb3JkZXIob3BzTGVhZCRPUFMsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBPbiBCYXNlIFBlcmNlbnRhZ2UKYGBge3J9Cm9ic0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRvdGFscyIpICU+JQogICBmaWx0ZXIocXVhbnRpbGUoT0JQLCAuOCkgPCBPQlApICU+JQogICBzZWxlY3QoZnVsbE5hbWUsIE9CUCkgCmFzLmRhdGEuZnJhbWUob2JzTGVhZFtvcmRlcihvYnNMZWFkJE9CUCwgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKCiMgSW5kaXZpZHVhbCBTdGF0cwojIyBEb3JzZXkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkRvcnNleSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgR3Vua2VsCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEdyYXZ5CmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJHcmF2ZGFobCAiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFRvbW15CmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIb3JhbiAiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCgojIyBIb3dlCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIb3dlIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgoKIyMgSHVudGluZ3RvbgpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiSHVudGluZ3RvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgSHVzZWJ5CmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdXNlYnkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIExpa2luZwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTGlraW5nIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBOYXVncwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTmF1Z2xlIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBQaWxsCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJQaWxvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUmVlZApgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiUmVlZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQmlnIENodW5ndXMKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlNheWxlcyIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgU2Nod2lubmVyCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTdHJhdHRvbiIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQiBXZWlkcwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiV2VpZGllbWFuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgo=</div>
 
 
 </div>
