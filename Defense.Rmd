@@ -36,7 +36,7 @@ pitchingSelect <- mudcatsRaw %>%
          H.1, R.1, ER, BB.1, SO.1, HBP.1, ERA, WHIP, BF)
 ```
 
-# Pitiching
+# Team
 
 ## Tables
 
@@ -55,7 +55,7 @@ eraTable <- pitchingSelect %>%
 as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])
 ```
 
-# Individual Stats
+# Individual
 ## Dorsey
 ```{r}
 pitchingSelect %>%

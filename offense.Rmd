@@ -38,17 +38,28 @@ offense <- mudcatsRaw %>%
          BB.K, C., K.L, SB, CS, SB.)
 offenseSelect <- mudcatsRaw %>%
   select(fullName, Last, AVG, GP, PA, AB, H, X1B, X2B, X3B, HR, RBI,
-         R, HBP,  SLG, OPS, OBP) %>% 
+         R, SB, HBP,  SLG, OPS, OBP, QAB.) %>% 
   rename("singles" = X1B, 
          "doubles" = X2B, 
          "triples" = X3B) 
+#removing percentage off of qab percentage 
+offenseSelect$QAB. <- str_sub(offenseSelect$QAB., 1, nchar(offenseSelect$QAB)-1)
+offenseSelect$QAB. <- as.numeric(offenseSelect$QAB.)
 ```
 
 
 
-# Offensive
+# Team
 
 ## Tables
+
+### Quality At Bats
+```{r}
+qabTable <- offenseSelect %>%
+  select(Last, QAB.) 
+as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])
+
+```
 
 ### Average
 ```{r}
@@ -66,29 +77,6 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])
 
 ```
 
-
-```{r, include= FALSE}
-# offenseSelect %>% 
-#   filter(quantile(AVG, .9) < AVG) %>%
-#   select(fullName, AVG) %>%
-#   kable()
-```
-
-```{r, include= FALSE}
-# offenseSelect %>% 
-#   filter(quantile(OPS, .9) < OPS) %>%
-#   select(fullName, OPS) %>%
-#   kable()
-```
-
-
-```{r, include= FALSE}
-# offenseSelect %>% 
-#   filter(quantile(OBP, .9) < OBP) %>%
-#   select(fullName, OBP) %>%
-#   kable()
-```
-
 ## Graphs
 
 ### Average
@@ -96,13 +84,116 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])
 ggplot(data = offenseSelect, aes(x = fullName, y = AVG, label = Last)) + 
   geom_text(size = 2.5, vjust = 2) +
   geom_point() + 
-  scale_y_binned(breaks = seq(0,1,.05)) +
+  scale_y_continuous(breaks = seq(0,1,.05)) +
+  ylim(0, .75) +
   scale_x_discrete(expand = c(.04, .08)) +
   theme(axis.text.x = element_text(angle = 90, size = 0)) + 
   ggtitle(paste("Team Averages"))
   
 ```
 
+### Quality At Bats Percentage
+```{r}
+ggplot(data = offenseSelect, aes(x = fullName, y = QAB., label = Last)) + 
+  geom_text(size = 2.5, vjust = 2)  +
+  geom_point()  +
+  theme(axis.text.x = element_text(angle = 90, size = 0)) + 
+  ggtitle(paste("Quality At Bats Percentage")) 
+  
+```
+
+## Team Leaders (Inlcludes those in 80th percentile or above)
+
+### Average
+```{r}
+avgLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(AVG, .8) < AVG) %>%
+  select(fullName, AVG) 
+as.data.frame(avgLead[order(avgLead$AVG, decreasing = TRUE),])
+```
+
+### At Bats
+```{r}
+absLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(AB, .8) < AB) %>%
+  select(fullName, AB) 
+as.data.frame(absLead[order(absLead$AB, decreasing = TRUE),])
+```
+
+### Hits
+```{r}
+hLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(H, .8) < H) %>%
+  select(fullName, H) 
+as.data.frame(hLead[order(hLead$H, decreasing = TRUE),])
+```
+
+
+### Singles
+```{r}
+singlesLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(singles, .8) < singles) %>%
+  select(fullName, singles) 
+as.data.frame(singlesLead[order(singlesLead$singles, decreasing = TRUE),])
+```
+
+### Doubles
+```{r}
+doublesLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(doubles, .5) < doubles) %>%
+  select(fullName, doubles) 
+as.data.frame(doublesLead[order(doublesLead$doubles, decreasing = TRUE),])
+```
+
+### Triples
+```{r}
+triplesLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(triples, .5) < triples) %>%
+  select(fullName, triples) 
+as.data.frame(triplesLead[order(triplesLead$triples, decreasing = TRUE),])
+```
+
+### Homers
+```{r}
+hrLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(HR, .5) < HR) %>%
+  select(fullName, HR) 
+as.data.frame(hrLead[order(hrLead$HR, decreasing = TRUE),])
+```
+
+### Stolen Bases 
+```{r}
+sbLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+ filter(quantile(SB, .5) < SB) %>%
+  select(fullName, SB) 
+as.data.frame(sbLead[order(sbLead$SB, decreasing = TRUE),])
+```
+
+### OPS
+```{r}
+opsLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+  filter(quantile(OPS, .8) < OPS) %>%
+  select(fullName, OPS) 
+as.data.frame(opsLead[order(opsLead$OPS, decreasing = TRUE),])
+```
+
+### On Base Percentage
+```{r}
+obsLead <- offenseSelect %>% 
+  filter(Last != "Totals") %>%
+   filter(quantile(OBP, .8) < OBP) %>%
+   select(fullName, OBP) 
+as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])
+```
 
 
 # Individual Stats
