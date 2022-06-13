@@ -1,5 +1,5 @@
 ---
-title: "Mudcats Statistics Website"
+title: "Mudcats Wiki"
 ---
 
 ```{r setup, include = FALSE}
