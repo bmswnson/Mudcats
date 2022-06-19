@@ -32,8 +32,9 @@ mudcatsRaw$fullName <- paste(mudcatsRaw$First, mudcatsRaw$Last, sep = " ")
 ```{r, include=FALSE}
 # Subsetting Stats
 pitchingSelect <- mudcatsRaw %>%
-  select(fullName, Last, IP, GP, GS, W, L, SV, SVO, BS, SV, 
-         H.1, R.1, ER, BB.1, SO.1, HBP.1, ERA, WHIP, BF)
+  select(fullName, Last, IP, GP.1, GS, W, L, SV, SVO, BS, SV, 
+         H.1, R.1, ER, BB.1, SO.1, HBP.1, ERA, WHIP, BF) %>%
+  rename("GP" = GP.1)
 ```
 
 # Team

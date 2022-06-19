@@ -53,6 +53,15 @@ offenseSelect$QAB. <- as.numeric(offenseSelect$QAB.)
 
 ## Tables
 
+### At Bats
+```{r}
+abTable <- offenseSelect %>%
+  select(Last, AB) %>%
+  filter(Last != "Totals")
+as.data.frame(abTable[order(abTable$AB, decreasing = TRUE),])
+```
+
+
 ### Quality At Bats
 ```{r}
 qabTable <- offenseSelect %>%
@@ -78,6 +87,20 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])
 ```
 
 ## Graphs
+
+
+### At Bats
+```{r}
+abGraph <- offenseSelect %>%
+  filter(Last != "Totals")
+ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) + 
+  geom_text(size = 2.5, vjust = 2) +
+  geom_point() + 
+  theme(axis.text.x = element_text(angle = 90, size = 0)) + 
+  ggtitle(paste("At Bats"))
+  
+```
+
 
 ### Average
 ```{r}
