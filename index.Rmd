@@ -7,9 +7,9 @@ knitr::opts_chunk$set(echo = TRUE,
                       error = TRUE)
 ```
 
-This site contains stats for the 2022 Mudcats campaign. 
+<font size="5"> This site contains stats for the 2022 Mudcats campaign. 
 This is very much a work in progress so feel free to reach out with items you'd like to see incorporated.
 We are a bit limited by Gamechanger.
-However, please see the [All Possible Stats](Gamechanger-Stats.html) page for a list of everything that could potentially be incorporated. 
+However, please see the [All Possible Stats](Gamechanger-Stats.html) page for a list of everything that could potentially be incorporated. </font>
 
 ![Summer 2019](Images/teamPic.png)
