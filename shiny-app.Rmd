@@ -1,0 +1,7 @@
+---
+title: "Stats App"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+---
+
+
+<iframe height="400" width="100%" frameborder="no" src="https://swanson.shinyapps.io/Mudcats-Stats/"> </iframe>

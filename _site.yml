@@ -26,6 +26,8 @@ navbar:
       - text: Defense
         href: Defense.html
     - text: All Possible Stats
-      href: Gamechanger-Stats.html    
+      href: Gamechanger-Stats.html
+    - text: Stats app
+      href: shiny-app.html
         
       
