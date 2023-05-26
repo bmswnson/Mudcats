@@ -11,7 +11,7 @@ Check back soon for 2023 updates!
 To use the app: 
 
 1. select the players you are interested in viewing
-2. select the stats you would like to view in a table
-3. select *a single* stat you would like to see graphed
+1. select the stats you would like to view in a table
+1. select *a single* stat you would like to see graphed
 
 <iframe height="600" width="100%" frameborder="no" src="https://swanson.shinyapps.io/Mudcats-Stats/"> </iframe>
