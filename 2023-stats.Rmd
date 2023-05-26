@@ -8,4 +8,10 @@ Check back soon for 2023 updates!
 
 # 2022 Stats App
 
+To use the app: 
+
+1. select the players you are interested in viewing
+2. select the stats you would like to view in a table
+3. select *a single* stat you would like to see graphed
+
 <iframe height="600" width="100%" frameborder="no" src="https://swanson.shinyapps.io/Mudcats-Stats/"> </iframe>
