@@ -1,0 +1,25 @@
+---
+title: "2023 Schedule"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+---
+
+# 2023
+
+| **Date**    | **Opponent**           | **Result** |
+|:-----------:|:----------------------:|:----------:|
+| May 17th    | vs Fargo Mets          | L 0-3      |
+| May 24th    | vs Jamestown Merchants | W          |
+| May 26th    | at Cold Spring         |            |
+| June 4th    | vs Hamel               |            |
+| June 7th    | vs Cass County Catfish |            |
+| June 14th   | vs Elks                |            |
+| June 20th   | vs Moorhead Brewers    |            |
+| June 21st   | vs Jamestown Merchants |            |
+| June 24th   | at Metro Knights       |            |
+| June 25th   | at Hamel               |            |
+| June 28th   | at Fergus              |            |
+| July 6th    | vs Brewers             |            |
+| July 15th   | at Sobieski            |            |
+| July 19th   | vs Elks                |            |
+| July 29th   | vs Cold Spring         |            |
+| Augusts 2nd | vs Mayville            |            |

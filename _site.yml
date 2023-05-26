@@ -2,32 +2,53 @@ name: "Mudcats Stats"
 output_dir: "_site"
 author: Ben Swanson
 date: '`r format(Sys.Date(), "%B %d, %Y")`'
+image:
+  caption: 'logo'
+  focal_point: 'right'
+  preview_only: yes
 output: 
   html_document:
     toc: true
     toc_depth: 2
     toc_float: true
-    number_sections: true
+    number_sections: false
     code_folding: hide
     df_print: paged
     code_download: true
     theme: readable
     css: ["includes/custom.css", "font/css/roboto.css"]
+    includes:
+      after_body:
+      - "includes/footer.html"
 new_session: true
 navbar:
-  title: "Mudcats Stats"
+  title: "Moorhead Mudcats"
   left:
-    - text: 2022 Schedule
-      href: 2022-Schedule.html
-    - text: Current Stats
+    - text: 2023 Schedule
+      href: 2023-Schedule.html
+    - text: 2023 Stats
+      href: 2023-Stats.html
+    - text: Archive
       menu:
-      - text: Offense
-        href: offense.html
-      - text: Defense
-        href: Defense.html
+      - text: "2022"
+        menu:
+        - text: Offense
+          href: offense_2022.html
+        - text: Defense
+          href: Defense_2022.html
+        - text: Schedule
+          href: 2022-Schedule.html
+        - text: Stats app
+          href: shiny-app_2022.html
     - text: All Possible Stats
       href: Gamechanger-Stats.html
-    - text: Stats app
-      href: shiny-app.html
+  right:
+    - image: Images/logo.png
+      href: https://twitter.com/MMudcats
+
+
+
+
+    
         
       
