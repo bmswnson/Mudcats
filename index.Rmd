@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE,
 This site contains information for the Moorhead Mudcats.
 The Mudcats were founded in 2018 and have appeared in the Minnesota Class B State Tournament in 2019, 2020, and 2021.
 <br>
-Find us on [Twitter!](https://twitter.com/MMudcats)
+Follow us on [Twitter](https://twitter.com/MMudcats) for the best amateur baseball content in Minnesota.
 
  </font>
 
