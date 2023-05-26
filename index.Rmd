@@ -13,7 +13,8 @@ The Mudcats were founded in 2018 and have appeared in the Minnesota Class B Stat
 <br>
 Follow us on [Twitter](https://twitter.com/MMudcats) for the best amateur baseball content in Minnesota.
 
-<a class="twitter-timeline" href="https://twitter.com/MMudcats?ref_src=twsrc%5Etfw">Tweets by MMudcats</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" href="https://twitter.com/MMudcats?ref_src=twsrc%5Etfw">Tweets by MMudcats</a> 
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
  </font>
 
