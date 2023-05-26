@@ -8,5 +8,4 @@ Check back soon for 2023 updates!
 
 # 2022 Stats App
 
-
 <iframe height="600" width="100%" frameborder="no" src="https://swanson.shinyapps.io/Mudcats-Stats/"> </iframe>
