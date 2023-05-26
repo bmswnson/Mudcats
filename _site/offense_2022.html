@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-05-26" />
 
 <title>Offense</title>
 
@@ -334,10 +334,10 @@ div.tocify {
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="2023-Schedule.html">2023 Schedule</a>
+  <a href="2023-shedule.html">2023 Schedule</a>
 </li>
 <li>
-  <a href="2023-Stats.html">2023 Stats</a>
+  <a href="2023-stats.html">2023 Stats</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -393,17 +393,17 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Offense</h1>
-<h4 class="date">May 25, 2023</h4>
+<h4 class="date">May 26, 2023</h4>
 
 </div>
 
 
-<div id="team" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Team</h1>
-<div id="tables" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Tables</h2>
-<div id="at-bats" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> At Bats</h3>
+<div id="team" class="section level1">
+<h1>Team</h1>
+<div id="tables" class="section level2">
+<h2>Tables</h2>
+<div id="at-bats" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>abTable &lt;- offenseSelect %&gt;%
   select(Last, AB) %&gt;%
   filter(Last != &quot;Team&quot;)
@@ -414,9 +414,8 @@ as.data.frame(abTable[order(abTable$AB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="quality-at-bats" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Quality At
-Bats</h3>
+<div id="quality-at-bats" class="section level3">
+<h3>Quality At Bats</h3>
 <pre class="r"><code>qabTable &lt;- offenseSelect %&gt;%
   select(Last, QAB., AB) 
 as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])</code></pre>
@@ -426,8 +425,8 @@ as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="average" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Average</h3>
+<div id="average" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>avgTable &lt;- offenseSelect %&gt;%
   select(Last, AVG, AB) 
 as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
@@ -437,8 +436,8 @@ as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="obp" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> OBP</h3>
+<div id="obp" class="section level3">
+<h3>OBP</h3>
 <pre class="r"><code>obpTable &lt;- offenseSelect %&gt;%
   select(Last, OBP, AB) 
 as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
@@ -449,10 +448,10 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="graphs" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Graphs</h2>
-<div id="at-bats-1" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> At Bats</h3>
+<div id="graphs" class="section level2">
+<h2>Graphs</h2>
+<div id="at-bats-1" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>abGraph &lt;- offenseSelect %&gt;%
   filter(Last != &quot;Team&quot;)
 ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) + 
@@ -462,8 +461,8 @@ ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) +
   ggtitle(paste(&quot;At Bats&quot;))</code></pre>
 <p><img src="offense_2022_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
-<div id="average-1" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Average</h3>
+<div id="average-1" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = AVG, label = Last)) + 
   geom_text(size = 2.5, vjust = 2) +
   geom_point() + 
@@ -476,10 +475,8 @@ ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) +
 ## Adding another scale for y, which will replace the existing scale.</code></pre>
 <p><img src="offense_2022_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
-<div id="quality-at-bats-percentage" class="section level3"
-number="1.2.3">
-<h3><span class="header-section-number">1.2.3</span> Quality At Bats
-Percentage</h3>
+<div id="quality-at-bats-percentage" class="section level3">
+<h3>Quality At Bats Percentage</h3>
 <pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = QAB., label = Last)) + 
   geom_text(size = 2.5, vjust = 2)  +
   geom_point()  +
@@ -489,11 +486,10 @@ Percentage</h3>
 </div>
 </div>
 <div id="team-leaders-inlcludes-those-in-80th-percentile-or-above"
-class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Team Leaders
-(Inlcludes those in 80th percentile or above)</h2>
-<div id="average-2" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Average</h3>
+class="section level2">
+<h2>Team Leaders (Inlcludes those in 80th percentile or above)</h2>
+<div id="average-2" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>avgLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(AVG, .8) &lt; AVG) %&gt;%
@@ -505,8 +501,8 @@ as.data.frame(avgLead[order(avgLead$AVG, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="at-bats-2" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> At Bats</h3>
+<div id="at-bats-2" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>absLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(AB, .8) &lt; AB) %&gt;%
@@ -518,8 +514,8 @@ as.data.frame(absLead[order(absLead$AB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="hits" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Hits</h3>
+<div id="hits" class="section level3">
+<h3>Hits</h3>
 <pre class="r"><code>hLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(H, .8) &lt; H) %&gt;%
@@ -531,8 +527,8 @@ as.data.frame(hLead[order(hLead$H, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="singles" class="section level3" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Singles</h3>
+<div id="singles" class="section level3">
+<h3>Singles</h3>
 <pre class="r"><code>singlesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(singles, .8) &lt; singles) %&gt;%
@@ -544,8 +540,8 @@ as.data.frame(singlesLead[order(singlesLead$singles, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="doubles" class="section level3" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Doubles</h3>
+<div id="doubles" class="section level3">
+<h3>Doubles</h3>
 <pre class="r"><code>doublesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(doubles, .5) &lt; doubles) %&gt;%
@@ -557,8 +553,8 @@ as.data.frame(doublesLead[order(doublesLead$doubles, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="triples" class="section level3" number="1.3.6">
-<h3><span class="header-section-number">1.3.6</span> Triples</h3>
+<div id="triples" class="section level3">
+<h3>Triples</h3>
 <pre class="r"><code>triplesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(triples, .5) &lt; triples) %&gt;%
@@ -570,8 +566,8 @@ as.data.frame(triplesLead[order(triplesLead$triples, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="homers" class="section level3" number="1.3.7">
-<h3><span class="header-section-number">1.3.7</span> Homers</h3>
+<div id="homers" class="section level3">
+<h3>Homers</h3>
 <pre class="r"><code>hrLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(HR, .5) &lt; HR) %&gt;%
@@ -583,8 +579,8 @@ as.data.frame(hrLead[order(hrLead$HR, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="stolen-bases" class="section level3" number="1.3.8">
-<h3><span class="header-section-number">1.3.8</span> Stolen Bases</h3>
+<div id="stolen-bases" class="section level3">
+<h3>Stolen Bases</h3>
 <pre class="r"><code>sbLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(SB, .5) &lt; SB) %&gt;%
@@ -596,8 +592,8 @@ as.data.frame(sbLead[order(sbLead$SB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="ops" class="section level3" number="1.3.9">
-<h3><span class="header-section-number">1.3.9</span> OPS</h3>
+<div id="ops" class="section level3">
+<h3>OPS</h3>
 <pre class="r"><code>opsLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
   filter(quantile(OPS, .8) &lt; OPS) %&gt;%
@@ -609,9 +605,8 @@ as.data.frame(opsLead[order(opsLead$OPS, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="on-base-percentage" class="section level3" number="1.3.10">
-<h3><span class="header-section-number">1.3.10</span> On Base
-Percentage</h3>
+<div id="on-base-percentage" class="section level3">
+<h3>On Base Percentage</h3>
 <pre class="r"><code>obsLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
    filter(quantile(OBP, .8) &lt; OBP) %&gt;%
@@ -625,10 +620,10 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="individual-stats" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Individual Stats</h1>
-<div id="dorsey" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dorsey</h2>
+<div id="individual-stats" class="section level1">
+<h1>Individual Stats</h1>
+<div id="dorsey" class="section level2">
+<h2>Dorsey</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -697,8 +692,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Gunkel</h2>
+<div id="gunkel" class="section level2">
+<h2>Gunkel</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -767,8 +762,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gravy" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Gravy</h2>
+<div id="gravy" class="section level2">
+<h2>Gravy</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Gravdahl &quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -837,8 +832,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="tommy" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Tommy</h2>
+<div id="tommy" class="section level2">
+<h2>Tommy</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Horan &quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -907,8 +902,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="howe" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Howe</h2>
+<div id="howe" class="section level2">
+<h2>Howe</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Howe&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -977,8 +972,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Huntington</h2>
+<div id="huntington" class="section level2">
+<h2>Huntington</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1047,8 +1042,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huseby" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Huseby</h2>
+<div id="huseby" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1117,8 +1112,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Liking</h2>
+<div id="liking" class="section level2">
+<h2>Liking</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1187,8 +1182,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Naugs</h2>
+<div id="naugs" class="section level2">
+<h2>Naugs</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1257,8 +1252,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Pill</h2>
+<div id="pill" class="section level2">
+<h2>Pill</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1327,8 +1322,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Reed</h2>
+<div id="reed" class="section level2">
+<h2>Reed</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1397,8 +1392,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2">
+<h2>Big Chungus</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1467,8 +1462,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.13">
-<h2><span class="header-section-number">2.13</span> Schwinner</h2>
+<div id="schwinner" class="section level2">
+<h2>Schwinner</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1537,8 +1532,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.14">
-<h2><span class="header-section-number">2.14</span> B Weids</h2>
+<div id="b-weids" class="section level2">
+<h2>B Weids</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%

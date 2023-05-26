@@ -25,9 +25,9 @@ navbar:
   title: "Moorhead Mudcats"
   left:
     - text: 2023 Schedule
-      href: 2023-Schedule.html
+      href: 2023-shedule.html
     - text: 2023 Stats
-      href: 2023-Stats.html
+      href: 2023-stats.html
     - text: Archive
       menu:
       - text: "2022"

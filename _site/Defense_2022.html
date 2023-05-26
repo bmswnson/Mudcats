@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-05-26" />
 
 <title>Pitching</title>
 
@@ -393,17 +393,17 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Pitching</h1>
-<h4 class="date">May 25, 2023</h4>
+<h4 class="date">May 26, 2023</h4>
 
 </div>
 
 
-<div id="team" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Team</h1>
-<div id="tables" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Tables</h2>
-<div id="ip" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> IP</h3>
+<div id="team" class="section level1">
+<h1>Team</h1>
+<div id="tables" class="section level2">
+<h2>Tables</h2>
+<div id="ip" class="section level3">
+<h3>IP</h3>
 <pre class="r"><code>ipTable &lt;- pitchingSelect %&gt;%
   select(Last, IP) 
 as.data.frame(ipTable[order(ipTable$IP, decreasing = TRUE),])</code></pre>
@@ -413,8 +413,8 @@ as.data.frame(ipTable[order(ipTable$IP, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="era" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> ERA</h3>
+<div id="era" class="section level3">
+<h3>ERA</h3>
 <pre class="r"><code>eraTable &lt;- pitchingSelect %&gt;%
   filter(IP &gt; .1) %&gt;%
   select(Last, ERA) 
@@ -427,10 +427,10 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="individual" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Individual</h1>
-<div id="dorsey" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dorsey</h2>
+<div id="individual" class="section level1">
+<h1>Individual</h1>
+<div id="dorsey" class="section level2">
+<h2>Dorsey</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -499,8 +499,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="duncan" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Duncan</h2>
+<div id="duncan" class="section level2">
+<h2>Duncan</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Duncan&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -569,8 +569,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Gunkel</h2>
+<div id="gunkel" class="section level2">
+<h2>Gunkel</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -639,8 +639,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Huntington</h2>
+<div id="huntington" class="section level2">
+<h2>Huntington</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -709,11 +709,11 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="howe" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Howe</h2>
+<div id="howe" class="section level2">
+<h2>Howe</h2>
 </div>
-<div id="huseby" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Huseby</h2>
+<div id="huseby" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Howe&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -782,8 +782,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huseby-1" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Huseby</h2>
+<div id="huseby-1" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -852,8 +852,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="levasseur" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Levasseur</h2>
+<div id="levasseur" class="section level2">
+<h2>Levasseur</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Levasseur&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -922,8 +922,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="fagerland" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Fagerland</h2>
+<div id="fagerland" class="section level2">
+<h2>Fagerland</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Fagerland&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -992,8 +992,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Liking</h2>
+<div id="liking" class="section level2">
+<h2>Liking</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1062,8 +1062,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Naugs</h2>
+<div id="naugs" class="section level2">
+<h2>Naugs</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1132,8 +1132,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Pill</h2>
+<div id="pill" class="section level2">
+<h2>Pill</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1202,8 +1202,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.13">
-<h2><span class="header-section-number">2.13</span> Reed</h2>
+<div id="reed" class="section level2">
+<h2>Reed</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1272,8 +1272,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.14">
-<h2><span class="header-section-number">2.14</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2">
+<h2>Big Chungus</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1342,8 +1342,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.15">
-<h2><span class="header-section-number">2.15</span> Schwinner</h2>
+<div id="schwinner" class="section level2">
+<h2>Schwinner</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1412,8 +1412,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.16">
-<h2><span class="header-section-number">2.16</span> B Weids</h2>
+<div id="b-weids" class="section level2">
+<h2>B Weids</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
