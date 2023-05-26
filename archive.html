@@ -10,11 +10,11 @@
 
 
 
-<meta name="date" content="2023-03-18" />
+<meta name="date" content="2023-05-26" />
 
 <title>Stats App</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -329,37 +329,50 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Mudcats Stats</a>
+      <a class="navbar-brand" href="index.html">Moorhead Mudcats</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="2022-Schedule.html">2022 Schedule</a>
+  <a href="2023-Schedule.html">2023 Schedule</a>
+</li>
+<li>
+  <a href="2023-Stats.html">2023 Stats</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Current Stats
+    Archive
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="offense.html">Offense</a>
-    </li>
-    <li>
-      <a href="Defense.html">Defense</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">2022</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="offense_2022.html">Offense</a>
+        </li>
+        <li>
+          <a href="Defense_2022.html">Defense</a>
+        </li>
+        <li>
+          <a href="2022-Schedule.html">Schedule</a>
+        </li>
+        <li>
+          <a href="shiny-app_2022.html">Stats app</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
 <li>
   <a href="Gamechanger-Stats.html">All Possible Stats</a>
 </li>
-<li>
-  <a href="shiny-app.html">Stats app</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://twitter.com/MMudcats"></a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -380,7 +393,7 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Stats App</h1>
-<h4 class="date">March 18, 2023</h4>
+<h4 class="date">May 26, 2023</h4>
 
 </div>
 
@@ -389,6 +402,30 @@ div.tocify {
 </iframe>
 
 <div id="rmd-source-code">LS0tCnRpdGxlOiAiU3RhdHMgQXBwIgpkYXRlOiAnYHIgZm9ybWF0KFN5cy5EYXRlKCksICIlQiAlZCwgJVkiKWAnCnRvYzogZmFsc2UKLS0tCgoKPGlmcmFtZSBoZWlnaHQ9IjYwMCIgd2lkdGg9IjEwMCUiIGZyYW1lYm9yZGVyPSJubyIgc3JjPSJodHRwczovL3N3YW5zb24uc2hpbnlhcHBzLmlvL011ZGNhdHMtU3RhdHMvIj4gPC9pZnJhbWU+</div>
+<script type="text/javascript" src="includes/external-links.js"></script>
+
+<br>
+<hr>
+<br>
+
+<!-- Add lab logo -->
+<!-- <p style="text-align: center;">>
+    <a href="https://twitter.com/MMudcats" target="_blank">
+        <img alt="Developmental Psychopathology Lab" src="Images/logo.png" width="10%">
+    </a>
+</p>
+
+<br>
+<hr>
+<br>
+-->
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/MMudcats" target="_blank" class="fa fa-twitter fa-fw fa-3x"></a>
+</p>
 
 
 </div>
@@ -426,7 +463,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("shiny-app.Rmd");
+  window.initializeSourceEmbed("archive.Rmd");
   window.initializeCodeFolding("hide" === "show");
 });
 </script>

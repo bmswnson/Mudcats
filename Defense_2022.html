@@ -10,11 +10,11 @@
 
 
 
-<meta name="date" content="2023-03-18" />
+<meta name="date" content="2023-05-26" />
 
 <title>Pitching</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -329,37 +329,50 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Mudcats Stats</a>
+      <a class="navbar-brand" href="index.html">Moorhead Mudcats</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="2022-Schedule.html">2022 Schedule</a>
+  <a href="2023-Schedule.html">2023 Schedule</a>
+</li>
+<li>
+  <a href="2023-Stats.html">2023 Stats</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Current Stats
+    Archive
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="offense.html">Offense</a>
-    </li>
-    <li>
-      <a href="Defense.html">Defense</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">2022</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="offense_2022.html">Offense</a>
+        </li>
+        <li>
+          <a href="Defense_2022.html">Defense</a>
+        </li>
+        <li>
+          <a href="2022-Schedule.html">Schedule</a>
+        </li>
+        <li>
+          <a href="shiny-app_2022.html">Stats app</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
 <li>
   <a href="Gamechanger-Stats.html">All Possible Stats</a>
 </li>
-<li>
-  <a href="shiny-app.html">Stats app</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://twitter.com/MMudcats"></a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -380,17 +393,17 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Pitching</h1>
-<h4 class="date">March 18, 2023</h4>
+<h4 class="date">May 26, 2023</h4>
 
 </div>
 
 
-<div id="team" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Team</h1>
-<div id="tables" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Tables</h2>
-<div id="ip" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> IP</h3>
+<div id="team" class="section level1">
+<h1>Team</h1>
+<div id="tables" class="section level2">
+<h2>Tables</h2>
+<div id="ip" class="section level3">
+<h3>IP</h3>
 <pre class="r"><code>ipTable &lt;- pitchingSelect %&gt;%
   select(Last, IP) 
 as.data.frame(ipTable[order(ipTable$IP, decreasing = TRUE),])</code></pre>
@@ -400,8 +413,8 @@ as.data.frame(ipTable[order(ipTable$IP, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="era" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> ERA</h3>
+<div id="era" class="section level3">
+<h3>ERA</h3>
 <pre class="r"><code>eraTable &lt;- pitchingSelect %&gt;%
   filter(IP &gt; .1) %&gt;%
   select(Last, ERA) 
@@ -414,10 +427,10 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="individual" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Individual</h1>
-<div id="dorsey" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dorsey</h2>
+<div id="individual" class="section level1">
+<h1>Individual</h1>
+<div id="dorsey" class="section level2">
+<h2>Dorsey</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -486,8 +499,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="duncan" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Duncan</h2>
+<div id="duncan" class="section level2">
+<h2>Duncan</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Duncan&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -556,8 +569,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Gunkel</h2>
+<div id="gunkel" class="section level2">
+<h2>Gunkel</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -626,8 +639,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Huntington</h2>
+<div id="huntington" class="section level2">
+<h2>Huntington</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -696,11 +709,11 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="howe" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Howe</h2>
+<div id="howe" class="section level2">
+<h2>Howe</h2>
 </div>
-<div id="huseby" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Huseby</h2>
+<div id="huseby" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Howe&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -769,8 +782,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huseby-1" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Huseby</h2>
+<div id="huseby-1" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -839,8 +852,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="levasseur" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Levasseur</h2>
+<div id="levasseur" class="section level2">
+<h2>Levasseur</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Levasseur&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -909,8 +922,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="fagerland" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Fagerland</h2>
+<div id="fagerland" class="section level2">
+<h2>Fagerland</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Fagerland&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -979,8 +992,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Liking</h2>
+<div id="liking" class="section level2">
+<h2>Liking</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1049,8 +1062,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Naugs</h2>
+<div id="naugs" class="section level2">
+<h2>Naugs</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1119,8 +1132,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Pill</h2>
+<div id="pill" class="section level2">
+<h2>Pill</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1189,8 +1202,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.13">
-<h2><span class="header-section-number">2.13</span> Reed</h2>
+<div id="reed" class="section level2">
+<h2>Reed</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1259,8 +1272,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.14">
-<h2><span class="header-section-number">2.14</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2">
+<h2>Big Chungus</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1329,8 +1342,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.15">
-<h2><span class="header-section-number">2.15</span> Schwinner</h2>
+<div id="schwinner" class="section level2">
+<h2>Schwinner</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1399,8 +1412,8 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.16">
-<h2><span class="header-section-number">2.16</span> B Weids</h2>
+<div id="b-weids" class="section level2">
+<h2>B Weids</h2>
 <pre class="r"><code>pitchingSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1472,6 +1485,30 @@ as.data.frame(eraTable[order(eraTable$ERA, decreasing = FALSE),])</code></pre>
 </div>
 
 <div id="rmd-source-code">LS0tCnRpdGxlOiBQaXRjaGluZwpkYXRlOiAnYHIgZm9ybWF0KFN5cy5EYXRlKCksICIlQiAlZCwgJVkiKWAnCi0tLQoKCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBJbnN0YWxsaW5nIExpYnJhcmllcyAKI2luc3RhbGwucGFja2FnZXMoYygidGlkeXIiLCAiZHBseXIiLCAia25pdHIiLCAidGlkeXZlcnNlIiwgInlhbWwiKSkKbGlicmFyeSgidGlkeXIiKQpsaWJyYXJ5KCJ5YW1sIikKbGlicmFyeSgiZHBseXIiKQpsaWJyYXJ5KCJrbml0ciIpCmxpYnJhcnkoInRpZHl2ZXJzZSIpCmxpYnJhcnkoInRpbnl0ZXgiKQpgYGAKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFJlYWRpbmcgRGF0YQptdWRjYXRzUmF3IDwtIHJlYWQuY3N2KCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vYm1zd25zb24vTXVkY2F0cy9tYWluL0RhdGEvY3VycmVudFN0YXRzLmNzdiIpCmBgYAoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIEFkZGluZyBGdWxsIE5hbWVzCm11ZGNhdHNSYXckZnVsbE5hbWUgPC0gcGFzdGUobXVkY2F0c1JhdyRGaXJzdCwgbXVkY2F0c1JhdyRMYXN0LCBzZXAgPSAiICIpCmBgYAoKCgpgYGB7ciwgaW5jbHVkZT1GQUxTRX0KIyBTdWJzZXR0aW5nIFN0YXRzCnBpdGNoaW5nU2VsZWN0IDwtIG11ZGNhdHNSYXcgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBMYXN0LCBJUCwgR1AuMSwgR1MsIFcsIEwsIFNWLCBTVk8sIEJTLCBTViwgCiAgICAgICAgIEguMSwgUi4xLCBFUiwgQkIuMSwgU08uMSwgSEJQLjEsIEVSQSwgV0hJUCwgQkYpICU+JQogIHJlbmFtZSgiR1AiID0gR1AuMSkKYGBgCgojIFRlYW0KCiMjIFRhYmxlcwoKIyMjIElQCmBgYHtyfQppcFRhYmxlIDwtIHBpdGNoaW5nU2VsZWN0ICU+JQogIHNlbGVjdChMYXN0LCBJUCkgCmFzLmRhdGEuZnJhbWUoaXBUYWJsZVtvcmRlcihpcFRhYmxlJElQLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgRVJBCmBgYHtyfQplcmFUYWJsZSA8LSBwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoSVAgPiAuMSkgJT4lCiAgc2VsZWN0KExhc3QsIEVSQSkgCmFzLmRhdGEuZnJhbWUoZXJhVGFibGVbb3JkZXIoZXJhVGFibGUkRVJBLCBkZWNyZWFzaW5nID0gRkFMU0UpLF0pCmBgYAoKIyBJbmRpdmlkdWFsCiMjIERvcnNleQpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkRvcnNleSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgRHVuY2FuCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRHVuY2FuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJHdW5rZWwiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIEh1bnRpbmd0b24KYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBIb3dlCiMjIEh1c2VieQpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvd2UiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCgojIyBIdXNlYnkKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdXNlYnkiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIExldmFzc2V1cgpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkxldmFzc2V1ciIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgRmFnZXJsYW5kIApgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkZhZ2VybGFuZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTGlraW5nCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiTGlraW5nIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBOYXVncwpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIk5hdWdsZSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgUGlsbApgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBSZWVkCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiUmVlZCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgQmlnIENodW5ndXMKYGBge3J9CnBpdGNoaW5nU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJTYXlsZXMiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFNjaHdpbm5lcgpgYGB7cn0KcGl0Y2hpbmdTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCIFdlaWRzCmBgYHtyfQpwaXRjaGluZ1NlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiV2VpZGllbWFuIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCg==</div>
+<script type="text/javascript" src="includes/external-links.js"></script>
+
+<br>
+<hr>
+<br>
+
+<!-- Add lab logo -->
+<!-- <p style="text-align: center;">>
+    <a href="https://twitter.com/MMudcats" target="_blank">
+        <img alt="Developmental Psychopathology Lab" src="Images/logo.png" width="10%">
+    </a>
+</p>
+
+<br>
+<hr>
+<br>
+-->
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/MMudcats" target="_blank" class="fa fa-twitter fa-fw fa-3x"></a>
+</p>
 
 
 </div>
@@ -1509,7 +1546,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("Defense.Rmd");
+  window.initializeSourceEmbed("Defense_2022.Rmd");
   window.initializeCodeFolding("hide" === "show");
 });
 </script>

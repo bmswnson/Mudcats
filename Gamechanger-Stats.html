@@ -11,9 +11,9 @@
 
 
 
-<title>All Possible Stats</title>
+<title>gamechanger-stats</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -328,37 +328,50 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Mudcats Stats</a>
+      <a class="navbar-brand" href="index.html">Moorhead Mudcats</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="2022-Schedule.html">2022 Schedule</a>
+  <a href="2023-Schedule.html">2023 Schedule</a>
+</li>
+<li>
+  <a href="2023-Stats.html">2023 Stats</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Current Stats
+    Archive
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="offense.html">Offense</a>
-    </li>
-    <li>
-      <a href="Defense.html">Defense</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">2022</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="offense_2022.html">Offense</a>
+        </li>
+        <li>
+          <a href="Defense_2022.html">Defense</a>
+        </li>
+        <li>
+          <a href="2022-Schedule.html">Schedule</a>
+        </li>
+        <li>
+          <a href="shiny-app_2022.html">Stats app</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
 <li>
   <a href="Gamechanger-Stats.html">All Possible Stats</a>
 </li>
-<li>
-  <a href="shiny-app.html">Stats app</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://twitter.com/MMudcats"></a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -378,13 +391,13 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">All Possible Stats</h1>
+<h1 class="title toc-ignore">gamechanger-stats</h1>
 
 </div>
 
 
-<div id="offense" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Offense</h1>
+<div id="offense" class="section level1">
+<h1>Offense</h1>
 <p>GP = Games played<br />
 PA = Plate appearances AB = At bats H = Hits<br />
 1B = Singles 2B = Doubles<br />
@@ -414,14 +427,15 @@ strikes 6+ = Plate appearances with 6+ pitches<br />
 FLB% = Fly ball percentage<br />
 GB% = Ground ball percentage SAC = Sacrifice hits &amp; bunts SF =
 Sacrifice flies<br />
-LOB = Runners left on base when batter is out 2OUTRBI = 2-out RBI HHB =
-Hard hit balls: Total line drives and hard ground balls<br />
+LOB = Runners left on base when batter is out<br />
+2OUTRBI = 2-out RBI HHB = Hard hit balls: Total line drives and hard
+ground balls<br />
 QAB = Quality at bats (any one of: 3 pitches after 2 strikes, 6+ pitch
 ABs, XBH, HHB, BB, SAC Bunt, SAC Fly) QAB% = Quality at bats per plate
 appearance BABIP = Batting average on balls in play</p>
 </div>
-<div id="pitching" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Pitching</h1>
+<div id="pitching" class="section level1">
+<h1>Pitching</h1>
 <p>IP = Innings Pitched GP = Games pitched<br />
 GS = Games started as the pitcher W = Wins L = Losses SV = Saves<br />
 SVO = Save opportunities BS = Blown saves<br />
@@ -431,15 +445,17 @@ R = Runs allowed<br />
 ER = Earned runs allowed<br />
 BB = Base on balls (walks) SO = Strikeouts HBP = Hit batters<br />
 ERA = Earned run average (season) WHIP = Walks plus hits per innings
-pitched BF = Total batters faced #P = Total pitches TS = Total strikes
-TB = Total balls P/IP = Pitches per inning P/BF = Pitches per batter
-faced &lt;3 = Batters on or out in three pitches or less &lt;3% = % of
-batters on or out in three pitches or less<br />
+pitched BF = Total batters faced<br />
+#P = Total pitches TS = Total strikes TB = Total balls P/IP = Pitches
+per inning P/BF = Pitches per batter faced &lt;3 = Batters on or out in
+three pitches or less &lt;3% = % of batters on or out in three pitches
+or less<br />
 LOO = Leadoff out (1st batter of inning) 1ST2OUT = Innings with 1st 2
 batters out<br />
 123INN = 1-2-3 Innings &lt;13 = Innings of 13 pitches or fewer FIP =
 Fielding Independent Pitching S% = Strike percentage FPS = First pitch
-strikes FPS% = First pitch strike percentage<br />
+strikes<br />
+FPS% = First pitch strike percentage<br />
 FPSO% = % of FPS at-bats that result in an out<br />
 FPSW% = % of FPS at-bats that result in a walk<br />
 FPSH% = % of FPS at-bats that result in a hit<br />
@@ -455,12 +471,13 @@ K/BF = Strikeouts per batter faced K/BB = Strikeouts per walk<br />
 WEAK% = % of batted balls weakly hit (fly balls and ground balls)<br />
 HHB% = % of batted balls that are line drives or hard ground balls GB% =
 % of all batted balls hit on the ground<br />
-FLB% = % of batted balls that are hit in the air GO = Ground outs FO =
-Fly outs<br />
+FLB% = % of batted balls that are hit in the air GO = Ground outs<br />
+FO = Fly outs<br />
 GO/FO = Ratio of ground outs to fly outs<br />
 BAA = Opponent batting average HR = Home runs allowed<br />
 BABIP = Opponent batting average on balls in play LOB = Runners left on
-base BK = Balks<br />
+base<br />
+BK = Balks<br />
 PIK = Runners picked off<br />
 SB = Stolen bases allowed<br />
 CS = Runners caught stealing SB% = Opponent stolen base percentage FB =
@@ -481,8 +498,8 @@ Offspeed (Curveball, Screwball, Changeup) OSS = Number of pitches thrown
 Offspeed for strikes OSS% = Percentage of Offspeed pitches thrown as
 strikes TC = Total Chances</p>
 </div>
-<div id="defense" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Defense</h1>
+<div id="defense" class="section level1">
+<h1>Defense</h1>
 <p>A = Assists PO = Putouts<br />
 E = Errors<br />
 DP = Double Plays<br />
@@ -491,11 +508,35 @@ FPCT = Fielding Percentage cINN = Innings caught cPB = Passed balls
 allowed<br />
 cSB = Stolen bases allowed cCS = Runners caught stealing<br />
 cCS% = Runners caught stealing percentage<br />
-cPIK = Runners picked off cCI = Batter advances on catcher’s
-interference</p>
+cPIK = Runners picked off<br />
+cCI = Batter advances on catcher’s interference</p>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiBBbGwgUG9zc2libGUgU3RhdHMKLS0tCgpgYGB7ciBzZXR1cCwgaW5jbHVkZT1GQUxTRX0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KGVjaG8gPSBUUlVFKQpgYGAKCiMgT2ZmZW5zZQpHUCA9IEdhbWVzIHBsYXllZAkKUEEgPSBQbGF0ZSBhcHBlYXJhbmNlcwpBQiA9IEF0IGJhdHMKSCA9IEhpdHMJCjFCID0gU2luZ2xlcwoyQiA9IERvdWJsZXMJCjNCID0gVHJpcGxlcwkKSFIgPSBIb21lIHJ1bnMKUkJJID0gUnVucyBiYXR0ZWQgaW4KUiA9IFJ1bnMgc2NvcmVkCQpIQlAgPSBIaXQgYnkgcGl0Y2gKUk9FID0gUmVhY2hlZCBvbiBlcnJvcgpGQyA9IEhpdCBpbnRvIGZpZWxkZXIncyBjaG9pY2UKQ0kgPSBCYXR0ZXIgYWR2YW5jZXMgb24gY2F0Y2hlcidzIGludGVyZmVyZW5jZQkKQkIgPSBCYXNlIG9uIGJhbGxzICh3YWxrcykJClNPID0gU3RyaWtlb3V0cwkKQVZHID0gQmF0dGluZyBhdmVyYWdlIChzZWFzb24pCk9CUCA9IE9uLWJhc2UgcGVyY2VudGFnZSAoc2Vhc29uKQpTTEcgPSBTbHVnZ2luZyBwZXJjZW50YWdlCQpPUFMgPSBPbi1iYXNlIHBlcmNlbnRhZ2UgcGx1cyBzbHVnZ2luZyBwZXJjZW50YWdlIChzZWFzb24pClBBL0JCID0gUGxhdGUgYXBwZWFyYW5jZXMgcGVyIHdhbGsJCkJCL0sgPSBXYWxrcyBwZXIgc3RyaWtlb3V0CkMlID0gQ29udGFjdCByYXRlCQpLLUwgPSBTdHJpa2VvdXRzIExvb2tpbmcKU0IgPSBTdG9sZW4gYmFzZXMKQ1MgPSBDYXVnaHQgc3RlYWxpbmcJClNCJSA9IFN0b2xlbiBiYXNlIHBlcmNlbnRhZ2UKUElLID0gUGlja2VkIG9mZgpHSURQID0gSGl0IGludG8gZG91YmxlIHBsYXkJCkdJVFAgPSBIaXQgaW50byB0cmlwbGUgcGxheQkKWEJIID0gRXh0cmEtYmFzZSBoaXRzCQpUQiA9IFRvdGFsIGJhc2VzCQpBQi9IUiA9IEF0IGJhdHMgcGVyIGhvbWUgcnVuCkJBL1JJU1AgPSBCYXR0aW5nIGF2ZXJhZ2Ugd2l0aCBydW5uZXJzIGluIHNjb3JpbmcgcG9zaXRpb24JClBTID0gUGl0Y2hlcyBzZWVuCQpQUy9QQSA9IFBpdGNoZXMgc2VlbiBwZXIgcGxhdGUgYXBwZWFyYW5jZQkKMlMrMyA9IFBsYXRlIGFwcGVhcmFuY2VzIGluIHdoaWNoIGJhdHRlciBzZWVzIDMrIHBpdGNoZXMgYWZ0ZXIgMiBzdHJpa2VzCQoyUyszJSA9ICUgb2YgcGxhdGUgYXBwZWFyYW5jZXMgaW4gd2hpY2ggYmF0dGVyIHNlZXMgMysgcGl0Y2hlcyBhZnRlciAyIHN0cmlrZXMKNisgPSBQbGF0ZSBhcHBlYXJhbmNlcyB3aXRoIDYrIHBpdGNoZXMJCjYrJSA9ICUgb2YgcGxhdGUgYXBwZWFyYW5jZXMgb2YgNisgcGl0Y2hlcwkKRkxCJSA9IEZseSBiYWxsIHBlcmNlbnRhZ2UJCkdCJSA9IEdyb3VuZCBiYWxsIHBlcmNlbnRhZ2UKU0FDID0gU2FjcmlmaWNlIGhpdHMgJiBidW50cwpTRiA9IFNhY3JpZmljZSBmbGllcwkKTE9CID0gUnVubmVycyBsZWZ0IG9uIGJhc2Ugd2hlbiBiYXR0ZXIgaXMgb3V0CTJPVVRSQkkgPSAKMi1vdXQgUkJJCUhIQiA9IEhhcmQgaGl0IGJhbGxzOiBUb3RhbCBsaW5lIGRyaXZlcyBhbmQgaGFyZCBncm91bmQgYmFsbHMJClFBQiA9IFF1YWxpdHkgYXQgYmF0cyAoYW55IG9uZSBvZjogMyBwaXRjaGVzIGFmdGVyIDIgc3RyaWtlcywgNisgcGl0Y2ggQUJzLCBYQkgsIEhIQiwgQkIsIFNBQyBCdW50LCBTQUMgRmx5KQpRQUIlID0gUXVhbGl0eSBhdCBiYXRzIHBlciBwbGF0ZSBhcHBlYXJhbmNlCQpCQUJJUCA9IEJhdHRpbmcgYXZlcmFnZSBvbiBiYWxscyBpbiBwbGF5CgojIFBpdGNoaW5nCklQID0gSW5uaW5ncyBQaXRjaGVkCkdQID0gR2FtZXMgcGl0Y2hlZAkKR1MgPSBHYW1lcyBzdGFydGVkIGFzIHRoZSBwaXRjaGVyClcgPSBXaW5zCkwgPSBMb3NzZXMKU1YgPSBTYXZlcwkKU1ZPID0gU2F2ZSBvcHBvcnR1bml0aWVzCkJTID0gQmxvd24gc2F2ZXMJClNWJSA9IFNhdmUgcGVyY2VudGFnZQkKSCA9IEhpdHMgYWxsb3dlZAkKUiA9IFJ1bnMgYWxsb3dlZAkKRVIgPSBFYXJuZWQgcnVucyBhbGxvd2VkCQpCQiA9IEJhc2Ugb24gYmFsbHMgKHdhbGtzKQpTTyA9IFN0cmlrZW91dHMJCkhCUCA9IEhpdCBiYXR0ZXJzCQpFUkEgPSBFYXJuZWQgcnVuIGF2ZXJhZ2UgKHNlYXNvbikKV0hJUCA9IFdhbGtzIHBsdXMgaGl0cyBwZXIgaW5uaW5ncyBwaXRjaGVkCkJGID0gVG90YWwgYmF0dGVycyBmYWNlZAkjUCA9IFRvdGFsIHBpdGNoZXMKVFMgPSBUb3RhbCBzdHJpa2VzClRCID0gVG90YWwgYmFsbHMKUC9JUCA9IFBpdGNoZXMgcGVyIGlubmluZwpQL0JGID0gUGl0Y2hlcyBwZXIgYmF0dGVyIGZhY2VkCTwzID0gQmF0dGVycyBvbiBvciBvdXQgaW4gdGhyZWUgcGl0Y2hlcyBvciBsZXNzCTwzJSA9ICUgb2YgYmF0dGVycyBvbiBvciBvdXQgaW4gdGhyZWUgcGl0Y2hlcyBvciBsZXNzCQpMT08gPSBMZWFkb2ZmIG91dCAoMXN0IGJhdHRlciBvZiBpbm5pbmcpCjFTVDJPVVQgPSBJbm5pbmdzIHdpdGggMXN0IDIgYmF0dGVycyBvdXQJCjEyM0lOTiA9ICAxLTItMyBJbm5pbmdzCTwxMyA9IElubmluZ3Mgb2YgMTMgcGl0Y2hlcyBvciBmZXdlcgpGSVAgPSBGaWVsZGluZyBJbmRlcGVuZGVudCBQaXRjaGluZwlTJSA9IFN0cmlrZSBwZXJjZW50YWdlCkZQUyA9IEZpcnN0IHBpdGNoIHN0cmlrZXMJRlBTJSA9IEZpcnN0IHBpdGNoIHN0cmlrZSBwZXJjZW50YWdlCQpGUFNPJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYW4gb3V0CQpGUFNXJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYSB3YWxrCQpGUFNIJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYSBoaXQJCkJCL0lOTiA9IFdhbGtzIHBlciBpbm5pbmcKMEJCSU5OID0gWmVyby13YWxrIGlubmluZ3MJCkJCUyA9IFdhbGtzIHRoYXQgc2NvcmUJCkxPQkIgPSBMZWFkb2ZmIHdhbGsgKDFzdCBiYXR0ZXIgb2YgaW5uaW5nKQpMT0JCUyA9IExlYWRvZmYgd2FsayB0aGF0IHNjb3JlZCAoMXN0IGJhdHRlciBvZiBpbm5pbmcpCldQID0gV2lsZCBwaXRjaGVzCQpBQkEgPSBBdCBCYXRzIGFnYWluc3QJClNNID0gT3Bwb3NpbmcgYmF0dGVyIHN3aW5ncy1hbmQtbWlzc2VzCQpTTSUgPSAlIG9mIHRvdGFsIHBpdGNoZXMgdGhhdCBhcmUgc3dpbmdzIGFuZCBtaXNzZXMJCksvRyA9IFN0cmlrZW91dHMgcGVyIHJlZ3VsYXRpb24gZ2FtZQkKSy9CRiA9IFN0cmlrZW91dHMgcGVyIGJhdHRlciBmYWNlZApLL0JCID0gU3RyaWtlb3V0cyBwZXIgd2FsawkKV0VBSyUgPSAlIG9mIGJhdHRlZCBiYWxscyB3ZWFrbHkgaGl0IChmbHkgYmFsbHMgYW5kIGdyb3VuZCBiYWxscykJCkhIQiUgPSAlIG9mIGJhdHRlZCBiYWxscyB0aGF0IGFyZSBsaW5lIGRyaXZlcyBvciBoYXJkIGdyb3VuZCBiYWxscwpHQiUgPSAlIG9mIGFsbCBiYXR0ZWQgYmFsbHMgaGl0IG9uIHRoZSBncm91bmQJCkZMQiUgPSAlIG9mIGJhdHRlZCBiYWxscyB0aGF0IGFyZSBoaXQgaW4gdGhlIGFpcgpHTyA9IEdyb3VuZCBvdXRzCUZPID0gRmx5IG91dHMJCkdPL0ZPID0gUmF0aW8gb2YgZ3JvdW5kIG91dHMgdG8gZmx5IG91dHMJCkJBQSA9IE9wcG9uZW50IGJhdHRpbmcgYXZlcmFnZQpIUiA9IEhvbWUgcnVucyBhbGxvd2VkCQpCQUJJUCA9IE9wcG9uZW50IGJhdHRpbmcgYXZlcmFnZSBvbiBiYWxscyBpbiBwbGF5CkxPQiA9IFJ1bm5lcnMgbGVmdCBvbiBiYXNlCUJLID0gQmFsa3MJClBJSyA9IFJ1bm5lcnMgcGlja2VkIG9mZgkKU0IgPSBTdG9sZW4gYmFzZXMgYWxsb3dlZAkKQ1MgPSBSdW5uZXJzIGNhdWdodCBzdGVhbGluZwpTQiUgPSBPcHBvbmVudCBzdG9sZW4gYmFzZSBwZXJjZW50YWdlCkZCID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIGFzIEZhc3RiYWxscwpGQlMgPSBOdW1iZXIgb2YgRmFzdGJhbGxzIHRocm93biBmb3Igc3RyaWtlcwkKRkJTJSA9IFBlcmNlbnRhZ2Ugb2YgRmFzdGJhbGxzIHRocm93biBmb3Igc3RyaWtlcwkKQ1QgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gYXMgQ3V0dGVycwkKQ1RTID0gTnVtYmVyIG9mIEN1dHRlcnMgdGhyb3duIGZvciBzdHJpa2VzCQpDVFMlID0gUGVyY2VudGFnZSBvZiBDdXR0ZXJzIHRocm93biBmb3Igc3RyaWtlcwkKQ0IgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gYXMgQ3VydmViYWxscwkKQ0JTID0gTnVtYmVyIG9mIEN1cnZlYmFsbHMgdGhyb3duIGZvciBzdHJpa2VzCQpDQlMlID0gUGVyY2VudGFnZSBvZiBDdXJ2ZWJhbGxzIHRocm93biBmb3Igc3RyaWtlcwpTTCA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBTbGlkZXJzCQpTTFMgPSBOdW1iZXIgb2YgU2xpZGVycyB0aHJvd24gZm9yIHN0cmlrZXMJClNMUyUgPSBQZXJjZW50YWdlIG9mIFNsaWRlcnMgdGhyb3duIGZvciBzdHJpa2VzCQpDSCA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBDaGFuZ2V1cHMKQ0hTID0gTnVtYmVyIG9mIENoYW5nZXVwcyB0aHJvd24gZm9yIHN0cmlrZXMKQ0hTJSA9IFBlcmNlbnRhZ2Ugb2YgQ2hhbmdldXBzIHRocm93biBmb3Igc3RyaWtlcwpPUyA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBPZmZzcGVlZCAoQ3VydmViYWxsLCBTY3Jld2JhbGwsIENoYW5nZXVwKQkKT1NTID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIE9mZnNwZWVkIGZvciBzdHJpa2VzCQpPU1MlID0gUGVyY2VudGFnZSBvZiBPZmZzcGVlZCBwaXRjaGVzIHRocm93biBhcyBzdHJpa2VzCVRDID0gVG90YWwgQ2hhbmNlcyAKCiMgRGVmZW5zZQpBID0gQXNzaXN0cwkKUE8gPSBQdXRvdXRzCQpFID0gRXJyb3JzCQpEUCA9IERvdWJsZSBQbGF5cwkKVFAgPSBUcmlwbGUgUGxheXMJCkZQQ1QgPSBGaWVsZGluZyBQZXJjZW50YWdlCmNJTk4gPSBJbm5pbmdzIGNhdWdodApjUEIgPSBQYXNzZWQgYmFsbHMgYWxsb3dlZAkKY1NCID0gU3RvbGVuIGJhc2VzIGFsbG93ZWQKY0NTID0gUnVubmVycyBjYXVnaHQgc3RlYWxpbmcJCmNDUyUgPSBSdW5uZXJzIGNhdWdodCBzdGVhbGluZyBwZXJjZW50YWdlCQpjUElLID0gUnVubmVycyBwaWNrZWQgb2ZmCWNDSSA9IEJhdHRlciBhZHZhbmNlcyBvbiBjYXRjaGVyJ3MgaW50ZXJmZXJlbmNl</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiBnYW1lY2hhbmdlci1zdGF0cwotLS0KCmBgYHtyIHNldHVwLCBpbmNsdWRlPUZBTFNFfQprbml0cjo6b3B0c19jaHVuayRzZXQoZWNobyA9IFRSVUUpCmBgYAoKIyBPZmZlbnNlCkdQID0gR2FtZXMgcGxheWVkCQpQQSA9IFBsYXRlIGFwcGVhcmFuY2VzCkFCID0gQXQgYmF0cwpIID0gSGl0cwkKMUIgPSBTaW5nbGVzCjJCID0gRG91YmxlcwkKM0IgPSBUcmlwbGVzCQpIUiA9IEhvbWUgcnVucwpSQkkgPSBSdW5zIGJhdHRlZCBpbgpSID0gUnVucyBzY29yZWQJCkhCUCA9IEhpdCBieSBwaXRjaApST0UgPSBSZWFjaGVkIG9uIGVycm9yCkZDID0gSGl0IGludG8gZmllbGRlcidzIGNob2ljZQpDSSA9IEJhdHRlciBhZHZhbmNlcyBvbiBjYXRjaGVyJ3MgaW50ZXJmZXJlbmNlCQpCQiA9IEJhc2Ugb24gYmFsbHMgKHdhbGtzKQkKU08gPSBTdHJpa2VvdXRzCQpBVkcgPSBCYXR0aW5nIGF2ZXJhZ2UgKHNlYXNvbikKT0JQID0gT24tYmFzZSBwZXJjZW50YWdlIChzZWFzb24pClNMRyA9IFNsdWdnaW5nIHBlcmNlbnRhZ2UJCk9QUyA9IE9uLWJhc2UgcGVyY2VudGFnZSBwbHVzIHNsdWdnaW5nIHBlcmNlbnRhZ2UgKHNlYXNvbikKUEEvQkIgPSBQbGF0ZSBhcHBlYXJhbmNlcyBwZXIgd2FsawkKQkIvSyA9IFdhbGtzIHBlciBzdHJpa2VvdXQKQyUgPSBDb250YWN0IHJhdGUJCkstTCA9IFN0cmlrZW91dHMgTG9va2luZwpTQiA9IFN0b2xlbiBiYXNlcwpDUyA9IENhdWdodCBzdGVhbGluZwkKU0IlID0gU3RvbGVuIGJhc2UgcGVyY2VudGFnZQpQSUsgPSBQaWNrZWQgb2ZmCkdJRFAgPSBIaXQgaW50byBkb3VibGUgcGxheQkKR0lUUCA9IEhpdCBpbnRvIHRyaXBsZSBwbGF5CQpYQkggPSBFeHRyYS1iYXNlIGhpdHMJClRCID0gVG90YWwgYmFzZXMJCkFCL0hSID0gQXQgYmF0cyBwZXIgaG9tZSBydW4KQkEvUklTUCA9IEJhdHRpbmcgYXZlcmFnZSB3aXRoIHJ1bm5lcnMgaW4gc2NvcmluZyBwb3NpdGlvbgkKUFMgPSBQaXRjaGVzIHNlZW4JClBTL1BBID0gUGl0Y2hlcyBzZWVuIHBlciBwbGF0ZSBhcHBlYXJhbmNlCQoyUyszID0gUGxhdGUgYXBwZWFyYW5jZXMgaW4gd2hpY2ggYmF0dGVyIHNlZXMgMysgcGl0Y2hlcyBhZnRlciAyIHN0cmlrZXMJCjJTKzMlID0gJSBvZiBwbGF0ZSBhcHBlYXJhbmNlcyBpbiB3aGljaCBiYXR0ZXIgc2VlcyAzKyBwaXRjaGVzIGFmdGVyIDIgc3RyaWtlcwo2KyA9IFBsYXRlIGFwcGVhcmFuY2VzIHdpdGggNisgcGl0Y2hlcwkKNislID0gJSBvZiBwbGF0ZSBhcHBlYXJhbmNlcyBvZiA2KyBwaXRjaGVzCQpGTEIlID0gRmx5IGJhbGwgcGVyY2VudGFnZQkKR0IlID0gR3JvdW5kIGJhbGwgcGVyY2VudGFnZQpTQUMgPSBTYWNyaWZpY2UgaGl0cyAmIGJ1bnRzClNGID0gU2FjcmlmaWNlIGZsaWVzCQpMT0IgPSBSdW5uZXJzIGxlZnQgb24gYmFzZSB3aGVuIGJhdHRlciBpcyBvdXQJCjJPVVRSQkkgPSAyLW91dCBSQkkJCkhIQiA9IEhhcmQgaGl0IGJhbGxzOiBUb3RhbCBsaW5lIGRyaXZlcyBhbmQgaGFyZCBncm91bmQgYmFsbHMJClFBQiA9IFF1YWxpdHkgYXQgYmF0cyAoYW55IG9uZSBvZjogMyBwaXRjaGVzIGFmdGVyIDIgc3RyaWtlcywgNisgcGl0Y2ggQUJzLCBYQkgsIEhIQiwgQkIsIFNBQyBCdW50LCBTQUMgRmx5KQpRQUIlID0gUXVhbGl0eSBhdCBiYXRzIHBlciBwbGF0ZSBhcHBlYXJhbmNlCQpCQUJJUCA9IEJhdHRpbmcgYXZlcmFnZSBvbiBiYWxscyBpbiBwbGF5CgojIFBpdGNoaW5nCklQID0gSW5uaW5ncyBQaXRjaGVkCkdQID0gR2FtZXMgcGl0Y2hlZAkKR1MgPSBHYW1lcyBzdGFydGVkIGFzIHRoZSBwaXRjaGVyClcgPSBXaW5zCkwgPSBMb3NzZXMKU1YgPSBTYXZlcwkKU1ZPID0gU2F2ZSBvcHBvcnR1bml0aWVzCkJTID0gQmxvd24gc2F2ZXMJClNWJSA9IFNhdmUgcGVyY2VudGFnZQkKSCA9IEhpdHMgYWxsb3dlZAkKUiA9IFJ1bnMgYWxsb3dlZAkKRVIgPSBFYXJuZWQgcnVucyBhbGxvd2VkCQpCQiA9IEJhc2Ugb24gYmFsbHMgKHdhbGtzKQpTTyA9IFN0cmlrZW91dHMJCkhCUCA9IEhpdCBiYXR0ZXJzCQpFUkEgPSBFYXJuZWQgcnVuIGF2ZXJhZ2UgKHNlYXNvbikKV0hJUCA9IFdhbGtzIHBsdXMgaGl0cyBwZXIgaW5uaW5ncyBwaXRjaGVkCkJGID0gVG90YWwgYmF0dGVycyBmYWNlZAkKI1AgPSBUb3RhbCBwaXRjaGVzClRTID0gVG90YWwgc3RyaWtlcwpUQiA9IFRvdGFsIGJhbGxzClAvSVAgPSBQaXRjaGVzIHBlciBpbm5pbmcKUC9CRiA9IFBpdGNoZXMgcGVyIGJhdHRlciBmYWNlZAkKPDMgPSBCYXR0ZXJzIG9uIG9yIG91dCBpbiB0aHJlZSBwaXRjaGVzIG9yIGxlc3MJCjwzJSA9ICUgb2YgYmF0dGVycyBvbiBvciBvdXQgaW4gdGhyZWUgcGl0Y2hlcyBvciBsZXNzCQpMT08gPSBMZWFkb2ZmIG91dCAoMXN0IGJhdHRlciBvZiBpbm5pbmcpCjFTVDJPVVQgPSBJbm5pbmdzIHdpdGggMXN0IDIgYmF0dGVycyBvdXQJCjEyM0lOTiA9ICAxLTItMyBJbm5pbmdzCQo8MTMgPSBJbm5pbmdzIG9mIDEzIHBpdGNoZXMgb3IgZmV3ZXIKRklQID0gRmllbGRpbmcgSW5kZXBlbmRlbnQgUGl0Y2hpbmcJClMlID0gU3RyaWtlIHBlcmNlbnRhZ2UKRlBTID0gRmlyc3QgcGl0Y2ggc3RyaWtlcwkKRlBTJSA9IEZpcnN0IHBpdGNoIHN0cmlrZSBwZXJjZW50YWdlCQpGUFNPJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYW4gb3V0CQpGUFNXJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYSB3YWxrCQpGUFNIJSA9ICUgb2YgRlBTIGF0LWJhdHMgdGhhdCByZXN1bHQgaW4gYSBoaXQJCkJCL0lOTiA9IFdhbGtzIHBlciBpbm5pbmcKMEJCSU5OID0gWmVyby13YWxrIGlubmluZ3MJCkJCUyA9IFdhbGtzIHRoYXQgc2NvcmUJCkxPQkIgPSBMZWFkb2ZmIHdhbGsgKDFzdCBiYXR0ZXIgb2YgaW5uaW5nKQpMT0JCUyA9IExlYWRvZmYgd2FsayB0aGF0IHNjb3JlZCAoMXN0IGJhdHRlciBvZiBpbm5pbmcpCldQID0gV2lsZCBwaXRjaGVzCQpBQkEgPSBBdCBCYXRzIGFnYWluc3QJClNNID0gT3Bwb3NpbmcgYmF0dGVyIHN3aW5ncy1hbmQtbWlzc2VzCQpTTSUgPSAlIG9mIHRvdGFsIHBpdGNoZXMgdGhhdCBhcmUgc3dpbmdzIGFuZCBtaXNzZXMJCksvRyA9IFN0cmlrZW91dHMgcGVyIHJlZ3VsYXRpb24gZ2FtZQkKSy9CRiA9IFN0cmlrZW91dHMgcGVyIGJhdHRlciBmYWNlZApLL0JCID0gU3RyaWtlb3V0cyBwZXIgd2FsawkKV0VBSyUgPSAlIG9mIGJhdHRlZCBiYWxscyB3ZWFrbHkgaGl0IChmbHkgYmFsbHMgYW5kIGdyb3VuZCBiYWxscykJCkhIQiUgPSAlIG9mIGJhdHRlZCBiYWxscyB0aGF0IGFyZSBsaW5lIGRyaXZlcyBvciBoYXJkIGdyb3VuZCBiYWxscwpHQiUgPSAlIG9mIGFsbCBiYXR0ZWQgYmFsbHMgaGl0IG9uIHRoZSBncm91bmQJCkZMQiUgPSAlIG9mIGJhdHRlZCBiYWxscyB0aGF0IGFyZSBoaXQgaW4gdGhlIGFpcgpHTyA9IEdyb3VuZCBvdXRzCQpGTyA9IEZseSBvdXRzCQpHTy9GTyA9IFJhdGlvIG9mIGdyb3VuZCBvdXRzIHRvIGZseSBvdXRzCQpCQUEgPSBPcHBvbmVudCBiYXR0aW5nIGF2ZXJhZ2UKSFIgPSBIb21lIHJ1bnMgYWxsb3dlZAkKQkFCSVAgPSBPcHBvbmVudCBiYXR0aW5nIGF2ZXJhZ2Ugb24gYmFsbHMgaW4gcGxheQpMT0IgPSBSdW5uZXJzIGxlZnQgb24gYmFzZQkKQksgPSBCYWxrcwkKUElLID0gUnVubmVycyBwaWNrZWQgb2ZmCQpTQiA9IFN0b2xlbiBiYXNlcyBhbGxvd2VkCQpDUyA9IFJ1bm5lcnMgY2F1Z2h0IHN0ZWFsaW5nClNCJSA9IE9wcG9uZW50IHN0b2xlbiBiYXNlIHBlcmNlbnRhZ2UKRkIgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gYXMgRmFzdGJhbGxzCkZCUyA9IE51bWJlciBvZiBGYXN0YmFsbHMgdGhyb3duIGZvciBzdHJpa2VzCQpGQlMlID0gUGVyY2VudGFnZSBvZiBGYXN0YmFsbHMgdGhyb3duIGZvciBzdHJpa2VzCQpDVCA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBDdXR0ZXJzCQpDVFMgPSBOdW1iZXIgb2YgQ3V0dGVycyB0aHJvd24gZm9yIHN0cmlrZXMJCkNUUyUgPSBQZXJjZW50YWdlIG9mIEN1dHRlcnMgdGhyb3duIGZvciBzdHJpa2VzCQpDQiA9IE51bWJlciBvZiBwaXRjaGVzIHRocm93biBhcyBDdXJ2ZWJhbGxzCQpDQlMgPSBOdW1iZXIgb2YgQ3VydmViYWxscyB0aHJvd24gZm9yIHN0cmlrZXMJCkNCUyUgPSBQZXJjZW50YWdlIG9mIEN1cnZlYmFsbHMgdGhyb3duIGZvciBzdHJpa2VzClNMID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIGFzIFNsaWRlcnMJClNMUyA9IE51bWJlciBvZiBTbGlkZXJzIHRocm93biBmb3Igc3RyaWtlcwkKU0xTJSA9IFBlcmNlbnRhZ2Ugb2YgU2xpZGVycyB0aHJvd24gZm9yIHN0cmlrZXMJCkNIID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIGFzIENoYW5nZXVwcwpDSFMgPSBOdW1iZXIgb2YgQ2hhbmdldXBzIHRocm93biBmb3Igc3RyaWtlcwpDSFMlID0gUGVyY2VudGFnZSBvZiBDaGFuZ2V1cHMgdGhyb3duIGZvciBzdHJpa2VzCk9TID0gTnVtYmVyIG9mIHBpdGNoZXMgdGhyb3duIE9mZnNwZWVkIChDdXJ2ZWJhbGwsIFNjcmV3YmFsbCwgQ2hhbmdldXApCQpPU1MgPSBOdW1iZXIgb2YgcGl0Y2hlcyB0aHJvd24gT2Zmc3BlZWQgZm9yIHN0cmlrZXMJCk9TUyUgPSBQZXJjZW50YWdlIG9mIE9mZnNwZWVkIHBpdGNoZXMgdGhyb3duIGFzIHN0cmlrZXMJVEMgPSBUb3RhbCBDaGFuY2VzIAoKIyBEZWZlbnNlCkEgPSBBc3Npc3RzCQpQTyA9IFB1dG91dHMJCkUgPSBFcnJvcnMJCkRQID0gRG91YmxlIFBsYXlzCQpUUCA9IFRyaXBsZSBQbGF5cwkKRlBDVCA9IEZpZWxkaW5nIFBlcmNlbnRhZ2UKY0lOTiA9IElubmluZ3MgY2F1Z2h0CmNQQiA9IFBhc3NlZCBiYWxscyBhbGxvd2VkCQpjU0IgPSBTdG9sZW4gYmFzZXMgYWxsb3dlZApjQ1MgPSBSdW5uZXJzIGNhdWdodCBzdGVhbGluZwkKY0NTJSA9IFJ1bm5lcnMgY2F1Z2h0IHN0ZWFsaW5nIHBlcmNlbnRhZ2UJCmNQSUsgPSBSdW5uZXJzIHBpY2tlZCBvZmYJCmNDSSA9IEJhdHRlciBhZHZhbmNlcyBvbiBjYXRjaGVyJ3MgaW50ZXJmZXJlbmNl</div>
+<script type="text/javascript" src="includes/external-links.js"></script>
+
+<br>
+<hr>
+<br>
+
+<!-- Add lab logo -->
+<!-- <p style="text-align: center;">>
+    <a href="https://twitter.com/MMudcats" target="_blank">
+        <img alt="Developmental Psychopathology Lab" src="Images/logo.png" width="10%">
+    </a>
+</p>
+
+<br>
+<hr>
+<br>
+-->
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/MMudcats" target="_blank" class="fa fa-twitter fa-fw fa-3x"></a>
+</p>
 
 
 </div>
@@ -533,7 +574,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("gamechanger-stats.Rmd");
+  window.initializeSourceEmbed("Gamechanger Stats.Rmd");
   window.initializeCodeFolding("hide" === "show");
 });
 </script>

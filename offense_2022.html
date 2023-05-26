@@ -10,11 +10,11 @@
 
 
 
-<meta name="date" content="2023-03-18" />
+<meta name="date" content="2023-05-26" />
 
 <title>Offense</title>
 
-<script src="site_libs/header-attrs-2.20/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
@@ -329,37 +329,50 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Mudcats Stats</a>
+      <a class="navbar-brand" href="index.html">Moorhead Mudcats</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="2022-Schedule.html">2022 Schedule</a>
+  <a href="2023-Schedule.html">2023 Schedule</a>
+</li>
+<li>
+  <a href="2023-Stats.html">2023 Stats</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Current Stats
+    Archive
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="offense.html">Offense</a>
-    </li>
-    <li>
-      <a href="Defense.html">Defense</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">2022</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="offense_2022.html">Offense</a>
+        </li>
+        <li>
+          <a href="Defense_2022.html">Defense</a>
+        </li>
+        <li>
+          <a href="2022-Schedule.html">Schedule</a>
+        </li>
+        <li>
+          <a href="shiny-app_2022.html">Stats app</a>
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
 <li>
   <a href="Gamechanger-Stats.html">All Possible Stats</a>
 </li>
-<li>
-  <a href="shiny-app.html">Stats app</a>
-</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://twitter.com/MMudcats"></a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -380,17 +393,17 @@ div.tocify {
 
 
 <h1 class="title toc-ignore">Offense</h1>
-<h4 class="date">March 18, 2023</h4>
+<h4 class="date">May 26, 2023</h4>
 
 </div>
 
 
-<div id="team" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Team</h1>
-<div id="tables" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> Tables</h2>
-<div id="at-bats" class="section level3" number="1.1.1">
-<h3><span class="header-section-number">1.1.1</span> At Bats</h3>
+<div id="team" class="section level1">
+<h1>Team</h1>
+<div id="tables" class="section level2">
+<h2>Tables</h2>
+<div id="at-bats" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>abTable &lt;- offenseSelect %&gt;%
   select(Last, AB) %&gt;%
   filter(Last != &quot;Team&quot;)
@@ -401,9 +414,8 @@ as.data.frame(abTable[order(abTable$AB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="quality-at-bats" class="section level3" number="1.1.2">
-<h3><span class="header-section-number">1.1.2</span> Quality At
-Bats</h3>
+<div id="quality-at-bats" class="section level3">
+<h3>Quality At Bats</h3>
 <pre class="r"><code>qabTable &lt;- offenseSelect %&gt;%
   select(Last, QAB., AB) 
 as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])</code></pre>
@@ -413,8 +425,8 @@ as.data.frame(qabTable[order(qabTable$QAB., decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="average" class="section level3" number="1.1.3">
-<h3><span class="header-section-number">1.1.3</span> Average</h3>
+<div id="average" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>avgTable &lt;- offenseSelect %&gt;%
   select(Last, AVG, AB) 
 as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
@@ -424,8 +436,8 @@ as.data.frame(avgTable[order(avgTable$AVG, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="obp" class="section level3" number="1.1.4">
-<h3><span class="header-section-number">1.1.4</span> OBP</h3>
+<div id="obp" class="section level3">
+<h3>OBP</h3>
 <pre class="r"><code>obpTable &lt;- offenseSelect %&gt;%
   select(Last, OBP, AB) 
 as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
@@ -436,10 +448,10 @@ as.data.frame(obpTable[order(obpTable$OBP, decreasing = TRUE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="graphs" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Graphs</h2>
-<div id="at-bats-1" class="section level3" number="1.2.1">
-<h3><span class="header-section-number">1.2.1</span> At Bats</h3>
+<div id="graphs" class="section level2">
+<h2>Graphs</h2>
+<div id="at-bats-1" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>abGraph &lt;- offenseSelect %&gt;%
   filter(Last != &quot;Team&quot;)
 ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) + 
@@ -447,10 +459,10 @@ ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) +
   geom_point() + 
   theme(axis.text.x = element_text(angle = 90, size = 0)) + 
   ggtitle(paste(&quot;At Bats&quot;))</code></pre>
-<p><img src="offense_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p><img src="offense_2022_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 </div>
-<div id="average-1" class="section level3" number="1.2.2">
-<h3><span class="header-section-number">1.2.2</span> Average</h3>
+<div id="average-1" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = AVG, label = Last)) + 
   geom_text(size = 2.5, vjust = 2) +
   geom_point() + 
@@ -461,26 +473,23 @@ ggplot(data = abGraph, aes(x = fullName, y = AB, label = Last)) +
   ggtitle(paste(&quot;Team Averages&quot;))</code></pre>
 <pre><code>## Scale for y is already present.
 ## Adding another scale for y, which will replace the existing scale.</code></pre>
-<p><img src="offense_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="offense_2022_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 </div>
-<div id="quality-at-bats-percentage" class="section level3"
-number="1.2.3">
-<h3><span class="header-section-number">1.2.3</span> Quality At Bats
-Percentage</h3>
+<div id="quality-at-bats-percentage" class="section level3">
+<h3>Quality At Bats Percentage</h3>
 <pre class="r"><code>ggplot(data = offenseSelect, aes(x = fullName, y = QAB., label = Last)) + 
   geom_text(size = 2.5, vjust = 2)  +
   geom_point()  +
   theme(axis.text.x = element_text(angle = 90, size = 0)) + 
   ggtitle(paste(&quot;Quality At Bats Percentage&quot;)) </code></pre>
-<p><img src="offense_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="offense_2022_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 </div>
 <div id="team-leaders-inlcludes-those-in-80th-percentile-or-above"
-class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Team Leaders
-(Inlcludes those in 80th percentile or above)</h2>
-<div id="average-2" class="section level3" number="1.3.1">
-<h3><span class="header-section-number">1.3.1</span> Average</h3>
+class="section level2">
+<h2>Team Leaders (Inlcludes those in 80th percentile or above)</h2>
+<div id="average-2" class="section level3">
+<h3>Average</h3>
 <pre class="r"><code>avgLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(AVG, .8) &lt; AVG) %&gt;%
@@ -492,8 +501,8 @@ as.data.frame(avgLead[order(avgLead$AVG, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="at-bats-2" class="section level3" number="1.3.2">
-<h3><span class="header-section-number">1.3.2</span> At Bats</h3>
+<div id="at-bats-2" class="section level3">
+<h3>At Bats</h3>
 <pre class="r"><code>absLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(AB, .8) &lt; AB) %&gt;%
@@ -505,8 +514,8 @@ as.data.frame(absLead[order(absLead$AB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="hits" class="section level3" number="1.3.3">
-<h3><span class="header-section-number">1.3.3</span> Hits</h3>
+<div id="hits" class="section level3">
+<h3>Hits</h3>
 <pre class="r"><code>hLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(H, .8) &lt; H) %&gt;%
@@ -518,8 +527,8 @@ as.data.frame(hLead[order(hLead$H, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="singles" class="section level3" number="1.3.4">
-<h3><span class="header-section-number">1.3.4</span> Singles</h3>
+<div id="singles" class="section level3">
+<h3>Singles</h3>
 <pre class="r"><code>singlesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(singles, .8) &lt; singles) %&gt;%
@@ -531,8 +540,8 @@ as.data.frame(singlesLead[order(singlesLead$singles, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="doubles" class="section level3" number="1.3.5">
-<h3><span class="header-section-number">1.3.5</span> Doubles</h3>
+<div id="doubles" class="section level3">
+<h3>Doubles</h3>
 <pre class="r"><code>doublesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(doubles, .5) &lt; doubles) %&gt;%
@@ -544,8 +553,8 @@ as.data.frame(doublesLead[order(doublesLead$doubles, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="triples" class="section level3" number="1.3.6">
-<h3><span class="header-section-number">1.3.6</span> Triples</h3>
+<div id="triples" class="section level3">
+<h3>Triples</h3>
 <pre class="r"><code>triplesLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(triples, .5) &lt; triples) %&gt;%
@@ -557,8 +566,8 @@ as.data.frame(triplesLead[order(triplesLead$triples, decreasing = TRUE),])</code
   </script>
 </div>
 </div>
-<div id="homers" class="section level3" number="1.3.7">
-<h3><span class="header-section-number">1.3.7</span> Homers</h3>
+<div id="homers" class="section level3">
+<h3>Homers</h3>
 <pre class="r"><code>hrLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(HR, .5) &lt; HR) %&gt;%
@@ -570,8 +579,8 @@ as.data.frame(hrLead[order(hrLead$HR, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="stolen-bases" class="section level3" number="1.3.8">
-<h3><span class="header-section-number">1.3.8</span> Stolen Bases</h3>
+<div id="stolen-bases" class="section level3">
+<h3>Stolen Bases</h3>
 <pre class="r"><code>sbLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
  filter(quantile(SB, .5) &lt; SB) %&gt;%
@@ -583,8 +592,8 @@ as.data.frame(sbLead[order(sbLead$SB, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="ops" class="section level3" number="1.3.9">
-<h3><span class="header-section-number">1.3.9</span> OPS</h3>
+<div id="ops" class="section level3">
+<h3>OPS</h3>
 <pre class="r"><code>opsLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
   filter(quantile(OPS, .8) &lt; OPS) %&gt;%
@@ -596,9 +605,8 @@ as.data.frame(opsLead[order(opsLead$OPS, decreasing = TRUE),])</code></pre>
   </script>
 </div>
 </div>
-<div id="on-base-percentage" class="section level3" number="1.3.10">
-<h3><span class="header-section-number">1.3.10</span> On Base
-Percentage</h3>
+<div id="on-base-percentage" class="section level3">
+<h3>On Base Percentage</h3>
 <pre class="r"><code>obsLead &lt;- offenseSelect %&gt;% 
   filter(Last != &quot;Team&quot;) %&gt;%
    filter(quantile(OBP, .8) &lt; OBP) %&gt;%
@@ -612,10 +620,10 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </div>
 </div>
 </div>
-<div id="individual-stats" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Individual Stats</h1>
-<div id="dorsey" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Dorsey</h2>
+<div id="individual-stats" class="section level1">
+<h1>Individual Stats</h1>
+<div id="dorsey" class="section level2">
+<h2>Dorsey</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Dorsey&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -684,8 +692,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gunkel" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Gunkel</h2>
+<div id="gunkel" class="section level2">
+<h2>Gunkel</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Gunkel&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -754,8 +762,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="gravy" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Gravy</h2>
+<div id="gravy" class="section level2">
+<h2>Gravy</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Gravdahl &quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -824,8 +832,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="tommy" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Tommy</h2>
+<div id="tommy" class="section level2">
+<h2>Tommy</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Horan &quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -894,8 +902,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="howe" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Howe</h2>
+<div id="howe" class="section level2">
+<h2>Howe</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Howe&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -964,8 +972,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huntington" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Huntington</h2>
+<div id="huntington" class="section level2">
+<h2>Huntington</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huntington&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1034,8 +1042,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="huseby" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Huseby</h2>
+<div id="huseby" class="section level2">
+<h2>Huseby</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Huseby&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1104,8 +1112,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="liking" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Liking</h2>
+<div id="liking" class="section level2">
+<h2>Liking</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Liking&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1174,8 +1182,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="naugs" class="section level2" number="2.9">
-<h2><span class="header-section-number">2.9</span> Naugs</h2>
+<div id="naugs" class="section level2">
+<h2>Naugs</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Naugle&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1244,8 +1252,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="pill" class="section level2" number="2.10">
-<h2><span class="header-section-number">2.10</span> Pill</h2>
+<div id="pill" class="section level2">
+<h2>Pill</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Pilon&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1314,8 +1322,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="reed" class="section level2" number="2.11">
-<h2><span class="header-section-number">2.11</span> Reed</h2>
+<div id="reed" class="section level2">
+<h2>Reed</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Reed&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1384,8 +1392,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="big-chungus" class="section level2" number="2.12">
-<h2><span class="header-section-number">2.12</span> Big Chungus</h2>
+<div id="big-chungus" class="section level2">
+<h2>Big Chungus</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Sayles&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1454,8 +1462,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="schwinner" class="section level2" number="2.13">
-<h2><span class="header-section-number">2.13</span> Schwinner</h2>
+<div id="schwinner" class="section level2">
+<h2>Schwinner</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Stratton&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1524,8 +1532,8 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </tbody>
 </table>
 </div>
-<div id="b-weids" class="section level2" number="2.14">
-<h2><span class="header-section-number">2.14</span> B Weids</h2>
+<div id="b-weids" class="section level2">
+<h2>B Weids</h2>
 <pre class="r"><code>offenseSelect %&gt;%
   filter(Last == &quot;Weidieman&quot;) %&gt;%
   select(-Last, -fullName) %&gt;%
@@ -1597,6 +1605,30 @@ as.data.frame(obsLead[order(obsLead$OBP, decreasing = TRUE),])</code></pre>
 </div>
 
 <div id="rmd-source-code">LS0tCnRpdGxlOiAiT2ZmZW5zZSIKZGF0ZTogJ2ByIGZvcm1hdChTeXMuRGF0ZSgpLCAiJUIgJWQsICVZIilgJwotLS0KCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgSW5zdGFsbGluZyBMaWJyYXJpZXMgCiNpbnN0YWxsLnBhY2thZ2VzKGMoInRpZHlyIiwgImRwbHlyIiwgImtuaXRyIiwgInRpZHl2ZXJzZSIsICJ5YW1sIikpCmxpYnJhcnkoInRpZHlyIikKbGlicmFyeSgieWFtbCIpCmxpYnJhcnkoImRwbHlyIikKbGlicmFyeSgia25pdHIiKQpsaWJyYXJ5KCJ0aWR5dmVyc2UiKQpsaWJyYXJ5KCJ0aW55dGV4IikKbGlicmFyeSgiZ2dwbG90MiIpCmBgYAoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgUmVhZGluZyBEYXRhCm11ZGNhdHNSYXcgPC0gcmVhZC5jc3YoImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9ibXN3bnNvbi9NdWRjYXRzL21haW4vRGF0YS9jdXJyZW50U3RhdHMuY3N2IikKYGBgCgoKYGBge3IsIGluY2x1ZGU9RkFMU0V9CiMgQWRkaW5nIEZ1bGwgTmFtZXMKbXVkY2F0c1JhdyRmdWxsTmFtZSA8LSBwYXN0ZShtdWRjYXRzUmF3JEZpcnN0LCBtdWRjYXRzUmF3JExhc3QsIHNlcCA9ICIgIikKYGBgCgoKCmBgYHtyLCBpbmNsdWRlPUZBTFNFfQojIFN1YnNldHRpbmcgU3RhdHMKb2ZmZW5zZSA8LSBtdWRjYXRzUmF3ICU+JSAKICBzZWxlY3QoTGFzdCwgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgSEJQLCBBVkcsIFJPRSwgRkMsIE9CUCwgU0xHLCBPUFMsIFBBLkJCLCAKICAgICAgICAgQkIuSywgQy4sIEsuTCwgU0IsIENTLCBTQi4pCm9mZmVuc2VTZWxlY3QgPC0gbXVkY2F0c1JhdyAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIExhc3QsIEFWRywgR1AsIFBBLCBBQiwgSCwgWDFCLCBYMkIsIFgzQiwgSFIsIFJCSSwKICAgICAgICAgUiwgU0IsIEhCUCwgIFNMRywgT1BTLCBPQlAsIFFBQi4pICU+JSAKICByZW5hbWUoInNpbmdsZXMiID0gWDFCLCAKICAgICAgICAgImRvdWJsZXMiID0gWDJCLCAKICAgICAgICAgInRyaXBsZXMiID0gWDNCKQoKI1JlbW92aW5nIFRvdGFscyBmb3IgVGVhbQpvZmZlbnNlU2VsZWN0JExhc3Rbd2hpY2gob2ZmZW5zZVNlbGVjdCRMYXN0ID09ICJUb3RhbHMiKV0gPC0gIlRlYW0iCgojcmVtb3ZpbmcgcGVyY2VudGFnZSBvZmYgb2YgcWFiIHBlcmNlbnRhZ2UgCm9mZmVuc2VTZWxlY3QkUUFCLiA8LSBzdHJfc3ViKG9mZmVuc2VTZWxlY3QkUUFCLiwgMSwgbmNoYXIob2ZmZW5zZVNlbGVjdCRRQUIpLTEpCm9mZmVuc2VTZWxlY3QkUUFCLiA8LSBhcy5udW1lcmljKG9mZmVuc2VTZWxlY3QkUUFCLikKYGBgCgoKCiMgVGVhbQoKIyMgVGFibGVzCgojIyMgQXQgQmF0cwpgYGB7cn0KYWJUYWJsZSA8LSBvZmZlbnNlU2VsZWN0ICU+JQogIHNlbGVjdChMYXN0LCBBQikgJT4lCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKQphcy5kYXRhLmZyYW1lKGFiVGFibGVbb3JkZXIoYWJUYWJsZSRBQiwgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKCiMjIyBRdWFsaXR5IEF0IEJhdHMKYGBge3J9CnFhYlRhYmxlIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgc2VsZWN0KExhc3QsIFFBQi4sIEFCKSAKYXMuZGF0YS5mcmFtZShxYWJUYWJsZVtvcmRlcihxYWJUYWJsZSRRQUIuLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKCmBgYAoKIyMjIEF2ZXJhZ2UKYGBge3J9CmF2Z1RhYmxlIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgc2VsZWN0KExhc3QsIEFWRywgQUIpIAphcy5kYXRhLmZyYW1lKGF2Z1RhYmxlW29yZGVyKGF2Z1RhYmxlJEFWRywgZGVjcmVhc2luZyA9IFRSVUUpLF0pCgpgYGAKCiMjIyBPQlAKYGBge3J9Cm9icFRhYmxlIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgc2VsZWN0KExhc3QsIE9CUCwgQUIpIAphcy5kYXRhLmZyYW1lKG9icFRhYmxlW29yZGVyKG9icFRhYmxlJE9CUCwgZGVjcmVhc2luZyA9IFRSVUUpLF0pCgpgYGAKCiMjIEdyYXBocwoKCiMjIyBBdCBCYXRzCmBgYHtyfQphYkdyYXBoIDwtIG9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKQpnZ3Bsb3QoZGF0YSA9IGFiR3JhcGgsIGFlcyh4ID0gZnVsbE5hbWUsIHkgPSBBQiwgbGFiZWwgPSBMYXN0KSkgKyAKICBnZW9tX3RleHQoc2l6ZSA9IDIuNSwgdmp1c3QgPSAyKSArCiAgZ2VvbV9wb2ludCgpICsgCiAgdGhlbWUoYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoYW5nbGUgPSA5MCwgc2l6ZSA9IDApKSArIAogIGdndGl0bGUocGFzdGUoIkF0IEJhdHMiKSkKICAKYGBgCgoKIyMjIEF2ZXJhZ2UKYGBge3J9CmdncGxvdChkYXRhID0gb2ZmZW5zZVNlbGVjdCwgYWVzKHggPSBmdWxsTmFtZSwgeSA9IEFWRywgbGFiZWwgPSBMYXN0KSkgKyAKICBnZW9tX3RleHQoc2l6ZSA9IDIuNSwgdmp1c3QgPSAyKSArCiAgZ2VvbV9wb2ludCgpICsgCiAgc2NhbGVfeV9jb250aW51b3VzKGJyZWFrcyA9IHNlcSgwLDEsLjA1KSkgKwogIHlsaW0oMCwgLjc1KSArCiAgc2NhbGVfeF9kaXNjcmV0ZShleHBhbmQgPSBjKC4wNCwgLjA4KSkgKwogIHRoZW1lKGF4aXMudGV4dC54ID0gZWxlbWVudF90ZXh0KGFuZ2xlID0gOTAsIHNpemUgPSAwKSkgKyAKICBnZ3RpdGxlKHBhc3RlKCJUZWFtIEF2ZXJhZ2VzIikpCiAgCmBgYAoKIyMjIFF1YWxpdHkgQXQgQmF0cyBQZXJjZW50YWdlCmBgYHtyfQpnZ3Bsb3QoZGF0YSA9IG9mZmVuc2VTZWxlY3QsIGFlcyh4ID0gZnVsbE5hbWUsIHkgPSBRQUIuLCBsYWJlbCA9IExhc3QpKSArIAogIGdlb21fdGV4dChzaXplID0gMi41LCB2anVzdCA9IDIpICArCiAgZ2VvbV9wb2ludCgpICArCiAgdGhlbWUoYXhpcy50ZXh0LnggPSBlbGVtZW50X3RleHQoYW5nbGUgPSA5MCwgc2l6ZSA9IDApKSArIAogIGdndGl0bGUocGFzdGUoIlF1YWxpdHkgQXQgQmF0cyBQZXJjZW50YWdlIikpIAogIApgYGAKCiMjIFRlYW0gTGVhZGVycyAoSW5sY2x1ZGVzIHRob3NlIGluIDgwdGggcGVyY2VudGlsZSBvciBhYm92ZSkKCiMjIyBBdmVyYWdlCmBgYHtyfQphdmdMZWFkIDwtIG9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihMYXN0ICE9ICJUZWFtIikgJT4lCiBmaWx0ZXIocXVhbnRpbGUoQVZHLCAuOCkgPCBBVkcpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgQVZHKSAKYXMuZGF0YS5mcmFtZShhdmdMZWFkW29yZGVyKGF2Z0xlYWQkQVZHLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgQXQgQmF0cwpgYGB7cn0KYWJzTGVhZCA8LSBvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIoTGFzdCAhPSAiVGVhbSIpICU+JQogZmlsdGVyKHF1YW50aWxlKEFCLCAuOCkgPCBBQikgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCBBQikgCmFzLmRhdGEuZnJhbWUoYWJzTGVhZFtvcmRlcihhYnNMZWFkJEFCLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgSGl0cwpgYGB7cn0KaExlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKSAlPiUKIGZpbHRlcihxdWFudGlsZShILCAuOCkgPCBIKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIEgpIAphcy5kYXRhLmZyYW1lKGhMZWFkW29yZGVyKGhMZWFkJEgsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCgojIyMgU2luZ2xlcwpgYGB7cn0Kc2luZ2xlc0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKSAlPiUKIGZpbHRlcihxdWFudGlsZShzaW5nbGVzLCAuOCkgPCBzaW5nbGVzKSAlPiUKICBzZWxlY3QoZnVsbE5hbWUsIHNpbmdsZXMpIAphcy5kYXRhLmZyYW1lKHNpbmdsZXNMZWFkW29yZGVyKHNpbmdsZXNMZWFkJHNpbmdsZXMsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBEb3VibGVzCmBgYHtyfQpkb3VibGVzTGVhZCA8LSBvZmZlbnNlU2VsZWN0ICU+JSAKICBmaWx0ZXIoTGFzdCAhPSAiVGVhbSIpICU+JQogZmlsdGVyKHF1YW50aWxlKGRvdWJsZXMsIC41KSA8IGRvdWJsZXMpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgZG91YmxlcykgCmFzLmRhdGEuZnJhbWUoZG91Ymxlc0xlYWRbb3JkZXIoZG91Ymxlc0xlYWQkZG91YmxlcywgZGVjcmVhc2luZyA9IFRSVUUpLF0pCmBgYAoKIyMjIFRyaXBsZXMKYGBge3J9CnRyaXBsZXNMZWFkIDwtIG9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihMYXN0ICE9ICJUZWFtIikgJT4lCiBmaWx0ZXIocXVhbnRpbGUodHJpcGxlcywgLjUpIDwgdHJpcGxlcykgJT4lCiAgc2VsZWN0KGZ1bGxOYW1lLCB0cmlwbGVzKSAKYXMuZGF0YS5mcmFtZSh0cmlwbGVzTGVhZFtvcmRlcih0cmlwbGVzTGVhZCR0cmlwbGVzLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgSG9tZXJzCmBgYHtyfQpockxlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKSAlPiUKIGZpbHRlcihxdWFudGlsZShIUiwgLjUpIDwgSFIpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgSFIpIAphcy5kYXRhLmZyYW1lKGhyTGVhZFtvcmRlcihockxlYWQkSFIsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBTdG9sZW4gQmFzZXMgCmBgYHtyfQpzYkxlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKSAlPiUKIGZpbHRlcihxdWFudGlsZShTQiwgLjUpIDwgU0IpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgU0IpIAphcy5kYXRhLmZyYW1lKHNiTGVhZFtvcmRlcihzYkxlYWQkU0IsIGRlY3JlYXNpbmcgPSBUUlVFKSxdKQpgYGAKCiMjIyBPUFMKYGBge3J9Cm9wc0xlYWQgPC0gb2ZmZW5zZVNlbGVjdCAlPiUgCiAgZmlsdGVyKExhc3QgIT0gIlRlYW0iKSAlPiUKICBmaWx0ZXIocXVhbnRpbGUoT1BTLCAuOCkgPCBPUFMpICU+JQogIHNlbGVjdChmdWxsTmFtZSwgT1BTKSAKYXMuZGF0YS5mcmFtZShvcHNMZWFkW29yZGVyKG9wc0xlYWQkT1BTLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgojIyMgT24gQmFzZSBQZXJjZW50YWdlCmBgYHtyfQpvYnNMZWFkIDwtIG9mZmVuc2VTZWxlY3QgJT4lIAogIGZpbHRlcihMYXN0ICE9ICJUZWFtIikgJT4lCiAgIGZpbHRlcihxdWFudGlsZShPQlAsIC44KSA8IE9CUCkgJT4lCiAgIHNlbGVjdChmdWxsTmFtZSwgT0JQKSAKYXMuZGF0YS5mcmFtZShvYnNMZWFkW29yZGVyKG9ic0xlYWQkT0JQLCBkZWNyZWFzaW5nID0gVFJVRSksXSkKYGBgCgoKIyBJbmRpdmlkdWFsIFN0YXRzCiMjIERvcnNleQpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiRG9yc2V5IikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBHdW5rZWwKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkd1bmtlbCIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgR3JhdnkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkdyYXZkYWhsICIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgVG9tbXkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvcmFuICIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKCiMjIEhvd2UKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkhvd2UiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCgojIyBIdW50aW5ndG9uCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJIdW50aW5ndG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBIdXNlYnkKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIkh1c2VieSIpICU+JQogIHNlbGVjdCgtTGFzdCwgLWZ1bGxOYW1lKSAlPiUKICBrYWJsZSgpCmBgYAoKIyMgTGlraW5nCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJMaWtpbmciKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIE5hdWdzCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJOYXVnbGUiKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCiMjIFBpbGwKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlBpbG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBSZWVkCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJSZWVkIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCaWcgQ2h1bmd1cwpgYGB7cn0Kb2ZmZW5zZVNlbGVjdCAlPiUKICBmaWx0ZXIoTGFzdCA9PSAiU2F5bGVzIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBTY2h3aW5uZXIKYGBge3J9Cm9mZmVuc2VTZWxlY3QgJT4lCiAgZmlsdGVyKExhc3QgPT0gIlN0cmF0dG9uIikgJT4lCiAgc2VsZWN0KC1MYXN0LCAtZnVsbE5hbWUpICU+JQogIGthYmxlKCkKYGBgCgojIyBCIFdlaWRzCmBgYHtyfQpvZmZlbnNlU2VsZWN0ICU+JQogIGZpbHRlcihMYXN0ID09ICJXZWlkaWVtYW4iKSAlPiUKICBzZWxlY3QoLUxhc3QsIC1mdWxsTmFtZSkgJT4lCiAga2FibGUoKQpgYGAKCg==</div>
+<script type="text/javascript" src="includes/external-links.js"></script>
+
+<br>
+<hr>
+<br>
+
+<!-- Add lab logo -->
+<!-- <p style="text-align: center;">>
+    <a href="https://twitter.com/MMudcats" target="_blank">
+        <img alt="Developmental Psychopathology Lab" src="Images/logo.png" width="10%">
+    </a>
+</p>
+
+<br>
+<hr>
+<br>
+-->
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/MMudcats" target="_blank" class="fa fa-twitter fa-fw fa-3x"></a>
+</p>
 
 
 </div>
@@ -1634,7 +1666,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("offense.Rmd");
+  window.initializeSourceEmbed("offense_2022.Rmd");
   window.initializeCodeFolding("hide" === "show");
 });
 </script>
