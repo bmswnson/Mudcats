@@ -9,7 +9,7 @@ date: '`r format(Sys.Date(), "%B %d, %Y")`'
 |:-----------:|:----------------------:|:----------:|
 | May 17th    | vs Fargo Mets          | L 0-3      |
 | May 24th    | vs Jamestown Merchants | W          |
-| May 26th    | at Cold Spring         |            |
+| May 26th    | at Cold Spring         | W          |
 | June 4th    | vs Hamel               |            |
 | June 7th    | vs Cass County Catfish |            |
 | June 14th   | vs Elks                |            |
